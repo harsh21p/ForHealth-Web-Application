@@ -1,0 +1,33 @@
+
+<html>
+    <head>
+        <title>Signup</title>
+        <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/style.css') }}"></link>
+        <link rel="stylesheet" href="{{ url_for('static', filename='css/w3.css') }}">
+        
+        <body>
+
+            <div class="loginboxsignup">
+            <h1>Signup Here</h1>
+            <form name="signup" action="" method="post">
+                <p>Username</p>
+                <input class="w3-input w3-border w3-round" type="text" name="username" placeholder="Enter Username" required>
+                <p>Email</p>
+                <input type="email" class="w3-input w3-border w3-round" name="email" placeholder="Enter Email" required>
+                <p>Contact No</p>
+                <input type="number" class="w3-input w3-border w3-round" name="phone" placeholder="Enter Contact No" required>
+                <p>Address</p>
+                <input type="text" class="w3-input w3-border w3-round" name="address"placeholder="Enter Address" required>
+                <p>Password</p>
+                <input type="password" name="password" class="w3-input w3-border w3-round"  placeholder="Enter Password" required>
+                <p>Confirm Password</p>
+                <input type="password" name="password1" class="w3-input w3-border w3-round" placeholder="Confirm Password" required>
+                <p style="text-align: center; font-size: x-small; color: red;"><b>{{message}}</b></p>
+                <input style="background-color: rgb(69, 193, 241);" type="submit" value="Signup"><br>
+                <a href="/" >Already have an account?</a>
+            </form>
+            </div>
+            
+        </body>
+    </head>
+</html>
