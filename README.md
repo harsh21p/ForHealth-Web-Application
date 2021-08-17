@@ -24,7 +24,7 @@ After creating the database change database config. in main.py file and run the 
 
 $ python main.py
 
-Open http://127.0.0.1:5000 in browser on the same machine.
+Open http://127.0.0.1:3000 in browser on the same machine.
 
 Access app from another device. 
 
