@@ -22,60 +22,6 @@ body{
     padding:70px 30px;
 }
 
-.profileimg{
-    width: 3%;
-    transition: transform .2s;
-  }
-  
-  .zoom{
-    transition: transform .2s;
-  }
-  .zoom a:hover{
-    transform: scale(1.1);
-  }
-  
-  
-  .navbar{
-    
-    height:70px;
-    background:rgb(0, 0, 0);
-    color:#fff;
-    opacity: 0.9;
-    box-sizing: border-box;
-    padding: 1%;
-  }
-  
-  .navbar img:hover{
-    transform: scale(1.1);
-    
-  }
-
-/* help */
-
-  .help{
-    width: 3%;
-    transition: transform .2s;
-  }
-  
-  .help{
-  
-    height:70px;
-    padding: 1%;
-  }
-
-  .helpimg{
-    width: 3%;
-    transition: transform .2s;
-
-  }
-  
-  .help img:hover{
-    transform: scale(1.1);
-    
-  }
-
-  /* help end */
-
 .imgclass{
     width:100px;
     height:100px;
@@ -108,7 +54,6 @@ color: #fff;
 {
 
     background: transparent; 
-    /* border-radius: 20px; */
     height: 30px;
     font-size: 10px;
 }
@@ -119,7 +64,7 @@ color: #fff;
 border:none;
 outline: none;
 height: 30px;
-background: #fb2525;
+background-color: rgb(69, 193, 241);
 color: #fff;
 font-size: 12px;
 border-radius: 20px;
@@ -182,7 +127,6 @@ color: #fff;
 {
 
     background: transparent; 
-    /* border-radius: 20px; */
     height: 30px;
     font-size: 10px;
 }
@@ -192,7 +136,7 @@ color: #fff;
 border:none;
 outline: none;
 height: 30px;
-background: #fb2525;
+background-color: rgb(69, 193, 241);
 color: #fff;
 font-size: 12px;
 border-radius: 20px;

@@ -11,17 +11,25 @@ from flask import Flask, render_template, request
 app=Flask(__name__)
 app.secret_key="ebcqaeyzfqtgtai"
 
+
 #DATABASE CONFIG
 
 app.config["MYSQL_HOST"]="localhost"
 app.config["MYSQL_USER"]="root"
 app.config["MYSQL_PASSWORD"]="root"
-app.config["MYSQL_DB"]="data"
+app.config["MYSQL_DB"]="data"  
 db=MySQL(app)
+
+#Home
+
+@app.route('/',methods=['GET','POST'])
+
+def myhome():
+    return render_template("home.html")
 
 #LOGIN
 
-@app.route('/',methods=['GET','POST'])
+@app.route('/login.html',methods=['GET','POST'])
 
 def index():
     session['username'] = ""
@@ -35,10 +43,11 @@ def index():
             cursor.execute("SELECT * FROM info1 WHERE name_user=%s AND password_user=%s",(username,password))
             
         info=cursor.fetchone()
-        session["email"]=info['email_user']
+        
         if info is not None:
+            session["email"]=info['email_user']
             if info['name_user'] == username and info['password_user'] == password:
-                return redirect(url_for("myhome"))
+                return redirect(url_for("successful"))
         else:
              return render_template("index.html",message1="Password or username didn't match")
     return render_template("index.html")
@@ -70,17 +79,18 @@ def register():
 
     return render_template("signup.html")
 
-    
-#Home AFTER LOGIN
+#Login successful
 
-@app.route('/home.html',methods=['GET','POST'])
+@app.route('/successful',methods=['GET','POST'])
 
-def myhome():
+def successful():
+    if request.method == 'POST':
+        return redirect(url_for("myhome"))
     if session["username"]==session["username1"]:
-        return render_template("home.html")
-
+        return render_template("successful.html")
     else:
         return redirect(url_for("index"))
+    
 
 #FLASK APP
 
