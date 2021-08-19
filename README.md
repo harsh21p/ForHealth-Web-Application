@@ -34,3 +34,4 @@ Steps :
 2) Connect your device to the hotspot.
 3) Run main.py file 
 4) Open the link shown by flask server in browser of your device
+

@@ -10,7 +10,7 @@
             <div>
                 <center><img src="{{ url_for('static', filename='images/logo.png') }}" alt="Logo" height="100">
                 <h3>Login Successful</h3>
-                
+                <h4>{{user}}</h4>
                 <form action="" name="logout" method="post">
                       <a href="/home.html">
                       <input type="submit"  name="logout" value="log out">

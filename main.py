@@ -1,24 +1,29 @@
 
 #DEPENDENCIES
 
-from flask import Flask, render_template,request,redirect,session,url_for
+from os import name
+from flask import Flask, render_template,request,redirect,session,url_for,current_app
 import MySQLdb 
 from flask_mysqldb import MySQL
 from flask import Flask, render_template, request
-
+import sqlite3
 #FLASK APP 
 
 app=Flask(__name__)
-app.secret_key="ebcqaeyzfqtgtai"
 
+app.secret_key="ebcqaeyzfqtgtai"
 
 #DATABASE CONFIG
 
-app.config["MYSQL_HOST"]="localhost"
-app.config["MYSQL_USER"]="root"
-app.config["MYSQL_PASSWORD"]="root"
-app.config["MYSQL_DB"]="data"  
-db=MySQL(app)
+# app.config["MYSQL_HOST"]="localhost"
+# app.config["MYSQL_USER"]="root"
+# app.config["MYSQL_PASSWORD"]="root"
+# app.config["MYSQL_DB"]="data"  
+# db=MySQL(app)
+
+db=sqlite3.connect("auth.db",check_same_thread=False)
+db.row_factory = sqlite3.Row
+cursor=db.cursor()
 
 #Home
 
@@ -39,8 +44,8 @@ def index():
             password=request.form['password']
             session['username'] = username
             session['username1'] = username
-            cursor=db.connection.cursor(MySQLdb.cursors.DictCursor)
-            cursor.execute("SELECT * FROM info1 WHERE name_user=%s AND password_user=%s",(username,password))
+            #cursor=db.connection.cursor(MySQLdb.cursors.DictCursor)
+            cursor.execute("SELECT * FROM info1 WHERE name_user=(?) AND password_user=(?)",(username,password))
             
         info=cursor.fetchone()
         
@@ -68,9 +73,9 @@ def register():
             phone=request.form['phone']
             address=request.form['address']
             if password==password1:
-                cursor=db.connection.cursor(MySQLdb.cursors.DictCursor)
-                cursor.execute("INSERT INTO data.info1(name_user,password_user,email_user,phone_user,address_user) VALUES(%s,%s,%s,%s,%s)",(username,password1,email,phone,address))
-                db.connection.commit()
+                # cursor=db.connection.cursor(MySQLdb.cursors.DictCursor)
+                cursor.execute("INSERT INTO info1(name_user,password_user,email_user,phone_user,address_user) VALUES((?),(?),(?),(?),(?))",(username,password1,email,phone,address))
+                db.commit()
                 return redirect(url_for("index"))
             else:
                 return render_template("signup.html",message="Password didn't match")
@@ -87,7 +92,8 @@ def successful():
     if request.method == 'POST':
         return redirect(url_for("myhome"))
     if session["username"]==session["username1"]:
-        return render_template("successful.html")
+        user=session["username"]
+        return render_template("successful.html",user=user)
     else:
         return redirect(url_for("index"))
     
