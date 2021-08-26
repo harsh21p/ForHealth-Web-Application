@@ -36,7 +36,7 @@ def myhome():
 
 @app.route('/login.html',methods=['GET','POST'])
 
-def index():
+def login():
     session['username'] = ""
     if request.method == 'POST':
         if 'username' in request.form and 'password' in request.form:
@@ -52,10 +52,10 @@ def index():
         if info is not None:
             session["email"]=info['email_user']
             if info['name_user'] == username and info['password_user'] == password:
-                return redirect(url_for("successful"))
+                return redirect(url_for("dashboard"))
         else:
-             return render_template("index.html",message1="Password or username didn't match")
-    return render_template("index.html")
+             return render_template("login.html",message1="Password or username didn't match")
+    return render_template("login.html")
 
 #SIGNUP
 
@@ -76,7 +76,7 @@ def register():
                 # cursor=db.connection.cursor(MySQLdb.cursors.DictCursor)
                 cursor.execute("INSERT INTO info1(name_user,password_user,email_user,phone_user,address_user) VALUES((?),(?),(?),(?),(?))",(username,password1,email,phone,address))
                 db.commit()
-                return redirect(url_for("index"))
+                return redirect(url_for("login"))
             else:
                 return render_template("signup.html",message="Password didn't match")
         else:
@@ -84,19 +84,34 @@ def register():
 
     return render_template("signup.html")
 
-#Login successful
+#Login successful to dashboard
 
-@app.route('/successful',methods=['GET','POST'])
+@app.route('/dashboard',methods=['GET','POST'])
 
-def successful():
+def dashboard():
     if request.method == 'POST':
-        return redirect(url_for("myhome"))
+        value1 = request.form["value1"]
+        value2 = request.form["value2"]
+        cursor.execute("INSERT INTO dataform(value1,value2) VALUES((?),(?))",(value1,value2))
+        db.commit()
+
+        cursor.execute("SELECT * FROM dataform WHERE value1=(?) AND value2=(?)",(value1,value2))
+
+        dataform=cursor.fetchone()
+        
+    if dataform is not None:
+        value1dbl=dataform['value1']
+        value2dbl=dataform['value2']
+        return render_template("dashboard.html",value1db=value1dbl,value2db=value2dbl)
+    
+
+
     if session["username"]==session["username1"]:
         user=session["username"]
-        return render_template("successful.html",user=user)
+        return render_template("dashboard.html",user=user)
     else:
-        return redirect(url_for("index"))
-    
+        return redirect(url_for("login"))
+
 
 #FLASK APP
 

@@ -160,3 +160,26 @@ color: darkgrey;
 color: #ffc107;
 text-align: center;
 }
+
+/* Dashboard */
+
+.lat{
+    margin-top: 40px;
+    font-size: large;
+    text-align: center;
+
+}
+
+.subbutton{
+    font-size: large;
+    margin-top: 50px;
+    margin-bottom: 20px;
+}
+
+.submitform {
+    border: 1px solid rgb(0, 0, 0);
+    border-radius: 40px 20px;
+    width: 50%;
+    background-color: #000;
+   
+  }
