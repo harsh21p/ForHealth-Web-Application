@@ -30,6 +30,7 @@ cursor=db.cursor()
 @app.route('/',methods=['GET','POST'])
 
 def myhome():
+    session['username']="null"
     return render_template("home.html")
 
 #LOGIN
@@ -89,6 +90,7 @@ def register():
 @app.route('/dashboard',methods=['GET','POST'])
 
 def dashboard():
+  if session["username"]==session["username1"]:
     if request.method == 'POST':
         value1 = request.form["value1"]
         value2 = request.form["value2"]
@@ -99,18 +101,15 @@ def dashboard():
 
         dataform=cursor.fetchone()
         
-    if dataform is not None:
-        value1dbl=dataform['value1']
-        value2dbl=dataform['value2']
-        return render_template("dashboard.html",value1db=value1dbl,value2db=value2dbl)
+        if dataform is not None:
+            value1dbl=dataform['value1']
+            value2dbl=dataform['value2']
+            return render_template("dashboard.html",value1db=value1dbl,value2db=value2dbl)
+    user=session["username"]
+    return render_template("dashboard.html",user=user)
     
-
-
-    if session["username"]==session["username1"]:
-        user=session["username"]
-        return render_template("dashboard.html",user=user)
-    else:
-        return redirect(url_for("login"))
+  else:
+    return redirect(url_for("login"))
 
 
 #FLASK APP
