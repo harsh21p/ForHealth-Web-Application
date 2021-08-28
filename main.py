@@ -129,18 +129,62 @@ def dashboard():
     return redirect(url_for("login"))
 
 
+@app.route('/wifion',methods=['GET','POST'])
+
+def dashboard():
+#turn on wifi
+    user=input("Enter Username of WIFI : ")
+    password=input("Enter Password WIFI ")
+
+    print("Connecting to wifi ...")
+
+    code="""ctrl_interface=DIR=/var/run/wpa_supplicant GROUP=netdev
+update_config=1
+country=IN
+
+network={
+        ssid="{}"
+        psk="{}"
+        key_mgmt=WPA-PSK
+}
+""".format(user,password)
+
+    os.system("cd ~")
+    os.system("cd ForHealth")
+    os.system("cd /etc/wpa_supplicant/")
+
+    # open('wpa_supplicant.conf', 'w').close()
+    with open("wpa_supplicant.conf", "w") as f:
+        f.write(code)
+        f.close()
+
+    os.system("sudo /usr/bin/autohotspotN")
+
+
 #FLASK APP
 
 if __name__ == '__main__' :
     print("Creating Hotspot ...")
 
+    code="""ctrl_interface=DIR=/var/run/wpa_supplicant GROUP=netdev
+update_config=1
+country=IN
+
+network={
+        ssid="nono"
+        psk="99889900"
+        key_mgmt=WPA-PSK
+}
+"""
+
     os.system("cd /etc/wpa_supplicant/")
 
     # open('wpa_supplicant.conf', 'w').close()
     with open("wpa_supplicant.conf", "w") as f:
-        f.truncate(0)
+        f.write(code)
         f.close()
-
+    os.system("cd ~")
+    os.system("cd ForHealth")
     os.system("sudo /usr/bin/autohotspotN")
 
     app.run(debug=True,host="0.0.0.0",port=3000)
