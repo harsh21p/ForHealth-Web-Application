@@ -1,15 +1,13 @@
 
 #DEPENDENCIES
 
-from datetime import time
-from os import name
 from flask import Flask, render_template,request,redirect,session,url_for,current_app
-import MySQLdb 
-from flask_mysqldb import MySQL
 from flask import Flask, render_template, request
 import sqlite3
-import math
-import time
+import os
+import sys
+# from flask_mysqldb import MySQL
+
 #FLASK APP 
 
 app=Flask(__name__)
@@ -92,51 +90,59 @@ def register():
 
 
 
-
 @app.route('/dashboard',methods=['GET','POST'])
 
 def dashboard():
-#   if session["username"]==session["username1"]:
-    # if request.method == 'POST':
-        # valuea = request.form["value1"]
-        # valueb = request.form["value2"]
+  if session["username"]==session["username1"]:
+    if request.method == 'POST':
+        valuea = request.form["value1"]
+        valueb = request.form["value2"]
 
-        # def addition(number):
-        #     revs_number = 0
-        #     while (number > 0):  
-        #         remainder = number % 10  
-        #         revs_number = (revs_number * 10) + remainder  
-        #         number = number // 10  
-        #     return revs_number   
-        num=1
-        while num<100:
-            value1=num
-            value2=num+1
-            num=num+1
-            time.sleep(1)
-            cursor.execute("INSERT INTO dataform(value1,value2) VALUES((?),(?))",(value1,value2))
-            db.commit()
-            cursor.execute("SELECT * FROM dataform WHERE value1=(?) AND value2=(?)",(value1,value2))
-
-            dataform=cursor.fetchone()
+        def addition(number):
+            revs_number = 0
+            while (number > 0):  
+                remainder = number % 10  
+                revs_number = (revs_number * 10) + remainder  
+                number = number // 10  
+            return revs_number   
         
-            if dataform is not None:
-                value1dbl=dataform['value1']
-                value2dbl=dataform['value2']
-                return render_template("dashboard.html",value1db=value1dbl,value2db=value2dbl)
+        value1=addition(int(valuea))
+        value2=addition(int(valueb))
+        
+        cursor.execute("INSERT INTO dataform(value1,value2) VALUES((?),(?))",(value1,value2))
+        db.commit()
+        cursor.execute("SELECT * FROM dataform WHERE value1=(?) AND value2=(?)",(value1,value2))
+
+        dataform=cursor.fetchone()
+        
+        if dataform is not None:
+            value1dbl=dataform['value1']
+            value2dbl=dataform['value2']
+            return render_template("dashboard.html",value1db=value1dbl,value2db=value2dbl)
     
 
         
-#   user=session["username"]
-#   return render_template("dashboard.html",user=user)
+    user=session["username"]
+    return render_template("dashboard.html",user=user)
     
-#   else:
-#     return redirect(url_for("login"))
+  else:
+    return redirect(url_for("login"))
 
 
 #FLASK APP
 
 if __name__ == '__main__' :
+    print("Creating Hotspot ...")
+
+    os.system("cd /etc/wpa_supplicant/")
+
+    # open('wpa_supplicant.conf', 'w').close()
+    with open("wpa_supplicant.conf", "w") as f:
+        f.truncate(0)
+        f.close()
+
+    os.system("sudo /usr/bin/autohotspotN")
+
     app.run(debug=True,host="0.0.0.0",port=3000)
 
 
