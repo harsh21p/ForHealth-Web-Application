@@ -115,10 +115,9 @@ def dashboard():
         cursor.execute("SELECT * FROM dataform WHERE value1=(?) AND value2=(?)",(value1,value2))
 
         dataform=cursor.fetchone()
-        for i in dataform:
-            if i is not None:
-                value1dbl=i['value1']
-                value2dbl=i['value2']
+        if dataform is not None:
+                value1dbl=dataform['value1']
+                value2dbl=dataform['value2']
                 return render_template("dashboard.html",value1db=value1dbl,value2db=value2dbl,user=session["username"])
     else:
         return render_template("dashboard.html",user=session["username"])
@@ -132,15 +131,25 @@ def dashboard():
 @app.route('/data')
 def data():
     
-    data = [time() * 1000, random() * 100]
-    response = make_response(json.dumps(data))
-    response.content_type = 'application/json'
+    cursor.execute("SELECT * FROM dataform")
+    dataform=cursor.fetchall()
+
+    for i in dataform:
+        if i is not None:
+            data = [time() * 100000,i["value1"]]
+            response = make_response(json.dumps(data))
+            response.content_type = 'application/json'
     return response
+
+    # for row in dataform:
+    #     print(type(row))
+    
 
 
 #FLASK APP
 
 if __name__ == '__main__' :
+
     app.run(debug=True,host="0.0.0.0",port=3000)
 
 
