@@ -1,11 +1,14 @@
 
 #DEPENDENCIES
 
-from flask import Flask, render_template,request,redirect,session,url_for,current_app
+from flask import Flask, render_template,request,redirect,session,url_for,make_response
 from flask import Flask, render_template, request
 import sqlite3
-import os
-import sys
+import json
+from time import time
+from random import random
+# import os
+# import sys
 # from flask_mysqldb import MySQL
 
 #FLASK APP 
@@ -88,8 +91,6 @@ def register():
 
 #Login successful to dashboard
 
-
-
 @app.route('/dashboard',methods=['GET','POST'])
 
 def dashboard():
@@ -114,61 +115,32 @@ def dashboard():
         cursor.execute("SELECT * FROM dataform WHERE value1=(?) AND value2=(?)",(value1,value2))
 
         dataform=cursor.fetchone()
-        
-        if dataform is not None:
-            value1dbl=dataform['value1']
-            value2dbl=dataform['value2']
-            return render_template("dashboard.html",value1db=value1dbl,value2db=value2dbl)
-    
-
-        
-    user=session["username"]
-    return render_template("dashboard.html",user=user)
-    
+        for i in dataform:
+            if i is not None:
+                value1dbl=i['value1']
+                value2dbl=i['value2']
+                return render_template("dashboard.html",value1db=value1dbl,value2db=value2dbl,user=session["username"])
+    else:
+        return render_template("dashboard.html",user=session["username"])
   else:
     return redirect(url_for("login"))
 
+# Chart on Webpage
+# @/data route to get data
 
-@app.route('/wifion',methods=['GET','POST'])
 
-def wifion():
-#turn on wifi
-    os.system("cd ~")
-    os.system("cd ForHealth")
-    os.system("sudo ./wifion.sh")
-    session['username']="null"
-    print("Turning on wifi ...")
-
-    exit()
+@app.route('/data')
+def data():
     
+    data = [time() * 1000, random() * 100]
+    response = make_response(json.dumps(data))
+    response.content_type = 'application/json'
+    return response
 
 
 #FLASK APP
 
 if __name__ == '__main__' :
-    print("Creating Hotspot ...")
-
-    code="""ctrl_interface=DIR=/var/run/wpa_supplicant GROUP=netdev
-update_config=1
-country=IN
-
-network={
-        ssid="nono"
-        psk="99889900"
-        key_mgmt=WPA-PSK
-}
-"""
-
-    os.system("cd /etc/wpa_supplicant/")
-
-    # open('wpa_supplicant.conf', 'w').close()
-    with open("wpa_supplicant.conf", "w") as f:
-        f.write(code)
-        f.close()
-    os.system("cd ~")
-    os.system("cd ForHealth")
-    os.system("sudo /usr/bin/autohotspotN")
-
     app.run(debug=True,host="0.0.0.0",port=3000)
 
 

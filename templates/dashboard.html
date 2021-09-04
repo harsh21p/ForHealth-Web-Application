@@ -1,49 +1,74 @@
 
 <html>
-    <head>
-        <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/dashboard.css') }}"></link>
+  <head>
+      <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/dashboard.css') }}"></link>
+      <title>
+          
+          Successful
 
-        <title>
-            
-            Successful
+      </title>
+      <body>
 
-        </title>
-        <body>
-            <div>
-                <center><img src="{{ url_for('static', filename='images/logo.png') }}" alt="Logo" height="100">
-                <h3>Login Successful</h3>
-                <h4>{{user}}</h4>
-                      <a href="/" >
-                      <button type="submit" name="logout">Log out</button>
-                      </a>
-                      <br><br>
-                      <a href="/wifion" >
-                      <button type="submit" name="off">OFF</button>
-                      </a>
-                </center>
-                <br>
-                <div>
+          <div>
+              
+            <center><img src="{{ url_for('static', filename='images/logo.png') }}" alt="Logo" height="100">
+              <h3>Login Successful</h3>
+              <h4>{{user}}</h4>
+                    <a href="/" >
+                    <button type="submit" name="logout">Log out</button>
+                    </a>
+                    <br><br>
+                    <!-- <a href="/wifion" >
+                    <button type="submit" name="off">OFF</button>
+                    </a> -->
+              </center>
+              <br>
+
+              <div>
+                  <center>
+                  <form class="submitform" method="post" action="">
+                      <input type="text" class="lat"  name="value1" placeholder="value1" required><br>
+                      <input type="text" class="lat"  name="value2" placeholder="value2" required><br>
+                      <button class="subbutton">Submit</button>
+
+                  </form>
+                  </center>
+                  <div>
                     <center>
-                    <form class="submitform" method="post" action="">
-                        <input type="text" class="lat"  name="value1" placeholder="value1" required><br>
-                        <input type="text" class="lat"  name="value2" placeholder="value2" required><br>
-                        <button class="subbutton">Submit</button>
+                      <div >
+                          <h3>Value1 ={{value1db}} </h3>
+                          <h3>Value2 ={{value2db}} </h3>
 
-                    </form>
-                </center>
-                <div>
-                    <center>
-                        <div >
-                            <h3>Value1 ={{value1db}} </h3>
-                            <h3>Value2 ={{value2db}} </h3>
-
-                        </div>
+                      </div>
                     </center>
-                </div>
+                   </div>
+              </div>
+
+              <!-- chart starts -->
+              <div>
+            
+                <div class="container-fluid">
+                    <!-- Example row of columns -->
+                    <div class="row">
+          
+                        <div class="container-fluid" id="data-container"></div>
+          
+                    </div>
                 </div>
 
-            </div>
-        </body>
-    </head>
+              </div>
+
+          </div>
+
+           <!-- imports for chart -->
+
+           <script src="/static/js/Supporting_docs/jquery.min.js"></script>
+           <script src="/static/js/Supporting_docs/highchart.js"></script>
+           <script src="/static/js/Supporting_docs/highcharts-more.js"></script>
+           <script src="/static/js/Supporting_docs/exporting.js"></script>
+           <script src="/static/js/getdata.js"></script>
+
+
+      </body>
+  </head>
 </html>
-
