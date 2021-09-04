@@ -14,14 +14,6 @@ $ pip install -r requirements.txt
 
 After the installation of all the requirements 
 
-We have to setup sql database.
-
-To create database we have to run the database.sql file
-
-Note : You can run it by opening it into mysql workbench.
-
-After creating the database change database config. in main.py file and run the file main.py
-
 $ python main.py
 
 Open http://127.0.0.1:3000 in browser on the same machine.
@@ -34,4 +26,15 @@ Steps :
 2) Connect your device to the hotspot.
 3) Run main.py file 
 4) Open the link shown by flask server in browser of your device
+
+Referances:
+
+Chart Webpage :
+https://www.youtube.com/watch?v=e68S9x3Rh_0
+https://github.com/soumilshah1995/flask-live-charts.git
+
+Hotspot Rpi :
+https://www.youtube.com/watch?v=qMT-0mz1lkI
+https://github.com/km4ack/pi-scripts/blob/master/autohotspotN-setup.git
+
 
