@@ -131,19 +131,18 @@ def dashboard():
 @app.route('/data')
 def data():
     
-    cursor.execute("SELECT * FROM dataform")
-    dataform=cursor.fetchall()
+    cursor.execute("select *from dataform ORDER BY ID DESC LIMIT 1")
+    dataform=cursor.fetchone()
 
-    for i in dataform:
-        if i is not None:
-            data = [time() * 100000,i["value1"]]
-            response = make_response(json.dumps(data))
-            response.content_type = 'application/json'
+    
+    if dataform is not None:
+        data = [time() * 100000,dataform["value1"]]
+        response = make_response(json.dumps(data))
+        response.content_type = 'application/json'
     return response
 
     # for row in dataform:
     #     print(type(row))
-    
 
 
 #FLASK APP
