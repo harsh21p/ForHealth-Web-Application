@@ -38,4 +38,7 @@ Hotspot Rpi :
 https://www.youtube.com/watch?v=qMT-0mz1lkI
 https://github.com/km4ack/pi-scripts/blob/master/autohotspotN-setup.git
 
+Autorun script:
+https://www.instructables.com/Raspberry-Pi-Launch-Python-script-on-startup/
+
 
