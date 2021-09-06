@@ -2,7 +2,7 @@
 
 Control Web Application
 
-Tech : MySQL Database, Python Flask, HTML, CSS.
+Tech : MySQL Database, Python Flask, HTML, CSS, JS, SQLite3.
 
 Steps to run :
 
@@ -18,14 +18,15 @@ $ python main.py
 
 Open http://127.0.0.1:3000 in browser on the same machine.
 
-Access app from another device. 
+Access app from another device via WiFi. 
 
 Steps :
 
-1) Turn on the hotspot of your machine (where the flask server is running ) 
-2) Connect your device to the hotspot.
-3) Run main.py file 
-4) Open the link shown by flask server in browser of your device
+1) Turn on the hotspot of your machine ( where the flask server is running ) 
+2) Run main.py & SensorData_Bot.py 
+3) Connect your device to the hotspot.
+4) Open the link shown by flask server in browser of your device. ( Ex. http://10.10.10.10:3000 )
+
 
 Referances:
 

@@ -7,25 +7,15 @@ import sqlite3
 import json
 from time import time
 from random import random
-# import os
-# import sys
-# from flask_mysqldb import MySQL
 
 #FLASK APP 
 
 app=Flask(__name__)
 
-app.secret_key="ebcqaeyzfqtgtai"
+app.secret_key="ForHealth"
 
-#DATABASE CONFIG
 
-# app.config["MYSQL_HOST"]="localhost"
-# app.config["MYSQL_USER"]="root"
-# app.config["MYSQL_PASSWORD"]="root"
-# app.config["MYSQL_DB"]="data"  
-# db=MySQL(app)
-
-db=sqlite3.connect("auth.db",check_same_thread=False)
+db=sqlite3.connect("Database.db",check_same_thread=False)
 db.row_factory = sqlite3.Row
 cursor=db.cursor()
 
@@ -49,7 +39,6 @@ def login():
             password=request.form['password']
             session['username'] = username
             session['username1'] = username
-            #cursor=db.connection.cursor(MySQLdb.cursors.DictCursor)
             cursor.execute("SELECT * FROM info1 WHERE name_user=(?) AND password_user=(?)",(username,password))
             
         info=cursor.fetchone()
@@ -78,7 +67,6 @@ def register():
             phone=request.form['phone']
             address=request.form['address']
             if password==password1:
-                # cursor=db.connection.cursor(MySQLdb.cursors.DictCursor)
                 cursor.execute("INSERT INTO info1(name_user,password_user,email_user,phone_user,address_user) VALUES((?),(?),(?),(?),(?))",(username,password1,email,phone,address))
                 db.commit()
                 return redirect(url_for("login"))
@@ -124,9 +112,7 @@ def dashboard():
   else:
     return redirect(url_for("login"))
 
-# Chart on Webpage
-# @/data route to get data
-
+# @/data route to send data from database to webpage
 
 @app.route('/data')
 def data():
@@ -140,10 +126,6 @@ def data():
         response = make_response(json.dumps(data))
         response.content_type = 'application/json'
     return response
-
-    # for row in dataform:
-    #     print(type(row))
-
 
 #FLASK APP
 

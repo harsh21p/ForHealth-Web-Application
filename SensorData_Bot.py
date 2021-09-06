@@ -2,7 +2,7 @@ from random import random
 import sqlite3
 import time
 
-db=sqlite3.connect("auth.db",check_same_thread=False)
+db=sqlite3.connect("Database.db",check_same_thread=False)
 db.row_factory = sqlite3.Row
 cursor=db.cursor()
 j=1
