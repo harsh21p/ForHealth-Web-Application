@@ -6,7 +6,6 @@ from flask import Flask, render_template, request
 import sqlite3
 import json
 from time import time
-from random import random
 
 #FLASK APP 
 
@@ -100,7 +99,7 @@ def dashboard():
         
         cursor.execute("INSERT INTO dataform(value1,value2) VALUES((?),(?))",(value1,value2))
         db.commit()
-        cursor.execute("SELECT * FROM dataform WHERE value1=(?) AND value2=(?)",(value1,value2))
+        cursor.execute("select * from dataform ORDER BY ID DESC LIMIT 1")
 
         dataform=cursor.fetchone()
         if dataform is not None:
@@ -117,10 +116,9 @@ def dashboard():
 @app.route('/data')
 def data():
     
-    cursor.execute("select *from dataform ORDER BY ID DESC LIMIT 1")
+    cursor.execute("select * from dataform ORDER BY ID DESC LIMIT 1")
     dataform=cursor.fetchone()
 
-    
     if dataform is not None:
         data = [time() * 100000,dataform["value1"]]
         response = make_response(json.dumps(data))
