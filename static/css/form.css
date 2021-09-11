@@ -1,0 +1,52 @@
+.first{
+    color: white;
+    float: left;
+    background-color: black;
+    /* border: 1px solid; */
+    width: 50%;
+    height:800px;
+}
+
+.second{
+    color: black;
+    float: right;
+    background-color: whitesmoke;
+    width: 50%;
+    height: 700px;
+}
+
+.pdetails{
+    margin:auto;
+    text-align:center;
+}
+
+.sdetails{
+    margin:auto;
+    text-align:center;
+}
+
+.pf{
+    width: 50%;
+    height: 50px
+    margin:auto;
+
+}
+
+.form1{
+    border: 1px solid white;
+}
+.form2{
+    border: 1px solid black;
+}
+
+
+
+.button{
+    background-color:yellow;
+    height:50px;
+}
+
+button:hover{background-color:orange;}
+
+button:focus{background-color:rgb(71, 240, 71);}
+

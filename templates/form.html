@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Patient Details</title>
+        <link rel="stylesheet" type="text/css"  href="{{ url_for('static',filename='css/bootstrap.css') }}" ></link>
+        <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/form.css') }}"></link>
+        <!-- <link rel="stylesheet" href="{{ url_for('static', filename='css/w3.css') }}"> -->
+     </head>
+
+    <body>
+         
+        <!-- First -->
+
+
+        <div class="first">
+            <form class="form1">
+                <h1 class="pdetails" style="margin-top: 5%;">Patient Details</h1>
+                <label for="fname" style="margin: 2%;margin-top: 8%;">Name :</label><br>
+                <input  type="text" class="form-control" style="width:50%;margin-left: 10%;"  id="fname" placeholder="Name">
+                <br>                
+                <label  for="fage" style="margin: 2%;">Age :</label>
+                <input class="form-control" style="width:50%;margin-left: 10%;" type="text" id="lage" name="lage"v placeholder="Age  (Years)">
+                <br>
+                <label for="fweight" style="margin: 2%;">Weight :</label>
+                <input class="form-control" style="width:50%;margin-left: 10%;" type="text" id="lweight" name="weight" placeholder="Weight (Kg)">
+                <br>
+                <label for="fheight" style="margin: 2%;">Height :</label>
+                <input class="form-control" style="width:50%;margin-left: 10%;margin-bottom: 10%;" type="text" id="lheight" name="lheight" placeholder="Height (cm)">
+                <br>
+              </form>
+        </div>
+        <!-- Second -->
+        <div class="second">
+            <form class="form2">
+            <h1 class="sdetails" style="margin-top: 5%;">Choose Type Of Treatment</h1>
+            <div style="margin-left: 35%;margin-top: 21%;">
+            <button type="button" >Passive</button>
+            <br>
+            <br>
+            <button type="button" class="button1">Freedrive</button>
+            <br>
+            <br>
+            <button type="button" class="button1">Active isotonic</button>
+            <br>
+            <br>
+            <button type="button" class="button1">Active isometric</button>
+            <br>
+            <br>
+            <button type="button" class="button1">Active isokinetic</button>
+            <br>
+            <br>
+          </div>
+            <!-- <select class="form-select form-select-lg mb-3" aria-label=".form-select-lg example">
+              <option selected>Choose Type Of Treatment</option>
+              <option value="1">Passive</option>
+              <option value="2">Freedrive</option>
+              <option value="3">Active isotonic</option>
+              <option value="3">Active isometric</option>
+              <option value="3">Active isokinetic</option>
+            </select> -->
+            <!-- <div >
+              <button type="button" class="btn btn-primary" >Passive</button>
+              <button type="button" class="btn btn-primary">Freedrive</button>
+              <button type="button" class="btn btn-primary">Active isotonic</button>
+          </div> -->
+              <button type="submit" class="btn btn-primary mb-2" style="margin-left:80%;margin-top:15%;">Continue</button>
+            
+            </form>
+
+         
+        </div>
+
+    </body>
+</html>
