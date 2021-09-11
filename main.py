@@ -78,7 +78,7 @@ def register():
 
 #Login successful to dashboard
 
-@app.route('/dashboard',methods=['GET','POST'])
+@app.route('/dashboard.html',methods=['GET','POST'])
 
 def dashboard():
   if session["username"]==session["username1"]:
@@ -110,6 +110,13 @@ def dashboard():
         return render_template("dashboard.html",user=session["username"])
   else:
     return redirect(url_for("login"))
+
+
+# Select positions
+
+@app.route('/select.html')
+def select():
+    return render_template("select.html")
 
 # @/data route to send data from database to webpage
 

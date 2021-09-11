@@ -4,8 +4,13 @@
         <title>Signup</title>
         <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/style.css') }}"></link>
         <link rel="stylesheet" href="{{ url_for('static', filename='css/w3.css') }}">
-        
+        <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/select.css') }}"></link>
+        <link rel="stylesheet" href="{{ url_for('static', filename='css/bootstrap.min.css') }}">
+        <link rel="stylesheet" href="{{ url_for('static', filename='css/w3.css') }}">
+        <script src="{{ url_for('static', filename='js/Supporting_docs/jquery.js') }}"></script>
+        <script src="{{ url_for('static', filename='js/Supporting_docs/bootstrap.bundle.min.js') }}"></script>
         <body>
+    
 
             <div class="loginboxsignup">
             <h1>Signup Here</h1>
@@ -27,6 +32,15 @@
                 <a href="/login.html" >Already have an account?</a>
             </form>
             </div>
+            <script>
+                function openNav() {
+                  document.getElementById("mySidenav").style.width = "350px";
+                }
+            
+                function closeNav() {
+                 document.getElementById("mySidenav").style.width = "0";
+                }
+                </script>
             
         </body>
     </head>

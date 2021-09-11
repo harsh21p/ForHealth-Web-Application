@@ -2,12 +2,57 @@
 <html>
   <head>
       <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/dashboard.css') }}"></link>
+      <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/select.css') }}"></link>
+      <link rel="stylesheet" href="{{ url_for('static', filename='css/bootstrap.min.css') }}">
+      <link rel="stylesheet" href="{{ url_for('static', filename='css/w3.css') }}">
+      <script src="{{ url_for('static', filename='js/Supporting_docs/jquery.js') }}"></script>
+      <script src="{{ url_for('static', filename='js/Supporting_docs/bootstrap.bundle.min.js') }}"></script>
       <title>
           
           Successful
 
       </title>
+
+      <style>
+        
+    </style>
       <body>
+         <!-- drawer -->
+  
+    <div id="mySidenav" class="sidenav">
+      <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+      <div style=" margin:4%;">
+        <a href="dashboard.html">Dashboard</a>
+      </div>
+      <div style=" margin:4%; opacity:100%">
+        <a style="text-decoration: none;" href="login.html">Login</a>
+      </div>
+      <div style=" margin:4%;">
+        <a href="signup.html">Signup</a>
+      </div>
+      <div style="margin:4%;">
+        <a href="aboutus.html">About Us</a>
+      </div>
+      <div style=" margin:4%;">
+        <a href="select.html">Select</a>
+      </div>
+    
+    </div>
+  
+    <!-- button of drawer -->
+    <!-- navbar -->
+    <div class="navbar">
+      <span style="transition: transform .2s;font-size:30px;cursor:pointer;color: white;" onclick="openNav()">&#9776;</span>
+      <h6 name="username">Welcome!! {{user}}</h6>
+      <img onclick="myprofile('myprofile.html')" src="{{ url_for('static', filename='images/profile.png') }}" name="profilepic" class="profileimg"/>
+    </div>
+  
+    <script>
+      function myprofile(clr) {
+        location.href = clr;
+      }
+    </script>
+  <!-- drower+navbar -->
 
           <div>
               
@@ -56,6 +101,15 @@
               </div>
 
           </div>
+          <script>
+            function openNav() {
+              document.getElementById("mySidenav").style.width = "350px";
+            }
+        
+            function closeNav() {
+             document.getElementById("mySidenav").style.width = "0";
+            }
+            </script>
 
            <!-- imports for chart -->
 
