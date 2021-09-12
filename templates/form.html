@@ -4,37 +4,94 @@
         <title>Patient Details</title>
         <link rel="stylesheet" type="text/css"  href="{{ url_for('static',filename='css/bootstrap.css') }}" ></link>
         <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/form.css') }}"></link>
-        <!-- <link rel="stylesheet" href="{{ url_for('static', filename='css/w3.css') }}"> -->
+        <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/select.css') }}"></link>
+        <link rel="stylesheet" href="{{ url_for('static', filename='css/bootstrap.min.css') }}">
+ 
      </head>
 
     <body>
+
+       <!-- drawer -->
+  
+       <div id="mySidenav" class="sidenav">
+        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+        <div style=" margin:4%;">
+          <a style="text-decoration: none;" href="dashboard.html">Dashboard</a>
+        </div>
+        <div style=" margin:4%; opacity:100%">
+          <a style="text-decoration: none;" href="login.html">Login</a>
+        </div>
+        <div style=" margin:4%;">
+          <a style="text-decoration: none;" href="/">Home</a>
+        </div>
+        <div style="margin:4%;">
+          <a  style="text-decoration: none;" href="details.html">Details</a>
+        </div>
+        <div style="margin:4%;">
+          <a style="text-decoration: none;" href="select.html">Select</a>
+        </div>
+      
+      </div>
+
+    <script>
+      function openNav() {
+        document.getElementById("mySidenav").style.width = "350px";
+      }
+  
+      function closeNav() {
+       document.getElementById("mySidenav").style.width = "0";
+      }
+      </script>
+  
+    <!-- button of drawer -->
+    <!-- navbar -->
+    <div class="navbar">
+      <span style="transition: transform .2s;font-size:30px;cursor:pointer;color: white;" onclick="openNav()">&#9776;</span>
+      <h6 name="username">Welcome!!</h6>
+      <img onclick="myprofile('myprofile.html')" src="{{ url_for('static', filename='images/profile.png') }}" name="profilepic" class="profileimg"/>
+    </div>
+  
+    <script>
+      function myprofile(clr) {
+        location.href = clr;
+      }
+    </script>
+  <!-- drower+navbar -->
          
         <!-- First -->
 
 
         <div class="first">
             <form class="form1">
+
                 <h1 class="pdetails" style="margin-top: 5%;">Patient Details</h1>
-                <label for="fname" style="margin: 2%;margin-top: 8%;">Name :</label><br>
-                <input  type="text" class="form-control" style="width:50%;margin-left: 10%;"  id="fname" placeholder="Name">
-                <br>                
-                <label  for="fage" style="margin: 2%;">Age :</label>
-                <input class="form-control" style="width:50%;margin-left: 10%;" type="text" id="lage" name="lage"v placeholder="Age  (Years)">
-                <br>
-                <label for="fweight" style="margin: 2%;">Weight :</label>
-                <input class="form-control" style="width:50%;margin-left: 10%;" type="text" id="lweight" name="weight" placeholder="Weight (Kg)">
-                <br>
-                <label for="fheight" style="margin: 2%;">Height :</label>
-                <input class="form-control" style="width:50%;margin-left: 10%;margin-bottom: 10%;" type="text" id="lheight" name="lheight" placeholder="Height (cm)">
-                <br>
+                
+                <label for="fname" style="margin-top: 12%; margin-left: 25%;">Name</label>
+                <center>
+                <input  type="text" class="form-control" style="width: 50%; "  id="fname" placeholder="Name">
+                <br> </center>                
+                <label  for="fage" style="margin-left: 25%;">Age</label>
+                <center>
+                <input class="form-control" style="width: 50%;" type="text" id="lage" name="lage"v placeholder="Age  (Years)">
+                <br> </center>
+                <label for="fweight" style="margin-left: 25%;">Weight</label>
+                <center>
+                <input class="form-control" style="width: 50%;" type="text" id="lweight" name="weight" placeholder="Weight (Kg)">
+                <br> </center>
+                <label for="fheight" style="margin-left: 25%;">Height</label>
+                <center>
+                <input class="form-control" style="width: 50%; margin-bottom: 16.5%;" type="text" id="lheight" name="lheight" placeholder="Height (cm)">
+                <br> </center>
+          
               </form>
         </div>
         <!-- Second -->
         <div class="second">
             <form class="form2">
             <h1 class="sdetails" style="margin-top: 5%;">Choose Type Of Treatment</h1>
-            <div style="margin-left: 35%;margin-top: 21%;">
-            <button type="button" >Passive</button>
+            <center>
+            <div style="margin: auto; margin-top: 1%;">
+            <button type="button" class="button1" style="margin-top: 6%;" >Passive</button>
             <br>
             <br>
             <button type="button" class="button1">Freedrive</button>
@@ -49,7 +106,8 @@
             <button type="button" class="button1">Active isokinetic</button>
             <br>
             <br>
-          </div>
+          </center>
+          
             <!-- <select class="form-select form-select-lg mb-3" aria-label=".form-select-lg example">
               <option selected>Choose Type Of Treatment</option>
               <option value="1">Passive</option>
@@ -63,8 +121,8 @@
               <button type="button" class="btn btn-primary">Freedrive</button>
               <button type="button" class="btn btn-primary">Active isotonic</button>
           </div> -->
-              <button type="submit" class="btn btn-primary mb-2" style="margin-left:80%;margin-top:15%;">Continue</button>
-            
+              <button type="submit" class="btn btn-primary mb-2" style="margin-left:80%;margin-top:3%;">Continue</button>
+            </div>
             </form>
 
          

@@ -118,6 +118,19 @@ def dashboard():
 def select():
     return render_template("select.html")
 
+# Details of user form
+
+@app.route('/details.html',methods=['GET','POST'])
+def details():
+    if session["username"] == session["username1"]:
+        if request.method == 'POST':
+            name = request.form["nameofuser"]
+            age = request.form["ageofuser"]
+
+        return render_template("form.html")
+    else:
+        return redirect(url_for("login"))
+
 # @/data route to send data from database to webpage
 
 @app.route('/data')

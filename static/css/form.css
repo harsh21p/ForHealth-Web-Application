@@ -28,7 +28,6 @@
 .pf{
     width: 50%;
     height: 50px
-    margin:auto;
 
 }
 
@@ -38,6 +37,10 @@
 .form2{
     border: 1px solid black;
 }
+
+/* .form1 input{
+    margin-top: 10%;
+    } */
 
 
 

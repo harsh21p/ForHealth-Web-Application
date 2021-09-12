@@ -14,10 +14,9 @@
     width: 400px;
     height: 70px;
     color: white;
-    margin: 10%;
 }
 .button2{
-    margin: 10%;
+
     background-color: black;
     width: 400px;
     height: 70px;
@@ -27,7 +26,7 @@
     height: 70px;
     width: 70px;
     border-radius: 20%;
-    margin-top: 26%;
+    margin-top: 25%;
     margin-right: 4%;
     text-align: center;
 
@@ -44,7 +43,7 @@
   height: 70px;
   width: 70px;
   border-radius: 20%;
-  margin-top: 34%;
+  margin-top: 25%;
   margin-right: 4%;
   text-align: center;
 
@@ -59,6 +58,15 @@
 
 
 
+
+.button{
+  background-color:yellow;
+  height:50px;
+}
+
+button:hover{background-color:orange;}
+
+button:focus{background-color:rgb(71, 240, 71);}
 
 
   .profileimg{

@@ -19,31 +19,31 @@
       <body>
          <!-- drawer -->
   
-    <div id="mySidenav" class="sidenav">
-      <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
-      <div style=" margin:4%;">
-        <a href="dashboard.html">Dashboard</a>
-      </div>
-      <div style=" margin:4%; opacity:100%">
-        <a style="text-decoration: none;" href="login.html">Login</a>
-      </div>
-      <div style=" margin:4%;">
-        <a href="signup.html">Signup</a>
-      </div>
-      <div style="margin:4%;">
-        <a href="aboutus.html">About Us</a>
-      </div>
-      <div style=" margin:4%;">
-        <a href="select.html">Select</a>
-      </div>
-    
-    </div>
+         <div id="mySidenav" class="sidenav">
+          <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+          <div style=" margin:4%;">
+            <a style="text-decoration: none;" href="dashboard.html">Dashboard</a>
+          </div>
+          <div style=" margin:4%; opacity:100%">
+            <a style="text-decoration: none;" href="login.html">Login</a>
+          </div>
+          <div style=" margin:4%;">
+            <a style="text-decoration: none;" href="/">Home</a>
+          </div>
+          <div style="margin:4%;">
+            <a  style="text-decoration: none;" href="details.html">Details</a>
+          </div>
+          <div style="margin:4%;">
+            <a style="text-decoration: none;" href="select.html">Select</a>
+          </div>
+        
+        </div>
   
     <!-- button of drawer -->
     <!-- navbar -->
     <div class="navbar">
       <span style="transition: transform .2s;font-size:30px;cursor:pointer;color: white;" onclick="openNav()">&#9776;</span>
-      <h6 name="username">Welcome!! {{user}}</h6>
+      <h6 name="username">Welcome!! &nbsp; {{user}}</h6>
       <img onclick="myprofile('myprofile.html')" src="{{ url_for('static', filename='images/profile.png') }}" name="profilepic" class="profileimg"/>
     </div>
   
@@ -55,14 +55,10 @@
   <!-- drower+navbar -->
 
           <div>
-              
+              <br><br>
             <center><img src="{{ url_for('static', filename='images/logo.png') }}" alt="Logo" height="100">
+              <br><br>
               <h3>Login Successful</h3>
-              <h4>{{user}}</h4>
-                    <a href="/" >
-                    <button type="submit" name="logout">Log out</button>
-                    </a>
-                    <br><br>
               </center>
               <br>
 
@@ -78,9 +74,11 @@
                   <div>
                     <center>
                       <div >
+                        <br>
+                        <br>
                           <h3>Value1 ={{value1db}} </h3>
                           <h3>Value2 ={{value2db}} </h3>
-
+                          <br><br>
                       </div>
                     </center>
                    </div>
@@ -100,6 +98,13 @@
 
               </div>
 
+          </div>
+          <div>
+            <center>
+            <a href="/" >
+              <button type="submit" style="margin:5%;" class="button1" name="logout">Log out</button>
+              </a>
+            </center>
           </div>
           <script>
             function openNav() {
