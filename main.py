@@ -106,9 +106,7 @@ def dashboard():
         if dataform is not None:
                 value1dbl=dataform['value1']
                 value2dbl=dataform['value2']
-                name=session["username"]+session['password']
-                print(name)
-                return render_template("dashboard.html",value1db=value1dbl,value2db=value2dbl,user=name)
+                return render_template("dashboard.html",value1db=value1dbl,value2db=value2dbl,user=session["username"])
     else:
         return render_template("dashboard.html",user=session["username"])
   else:
@@ -123,24 +121,33 @@ def select():
         return render_template("select.html")
     else:
         return redirect(url_for("login"))
-
 # Details of user form
 
 @app.route('/details.html',methods=['GET','POST'])
 def details():
     if session["username"] == session["username1"]:
-        if request.method == 'POST':
-            name = request.form["uname"]
-            age = request.form["uage"]
-            weight = request.form["uweight"]
-            height = request.form["uheight"]
+        cursor.execute("select * from info1 WHERE name_user=(?)",(session['username'],))
+        dataform=cursor.fetchone()
+        if dataform['uname'] is None:
+            if request.method == 'POST':
+                name = request.form["uname"]
+                age = request.form["uage"]
+                weight = request.form["uweight"]
+                height = request.form["uheight"]
+                cursor.execute("UPDATE info1 SET uname=(?),uage=(?),uweight=(?),uheight=(?) WHERE name_user=(?)",(name,age,weight,height,dataform['name_user']))
+                db.commit()
+                return render_template("form.html")
+            else:
+                return render_template("form.html")
 
-            cursor.execute("INSERT INTO info1(uname,uage,uweight,uheight) VALUES((?),(?),(?),(?),(?)) WHERE 'name_user'=(?) AND 'password_user'=(?)",(name,age,weight,height,session['username'],session['password']))
-            db.commit()
-
-        return render_template("form.html")
-    else:
-        return redirect(url_for("login"))
+        elif dataform['uname'] is not None:
+                uname = dataform['uname']
+                uage = dataform['uage']
+                uweight = dataform['uweight']
+                uheight = dataform['uheight']
+                return render_template("form.html",uname=uname,uage=uage,uweight=uweight,uheight=uheight)
+        else:
+            return redirect(url_for("login"))
 
 
 # @/data route to send data from database to webpage
