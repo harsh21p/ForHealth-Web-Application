@@ -9,7 +9,7 @@
       <script src="{{ url_for('static', filename='js/Supporting_docs/bootstrap.bundle.min.js') }}"></script>
       <title>
           
-          Successful
+        Dashboard
 
       </title>
 
@@ -20,7 +20,7 @@
          <!-- drawer -->
   
          <div id="mySidenav" class="sidenav">
-          <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+          <a style="text-decoration: none;" href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
           <div style=" margin:4%;">
             <a style="text-decoration: none;" href="dashboard.html">Dashboard</a>
           </div>
@@ -58,34 +58,36 @@
               <br><br>
             <center><img src="{{ url_for('static', filename='images/logo.png') }}" alt="Logo" height="100">
               <br><br>
-              <h3>Login Successful</h3>
+             <h3 style="color: rgb(15, 161, 15);"> <b>Login Successful</b></h3>
               </center>
               <br>
 
-              <div>
+              <div class="part1">
                   <center>
                   <form class="submitform" method="post" action="">
-                      <input type="text" class="lat"  name="value1" placeholder="value1" required><br>
-                      <input type="text" class="lat"  name="value2" placeholder="value2" required><br>
+                      <input type="text" class="lat"  name="value1" placeholder="Enter value1" required><br>
+                      <input type="text" class="lat"  name="value2" placeholder="Enter value2" required><br>
                       <button class="subbutton">Submit</button>
-
                   </form>
                   </center>
                   <div>
                     <center>
-                      <div >
-                        <br>
-                        <br>
-                          <h3>Value1 ={{value1db}} </h3>
-                          <h3>Value2 ={{value2db}} </h3>
-                          <br><br>
-                      </div>
+                    <a href="/" >
+                      <button type="submit" style="margin: 0%;" class="subbutton" name="logout">Log out</button>
+                      </a>
                     </center>
-                   </div>
+                  </div>
+                  <center>
+                    <div >
+                      <br>
+                        <h6 style="color: green;"><b>Value1 = {{value1db}} </b></h6>
+                        <h6 style="color: green;"><b>Value2 = {{value2db}}</b></h6>
+                    </div>
+                  </center>
               </div>
 
               <!-- chart starts -->
-              <div>
+              <div class="part2">
             
                 <div class="container-fluid">
                  
@@ -99,13 +101,7 @@
               </div>
 
           </div>
-          <div>
-            <center>
-            <a href="/" >
-              <button type="submit" style="margin:5%;" class="button1" name="logout">Log out</button>
-              </a>
-            </center>
-          </div>
+         
           <script>
             function openNav() {
               document.getElementById("mySidenav").style.width = "350px";

@@ -14,7 +14,7 @@
        <!-- drawer -->
   
        <div id="mySidenav" class="sidenav">
-        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+        <a style="text-decoration: none;" href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
         <div style=" margin:4%;">
           <a style="text-decoration: none;" href="dashboard.html">Dashboard</a>
         </div>
@@ -47,7 +47,7 @@
     <!-- navbar -->
     <div class="navbar">
       <span style="transition: transform .2s;font-size:30px;cursor:pointer;color: white;" onclick="openNav()">&#9776;</span>
-      <h6 name="username">Welcome!!</h6>
+      <h6 name="username">Details</h6>
       <img onclick="myprofile('myprofile.html')" src="{{ url_for('static', filename='images/profile.png') }}" name="profilepic" class="profileimg"/>
     </div>
   
@@ -68,26 +68,25 @@
                 
                 <label for="fname" style="margin-top: 12%; margin-left: 25%;">Name</label>
                 <center>
-                <input  type="text" class="form-control" style="width: 50%; "  id="fname" placeholder="Name">
+                <input  type="text" class="form-control" style="width: 50%; "  id="fname" name="uname" placeholder="Name">
                 <br> </center>                
                 <label  for="fage" style="margin-left: 25%;">Age</label>
                 <center>
-                <input class="form-control" style="width: 50%;" type="text" id="lage" name="lage"v placeholder="Age  (Years)">
+                <input class="form-control" style="width: 50%;" type="text" id="lage" name="uage"v placeholder="Age  (Years)">
                 <br> </center>
                 <label for="fweight" style="margin-left: 25%;">Weight</label>
                 <center>
-                <input class="form-control" style="width: 50%;" type="text" id="lweight" name="weight" placeholder="Weight (Kg)">
+                <input class="form-control" style="width: 50%;" type="text" id="lweight" name="uweight" placeholder="Weight (Kg)">
                 <br> </center>
                 <label for="fheight" style="margin-left: 25%;">Height</label>
                 <center>
-                <input class="form-control" style="width: 50%; margin-bottom: 16.5%;" type="text" id="lheight" name="lheight" placeholder="Height (cm)">
+                <input class="form-control" style="width: 50%; margin-bottom: 16.5%;" type="text" id="lheight" name="uheight" placeholder="Height (cm)">
                 <br> </center>
           
-              </form>
         </div>
         <!-- Second -->
         <div class="second">
-            <form class="form2">
+            
             <h1 class="sdetails" style="margin-top: 5%;">Choose Type Of Treatment</h1>
             <center>
             <div style="margin: auto; margin-top: 1%;">
@@ -108,19 +107,6 @@
             <br>
           </center>
           
-            <!-- <select class="form-select form-select-lg mb-3" aria-label=".form-select-lg example">
-              <option selected>Choose Type Of Treatment</option>
-              <option value="1">Passive</option>
-              <option value="2">Freedrive</option>
-              <option value="3">Active isotonic</option>
-              <option value="3">Active isometric</option>
-              <option value="3">Active isokinetic</option>
-            </select> -->
-            <!-- <div >
-              <button type="button" class="btn btn-primary" >Passive</button>
-              <button type="button" class="btn btn-primary">Freedrive</button>
-              <button type="button" class="btn btn-primary">Active isotonic</button>
-          </div> -->
               <button type="submit" class="btn btn-primary mb-2" style="margin-left:80%;margin-top:3%;">Continue</button>
             </div>
             </form>

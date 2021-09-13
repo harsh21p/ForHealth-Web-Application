@@ -2,9 +2,7 @@
     color: white;
     float: left;
     background-color: black;
-    /* border: 1px solid; */
     width: 50%;
-    height:800px;
 }
 
 .second{
@@ -12,7 +10,6 @@
     float: right;
     background-color: whitesmoke;
     width: 50%;
-    height: 700px;
 }
 
 .pdetails{
@@ -37,12 +34,6 @@
 .form2{
     border: 1px solid black;
 }
-
-/* .form1 input{
-    margin-top: 10%;
-    } */
-
-
 
 .button{
     background-color:yellow;

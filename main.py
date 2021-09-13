@@ -38,6 +38,7 @@ def login():
             password=request.form['password']
             session['username'] = username
             session['username1'] = username
+            session['password'] = password
             cursor.execute("SELECT * FROM info1 WHERE name_user=(?) AND password_user=(?)",(username,password))
             
         info=cursor.fetchone()
@@ -105,7 +106,9 @@ def dashboard():
         if dataform is not None:
                 value1dbl=dataform['value1']
                 value2dbl=dataform['value2']
-                return render_template("dashboard.html",value1db=value1dbl,value2db=value2dbl,user=session["username"])
+                name=session["username"]+session['password']
+                print(name)
+                return render_template("dashboard.html",value1db=value1dbl,value2db=value2dbl,user=name)
     else:
         return render_template("dashboard.html",user=session["username"])
   else:
@@ -116,7 +119,10 @@ def dashboard():
 
 @app.route('/select.html')
 def select():
-    return render_template("select.html")
+    if session["username"] == session["username1"]:
+        return render_template("select.html")
+    else:
+        return redirect(url_for("login"))
 
 # Details of user form
 
@@ -124,26 +130,34 @@ def select():
 def details():
     if session["username"] == session["username1"]:
         if request.method == 'POST':
-            name = request.form["nameofuser"]
-            age = request.form["ageofuser"]
+            name = request.form["uname"]
+            age = request.form["uage"]
+            weight = request.form["uweight"]
+            height = request.form["uheight"]
+
+            cursor.execute("INSERT INTO info1(uname,uage,uweight,uheight) VALUES((?),(?),(?),(?),(?)) WHERE 'name_user'=(?) AND 'password_user'=(?)",(name,age,weight,height,session['username'],session['password']))
+            db.commit()
 
         return render_template("form.html")
     else:
         return redirect(url_for("login"))
 
+
 # @/data route to send data from database to webpage
 
 @app.route('/data')
 def data():
-    
-    cursor.execute("select * from dataform ORDER BY ID DESC LIMIT 1")
-    dataform=cursor.fetchone()
+    if session["username"]==session["username1"]:
+        cursor.execute("select * from dataform ORDER BY ID DESC LIMIT 1")
+        dataform=cursor.fetchone()
 
-    if dataform is not None:
-        data = [time() * 100000,dataform["value1"]]
-        response = make_response(json.dumps(data))
-        response.content_type = 'application/json'
-    return response
+        if dataform is not None:
+            data = [time() * 100000,dataform["value1"]]
+            response = make_response(json.dumps(data))
+            response.content_type = 'application/json'
+        return response
+    else:
+       return redirect(url_for("login")) 
 
 #FLASK APP
 

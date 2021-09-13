@@ -1,4 +1,12 @@
 /* Dashboard */
+body{
+    margin: 0;
+    padding: 0;
+    background: gray;
+    background-size:cover;
+    background-position:center;
+    font-family:sans-serif;
+}
 
 .lat{
     margin-top: 40px;
@@ -13,10 +21,22 @@
     margin-bottom: 20px;
 }
 
-.submitform {
-    border: 1px solid rgb(0, 0, 0);
-    border-radius: 40px 20px;
-    width: 50%;
-    background-color: #000;
-   
-  }
+.subbutton{
+    background-color: black;
+    width: 200px;
+    height: 40px;
+    color: white;
+}
+
+.part1{
+    float: left;
+    width: 25%;
+
+}
+
+.part2{
+    float: left;
+    width: 75%;
+    margin: auto;
+  
+}
