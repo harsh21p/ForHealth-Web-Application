@@ -6,6 +6,7 @@ from flask import Flask, render_template, request
 import sqlite3
 import json
 from time import time
+from random import random
 
 #FLASK APP 
 
@@ -174,60 +175,47 @@ def data():
     if session["username"]==session["username1"]:
         cursor.execute("select * from dataform ORDER BY ID DESC LIMIT 1")
         dataform=cursor.fetchone()
-
         if dataform is not None:
             data = [time() * 10000,dataform["value1"]]
             response = make_response(json.dumps(data))
             response.content_type = 'application/json'
+            return response
+    else:
+       return redirect(url_for("login")) 
+
+
+@app.route('/data1')
+def data1():
+    if session["username"]==session["username1"]:
+        data = [time() * 100000,random()*100*time()]
+        response = make_response(json.dumps(data))
+        response.content_type = 'application/json'
         return response
     else:
        return redirect(url_for("login")) 
 
 
-# @app.route('/data1')
-# def data1():
-#     if session["username"]==session["username1"]:
-#         cursor.execute("select * from dataform ORDER BY ID DESC LIMIT 1")
-#         dataform=cursor.fetchone()
-
-#         if dataform is not None:
-#             data = [time() * 10000,dataform["value1"]]
-#             response = make_response(json.dumps(data))
-#             response.content_type = 'application/json'
-#         return response
-#     else:
-#        return redirect(url_for("login")) 
-
-
-# @app.route('/data2')
-# def data2():
-#     if session["username"]==session["username1"]:
-#         cursor.execute("select * from dataform ORDER BY ID DESC LIMIT 1")
-#         dataform=cursor.fetchone()
-
-#         if dataform is not None:
-#             data = [time() * 10000,dataform["value1"]]
-#             response = make_response(json.dumps(data))
-#             response.content_type = 'application/json'
-#         return response
-#     else:
-#        return redirect(url_for("login")) 
+@app.route('/data2')
+def data2():
+    if session["username"]==session["username1"]:
+        data = [time() * 100000,random()*random()]
+        response = make_response(json.dumps(data))
+        response.content_type = 'application/json'
+        return response
+    else:
+       return redirect(url_for("login")) 
 
 
 
-# @app.route('/data3')
-# def data3():
-#     if session["username"]==session["username1"]:
-#         cursor.execute("select * from dataform ORDER BY ID DESC LIMIT 1")
-#         dataform=cursor.fetchone()
-
-#         if dataform is not None:
-#             data = [time() * 10000,dataform["value1"]]
-#             response = make_response(json.dumps(data))
-#             response.content_type = 'application/json'
-#         return response
-#     else:
-#        return redirect(url_for("login")) 
+@app.route('/data3')
+def data3():
+    if session["username"]==session["username1"]:
+        data = [time() * 10000,random()*100]
+        response = make_response(json.dumps(data))
+        response.content_type = 'application/json'
+        return response
+    else:
+       return redirect(url_for("login")) 
 
 #FLASK APP
 

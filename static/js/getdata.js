@@ -14,9 +14,60 @@ function requestData() {
                 
             // add the point
             chart.series[0].addPoint(point, true, shift);
+          
+
+            // call it again after one second
+        },
+        cache: false
+    });
+
+    $.ajax({
+        url: '/data1',
+        success: function(point) {
+            var series = chart.series[0],
+                shift = series.data.length > 20; // shift if the series is
+                                                 // longer than 20
+                
+            // add the point
+            
             charta.series[0].addPoint(point, true, shift);
+           
+
+           
+        },
+        cache: false
+    });
+
+    
+    $.ajax({
+        url: '/data2',
+        success: function(point) {
+            var series = chart.series[0],
+                shift = series.data.length > 20; // shift if the series is
+                                                 // longer than 20
+                
+            // add the point
+            
             chartb.series[0].addPoint(point, true, shift);
+           
+
+            // call it again after one second
+            
+        },
+        cache: false
+    });
+
+    $.ajax({
+        url: '/data3',
+        success: function(point) {
+            var series = chart.series[0],
+                shift = series.data.length > 20; // shift if the series is
+                                                 // longer than 20
+                
+            // add the point
+            
             chartc.series[0].addPoint(point, true, shift);
+           
 
             // call it again after one second
             setTimeout(requestData, 1000);
