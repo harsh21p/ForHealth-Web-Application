@@ -40,7 +40,96 @@
     height:50px;
 }
 
-button:hover{background-color:orange;}
+.button1:hover{background-color:orange;}
 
-button:focus{background-color:rgb(71, 240, 71);}
+/* .button1:focus{background-color:rgb(71, 240, 71);} */
+ 
+ 
+/* *************************************************************************************************** */
+
+/* Forthpage CSS */
+
+.fbutton1{
+    background-color:black;
+    height:60px;
+    width:200px;
+    color:white;
+    margin: 4%;
+    margin-top: 5%;
+}
+
+.fbutton2{
+    background-color:black;
+    height:60px;
+    width:200px;
+    color:white;
+    margin: 4%;
+}
+
+.fbutton3{
+    background-color:black;
+    height:60px;
+    width:200px;
+    color:white;
+    margin: 4%;
+}
+
+.fbutton4{
+    background-color:black;
+    height:60px;
+    width:200px;
+    color:white;
+    margin-left: 10%;
+    border-radius: 30%;
+}
+
+
+.fbutton1:hover{background-color:rgb(28, 202, 255);}
+.fbutton2:hover{background-color:rgb(255, 238, 2);}
+.fbutton3:hover{background-color:rgb(16, 128, 255);}
+
+.fbutton1:focus{background-color:rgb(94, 255, 30);}
+.fbutton2:focus{background-color:rgb(248, 121, 1);}
+.fbutton3:focus{background-color:rgb(255, 0, 0);}
+
+
+.float-container {
+    border: 3px solid #fff;
+    padding: 20px;
+}
+
+.float-child1{
+    width: 30%;
+    float: left;
+    padding: 10px;
+    border: 2px solid rgb(0, 0, 0);
+    margin-left: 2%;
+}  
+
+.float-child2 {
+    width: 60%;
+    float: left;
+    padding: 10px;
+    border: 2px solid rgb(0, 0, 0);
+    margin-left: 2%;
+}  
+
+.float-child3{
+    width: 40%;
+    float: left;
+    padding: 10px;
+    border: 2px solid rgb(0, 0, 0);
+    margin-left: 2%;
+    margin-top: 5%;
+}  
+
+.float-child4{
+    width: 40%;
+    float: left;
+    padding: 10px;
+    border: 2px solid rgb(0, 0, 0);
+    margin-left: 2%;
+    margin-top: 5%;
+
+}  
 
