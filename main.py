@@ -28,7 +28,7 @@ def myhome():
 
 #LOGIN
 
-@app.route('/login.html',methods=['GET','POST'])
+@app.route('/login',methods=['GET','POST'])
 
 def login():
     session['username'] = ""
@@ -46,14 +46,14 @@ def login():
         if info is not None:
             session["email"]=info['email_user']
             if info['name_user'] == username and info['password_user'] == password:
-                return redirect(url_for("dashboard"))
+                return redirect(url_for("details"))
         else:
              return render_template("login.html",message1="Password or username didn't match")
     return render_template("login.html")
 
 #SIGNUP
 
-@app.route('/signup.html',methods=['GET','POST'])
+@app.route('/signup',methods=['GET','POST'])
 
 def register():
     if request.method == 'POST':
@@ -79,7 +79,7 @@ def register():
 
 #Login successful to dashboard
 
-@app.route('/dashboard.html',methods=['GET','POST'])
+@app.route('/dashboard',methods=['GET','POST'])
 
 def dashboard():
   if session["username"]==session["username1"]:
@@ -115,15 +115,18 @@ def dashboard():
 
 # Select positions
 
-@app.route('/select.html')
+@app.route('/select',methods=['GET','POST'])
 def select():
     if session["username"] == session["username1"]:
-        return render_template("select.html")
+        if request.method == 'POST':
+            return redirect(url_for("information"))
+        else:
+            return render_template("select.html")
     else:
         return redirect(url_for("login"))
 # Details of user form
 
-@app.route('/details.html',methods=['GET','POST'])
+@app.route('/details',methods=['GET','POST'])
 def details():
     if session["username"] == session["username1"]:
         cursor.execute("select * from info1 WHERE name_user=(?)",(session['username'],))
@@ -136,25 +139,83 @@ def details():
                 height = request.form["uheight"]
                 cursor.execute("UPDATE info1 SET uname=(?),uage=(?),uweight=(?),uheight=(?) WHERE name_user=(?)",(name,age,weight,height,dataform['name_user']))
                 db.commit()
-                return render_template("form.html")
+                return redirect(url_for("select"))
             else:
-                return render_template("form.html")
+                return redirect(url_for("select"))
 
         elif dataform['uname'] is not None:
                 uname = dataform['uname']
                 uage = dataform['uage']
                 uweight = dataform['uweight']
                 uheight = dataform['uheight']
-                
+                if request.method == 'POST':
+                    name = request.form["uname"]
+                    age = request.form["uage"]
+                    weight = request.form["uweight"]
+                    height = request.form["uheight"]
+                    cursor.execute("UPDATE info1 SET uname=(?),uage=(?),uweight=(?),uheight=(?) WHERE name_user=(?)",(name,age,weight,height,dataform['name_user']))
+                    db.commit()
+                    return redirect(url_for("select"))
+                    
                 return render_template("form.html",uname=uname,uage=uage,uweight=uweight,uheight=uheight)
-        else:
-            return redirect(url_for("login"))
+    else:
+        return redirect(url_for("login"))
 
+@app.route('/information',methods=['GET','POST'])
+def information():
+    if session["username"] == session["username1"]:
+        return render_template("fourthpage.html")
 
 # @/data route to send data from database to webpage
 
 @app.route('/data')
 def data():
+    if session["username"]==session["username1"]:
+        cursor.execute("select * from dataform ORDER BY ID DESC LIMIT 1")
+        dataform=cursor.fetchone()
+
+        if dataform is not None:
+            data = [time() * 10000,dataform["value1"]]
+            response = make_response(json.dumps(data))
+            response.content_type = 'application/json'
+        return response
+    else:
+       return redirect(url_for("login")) 
+
+
+@app.route('/data1')
+def data1():
+    if session["username"]==session["username1"]:
+        cursor.execute("select * from dataform ORDER BY ID DESC LIMIT 1")
+        dataform=cursor.fetchone()
+
+        if dataform is not None:
+            data = [time() * 10000,dataform["value1"]]
+            response = make_response(json.dumps(data))
+            response.content_type = 'application/json'
+        return response
+    else:
+       return redirect(url_for("login")) 
+
+
+@app.route('/data2')
+def data2():
+    if session["username"]==session["username1"]:
+        cursor.execute("select * from dataform ORDER BY ID DESC LIMIT 1")
+        dataform=cursor.fetchone()
+
+        if dataform is not None:
+            data = [time() * 10000,dataform["value1"]]
+            response = make_response(json.dumps(data))
+            response.content_type = 'application/json'
+        return response
+    else:
+       return redirect(url_for("login")) 
+
+
+
+@app.route('/data3')
+def data3():
     if session["username"]==session["username1"]:
         cursor.execute("select * from dataform ORDER BY ID DESC LIMIT 1")
         dataform=cursor.fetchone()

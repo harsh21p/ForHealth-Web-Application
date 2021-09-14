@@ -77,10 +77,10 @@
 .fbutton4{
     background-color:black;
     height:60px;
-    width:200px;
+    width:100px;
     color:white;
-    margin-left: 10%;
-    border-radius: 30%;
+    margin-left: 25%;
+    border-radius: 10%;
 }
 
 
@@ -107,7 +107,8 @@
 }  
 
 .float-child2 {
-    width: 60%;
+    background-color: rgb(0, 0, 0);
+    width: 65%;
     float: left;
     padding: 10px;
     border: 2px solid rgb(0, 0, 0);
@@ -115,7 +116,7 @@
 }  
 
 .float-child3{
-    width: 40%;
+    width: 47%;
     float: left;
     padding: 10px;
     border: 2px solid rgb(0, 0, 0);
@@ -124,7 +125,7 @@
 }  
 
 .float-child4{
-    width: 40%;
+    width: 47%;
     float: left;
     padding: 10px;
     border: 2px solid rgb(0, 0, 0);

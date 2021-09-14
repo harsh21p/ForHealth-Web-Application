@@ -15,22 +15,21 @@
   
     <div id="mySidenav" class="sidenav">
       <a style="text-decoration: none;" href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
-      <div style=" margin:4%;">
-        <a style="text-decoration: none;" href="dashboard.html">Dashboard</a>
-      </div>
       <div style=" margin:4%; opacity:100%">
-        <a style="text-decoration: none;" href="login.html">Login</a>
+        <a style="text-decoration: none;" href="login">Login</a>
       </div>
       <div style=" margin:4%;">
         <a style="text-decoration: none;" href="/">Home</a>
       </div>
       <div style="margin:4%;">
-        <a  style="text-decoration: none;" href="details.html">Details</a>
+        <a  style="text-decoration: none;" href="details">Details</a>
       </div>
       <div style="margin:4%;">
-        <a style="text-decoration: none;" href="select.html">Select</a>
+        <a style="text-decoration: none;" href="select">Select</a>
       </div>
-    
+      <div style="margin:4%;">
+        <a style="text-decoration: none;" href="information">Info</a>
+      </div>
     </div>
   
     <!-- button of drawer -->
@@ -38,7 +37,7 @@
     <div class="navbar">
       <span style="transition: transform .2s;font-size:30px;cursor:pointer;color: white;" onclick="openNav()">&#9776;</span>
       <h6>Input End Points</h6>
-      <img onclick="myprofile('myprofile.html')" src="{{ url_for('static', filename='images/profile.png') }}" name="profilepic" class="profileimg"/>
+      <img onclick="myprofile('dashboard')" src="{{ url_for('static', filename='images/profile.png') }}" name="profilepic" class="profileimg"/>
     </div>
   
     <script>
@@ -54,7 +53,7 @@
             <br>
             <button style="margin-top: 25%;"  onclick="disable()" class="button2">Auto</button>
         </div>
-
+        <form action="" id="formofselect" method="POST">
         <div class="part2">
 
 
@@ -65,8 +64,16 @@
             <input   class="input3" id="first"/>
          
             <input  class="input4" id="second"/>
+            <br>
+           
+              <a href="information">
+              <button style="margin-left: 50%; margin-top: 10%;" type="submit" class="btn btn-primary mb-2">Continue</button>
+              </a>
+            
 
         </div>
+       
+      </form>
 
 
     </center>

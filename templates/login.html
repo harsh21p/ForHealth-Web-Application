@@ -16,22 +16,15 @@
   
              <div id="mySidenav" class="sidenav">
               <a style="text-decoration: none;" href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
-              <div style=" margin:4%;">
-                <a style="text-decoration: none;" href="dashboard.html">Dashboard</a>
-              </div>
               <div style=" margin:4%; opacity:100%">
-                <a style="text-decoration: none;" href="login.html">Login</a>
+                <a style="text-decoration: none;" href="login">Login</a>
+              </div>
+              <div style=" margin:4%;">
+                <a style="text-decoration: none;" href="signup">Signup</a>
               </div>
               <div style=" margin:4%;">
                 <a style="text-decoration: none;" href="/">Home</a>
               </div>
-              <div style="margin:4%;">
-                <a  style="text-decoration: none;" href="details.html">Details</a>
-              </div>
-              <div style="margin:4%;">
-                <a style="text-decoration: none;" href="select.html">Select</a>
-              </div>
-            
             </div>
     
       <!-- button of drawer -->
@@ -56,11 +49,11 @@
                 <p>Password</p>
                 <input type="password" class="w3-input w3-border w3-round"  name="password" placeholder="Enter Password" required>
                 <p style="text-align: center; font-size: x-small; color: red;"><b>{{message1}}</b></p>
-                <a href="/successful">
+                <a href="details">
                 <input type="submit"  name="loginbtn" value="login">
                 </a><br>
-                <a href="">Lost your password?</a><br>
-                <a href="signup.html">Don't have an account?</a>
+                <a href="#">Lost your password?</a><br>
+                <a href="signup">Don't have an account?</a>
             </form>
             </div>
             <script>
@@ -72,7 +65,6 @@
                  document.getElementById("mySidenav").style.width = "0";
                 }
                 </script>
-          
         </body>
     </head>
 </html>
