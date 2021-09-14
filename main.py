@@ -145,6 +145,7 @@ def details():
                 uage = dataform['uage']
                 uweight = dataform['uweight']
                 uheight = dataform['uheight']
+                
                 return render_template("form.html",uname=uname,uage=uage,uweight=uweight,uheight=uheight)
         else:
             return redirect(url_for("login"))
@@ -159,7 +160,7 @@ def data():
         dataform=cursor.fetchone()
 
         if dataform is not None:
-            data = [time() * 100000,dataform["value1"]]
+            data = [time() * 10000,dataform["value1"]]
             response = make_response(json.dumps(data))
             response.content_type = 'application/json'
         return response

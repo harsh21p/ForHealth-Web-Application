@@ -10,5 +10,5 @@ while True:
     cursor.execute("INSERT INTO dataform(value1,value2) VALUES((?),(?))",(random(),random()))
     db.commit()
     print("Done")
-    time.sleep(0.01)
+    time.sleep(0.1)
     
