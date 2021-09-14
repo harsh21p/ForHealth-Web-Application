@@ -1,7 +1,10 @@
 # ForHealth
 
-Username = ForHealth
-Pass = ForHealth@123
+Username = ForHealth 
+Pass = ForHealth@123 
+
+Username = admin 
+Pass = admin 
 
 Control Web Application
 

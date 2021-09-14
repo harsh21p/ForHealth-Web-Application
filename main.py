@@ -98,6 +98,7 @@ def dashboard():
         value1=addition(int(valuea))
         value2=addition(int(valueb))
         
+       
         cursor.execute("INSERT INTO dataform(value1,value2) VALUES((?),(?))",(value1,value2))
         db.commit()
         cursor.execute("select * from dataform ORDER BY ID DESC LIMIT 1")
@@ -183,50 +184,50 @@ def data():
        return redirect(url_for("login")) 
 
 
-@app.route('/data1')
-def data1():
-    if session["username"]==session["username1"]:
-        cursor.execute("select * from dataform ORDER BY ID DESC LIMIT 1")
-        dataform=cursor.fetchone()
+# @app.route('/data1')
+# def data1():
+#     if session["username"]==session["username1"]:
+#         cursor.execute("select * from dataform ORDER BY ID DESC LIMIT 1")
+#         dataform=cursor.fetchone()
 
-        if dataform is not None:
-            data = [time() * 10000,dataform["value1"]]
-            response = make_response(json.dumps(data))
-            response.content_type = 'application/json'
-        return response
-    else:
-       return redirect(url_for("login")) 
-
-
-@app.route('/data2')
-def data2():
-    if session["username"]==session["username1"]:
-        cursor.execute("select * from dataform ORDER BY ID DESC LIMIT 1")
-        dataform=cursor.fetchone()
-
-        if dataform is not None:
-            data = [time() * 10000,dataform["value1"]]
-            response = make_response(json.dumps(data))
-            response.content_type = 'application/json'
-        return response
-    else:
-       return redirect(url_for("login")) 
+#         if dataform is not None:
+#             data = [time() * 10000,dataform["value1"]]
+#             response = make_response(json.dumps(data))
+#             response.content_type = 'application/json'
+#         return response
+#     else:
+#        return redirect(url_for("login")) 
 
 
+# @app.route('/data2')
+# def data2():
+#     if session["username"]==session["username1"]:
+#         cursor.execute("select * from dataform ORDER BY ID DESC LIMIT 1")
+#         dataform=cursor.fetchone()
 
-@app.route('/data3')
-def data3():
-    if session["username"]==session["username1"]:
-        cursor.execute("select * from dataform ORDER BY ID DESC LIMIT 1")
-        dataform=cursor.fetchone()
+#         if dataform is not None:
+#             data = [time() * 10000,dataform["value1"]]
+#             response = make_response(json.dumps(data))
+#             response.content_type = 'application/json'
+#         return response
+#     else:
+#        return redirect(url_for("login")) 
 
-        if dataform is not None:
-            data = [time() * 10000,dataform["value1"]]
-            response = make_response(json.dumps(data))
-            response.content_type = 'application/json'
-        return response
-    else:
-       return redirect(url_for("login")) 
+
+
+# @app.route('/data3')
+# def data3():
+#     if session["username"]==session["username1"]:
+#         cursor.execute("select * from dataform ORDER BY ID DESC LIMIT 1")
+#         dataform=cursor.fetchone()
+
+#         if dataform is not None:
+#             data = [time() * 10000,dataform["value1"]]
+#             response = make_response(json.dumps(data))
+#             response.content_type = 'application/json'
+#         return response
+#     else:
+#        return redirect(url_for("login")) 
 
 #FLASK APP
 

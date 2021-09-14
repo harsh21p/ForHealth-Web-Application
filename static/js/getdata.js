@@ -19,7 +19,7 @@ function requestData() {
             chartc.series[0].addPoint(point, true, shift);
 
             // call it again after one second
-            setTimeout(requestData, 100);
+            setTimeout(requestData, 1000);
         },
         cache: false
     });
@@ -49,7 +49,7 @@ $(document).ready(function() {
             maxPadding: 0.2,
             title: {
                 text: 'Value',
-                margin: 80
+                margin: 10
             }
         },
         series: [{
@@ -83,7 +83,7 @@ $(document).ready(function() {
             maxPadding: 0.2,
             title: {
                 text: 'Value',
-                margin: 80
+                margin: 10
             }
         },
         series: [{
@@ -115,7 +115,7 @@ $(document).ready(function() {
             maxPadding: 0.2,
             title: {
                 text: 'Value',
-                margin: 80
+                margin: 10
             }
         },
         series: [{
@@ -148,7 +148,7 @@ $(document).ready(function() {
             maxPadding: 0.2,
             title: {
                 text: 'Value',
-                margin: 80
+                margin: 10
             }
         },
         series: [{
