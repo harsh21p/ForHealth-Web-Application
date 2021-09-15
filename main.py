@@ -120,18 +120,32 @@ def dashboard():
 @app.route('/select',methods=['GET','POST'])
 def select():
     if session["username"] == session["username1"]:
-        if request.method == 'POST':
-            point1 = request.form["point1"]
-            point2 = request.form["point2"]
-            if point1 is not None:
-                if point2 is not None:
-                    cursor.execute("UPDATE select SET pont1=(?),point2=(?) WHERE name_user=(?)",(point1,point2,session['username']))
+        cursor.execute("select * from info1 WHERE name_user=(?)",(session['username'],))
+        dataform=cursor.fetchone()
+        if dataform['point1'] is None:
+            if request.method == 'POST':
+                point1 = request.form["point1"]
+                point2 = request.form["point2"]
+                cursor.execute("UPDATE info1 SET point1=(?),point2=(?) WHERE user_name=(?)",(point1,point2,dataform['name_user']))
+                db.commit()
+                return redirect(url_for("select"))
+            else:
+                return redirect(url_for("select"))
+
+        elif dataform['point1'] is not None:
+                point1 = dataform['point1']
+                point2 = dataform['point2']
+                if request.method == 'POST':
+                    point1 = request.form["point1"]
+                    point2 = request.form["point2"]
+                    cursor.execute("UPDATE info1 SET point1=(?),point2=(?) WHERE user_name=(?)",(point1,point2,dataform['name_user']))
                     db.commit()
-            return redirect(url_for("information"))
-        else:
-            return render_template("select.html")
+                    return redirect(url_for("information"))
+                    
+                return render_template("select.html",point1=point1,point2=point2)
     else:
         return redirect(url_for("login"))
+
 # Details of user form
 
 @app.route('/details',methods=['GET','POST'])
