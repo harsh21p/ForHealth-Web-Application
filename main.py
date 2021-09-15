@@ -126,11 +126,11 @@ def select():
             if request.method == 'POST':
                 point1 = request.form["point1"]
                 point2 = request.form["point2"]
-                cursor.execute("UPDATE info1 SET point1=(?),point2=(?) WHERE user_name=(?)",(point1,point2,dataform['name_user']))
+                cursor.execute("UPDATE info1 SET point1=(?),point2=(?) WHERE name_user=(?)",(point1,point2,dataform['name_user']))
                 db.commit()
                 return redirect(url_for("select"))
             else:
-                return redirect(url_for("select"))
+                return render_template("select.html")
 
         elif dataform['point1'] is not None:
                 point1 = dataform['point1']
@@ -138,7 +138,7 @@ def select():
                 if request.method == 'POST':
                     point1 = request.form["point1"]
                     point2 = request.form["point2"]
-                    cursor.execute("UPDATE info1 SET point1=(?),point2=(?) WHERE user_name=(?)",(point1,point2,dataform['name_user']))
+                    cursor.execute("UPDATE info1 SET point1=(?),point2=(?) WHERE name_user=(?)",(point1,point2,dataform['name_user']))
                     db.commit()
                     return redirect(url_for("information"))
                     
@@ -162,8 +162,9 @@ def details():
                 cursor.execute("UPDATE info1 SET uname=(?),uage=(?),uweight=(?),uheight=(?) WHERE name_user=(?)",(name,age,weight,height,dataform['name_user']))
                 db.commit()
                 return redirect(url_for("select"))
+            
             else:
-                return redirect(url_for("select"))
+                return render_template("form.html")
 
         elif dataform['uname'] is not None:
                 uname = dataform['uname']
