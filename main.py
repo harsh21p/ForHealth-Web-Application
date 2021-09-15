@@ -121,6 +121,12 @@ def dashboard():
 def select():
     if session["username"] == session["username1"]:
         if request.method == 'POST':
+            point1 = request.form["point1"]
+            point2 = request.form["point2"]
+            if point1 is not None:
+                if point2 is not None:
+                    cursor.execute("UPDATE select SET pont1=(?),point2=(?) WHERE name_user=(?)",(point1,point2,session['username']))
+                    db.commit()
             return redirect(url_for("information"))
         else:
             return render_template("select.html")

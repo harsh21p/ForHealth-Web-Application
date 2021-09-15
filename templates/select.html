@@ -53,17 +53,25 @@
             <br>
             <button style="margin-top: 25%;"  onclick="disable()" class="button2">Auto</button>
         </div>
+      </center>
         <form action="" id="formofselect" method="POST">
         <div class="part2">
 
-
-            <input   class="input1" id="first"/>
+          <button type="button" class="btn btn-primary mb-2" style="margin-top: 15%; margin-left: 38%;background-color: black;" onclick="record1()" >Record</button>  
+          <button type="button" class="btn btn-primary mb-2" style="margin-top: 15%; margin-left: 3%; background-color: black;" onclick="record2()" >Record</button>  
+          <br>
+          <center>
+            <input name="point1"  class="input1" id="first"/>
          
-            <input  class="input2" id="second"/><br>
-
-            <input   class="input3" id="first"/>
+            <input name="point2" class="input2" id="second"/><br>
+            </center>
+            <button type="button" class="btn btn-primary mb-2" style="margin-top: 14%; margin-left: 38%;background-color: black;" onclick="record3()" >Record</button>  
+            <button type="button" class="btn btn-primary mb-2" style="margin-top: 14%; margin-left: 3%; background-color: black;" onclick="record4()" >Record</button> 
+            <br>
+            <center>
+            <input  name="point1" class="input3" id="third"/>
          
-            <input  class="input4" id="second"/>
+            <input name="point2" class="input4" id="fourth"/>
             <br>
            
               <a href="information">
@@ -71,12 +79,13 @@
               </a>
             
 
+        </center>
+            
+
         </div>
        
       </form>
 
-
-    </center>
 
     <script>
       function openNav() {
@@ -96,6 +105,25 @@
           document.getElementById("first").removeAttribute('disabled');
           document.getElementById("second").removeAttribute('disabled');
         }
+
+        function record1(){
+          document.getElementById("first").disabled = "true";
+
+        }
+        function record2(){
+          document.getElementById("second").disabled = "true";
+        }
+
+          function record3(){
+          document.getElementById("third").disabled = "true";
+          }
+
+          function record4(){
+          document.getElementById("fourth").disabled = "true";
+          }
+
+
+        
       </script>
 
     </body>

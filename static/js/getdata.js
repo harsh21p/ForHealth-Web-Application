@@ -4,76 +4,102 @@ var chart;
  * Request data from the server, add it to the graph and set a timeout
  * to request again
  */
+var i=0;
+var j=0;
+var k=0;
+var l=0;
+
 function requestData() {
-    $.ajax({
-        url: '/data',
-        success: function(point) {
-            var series = chart.series[0],
-                shift = series.data.length > 20; // shift if the series is
-                                                 // longer than 20
+
+    if(i==20){
+        $.ajax({
+            url: '/data1',
+            success: function(point) {
+                var series = chart.series[0],
+                    shift = series.data.length > 20; // shift if the series is
+                                                     // longer than 20
+                    
+                // add the point
                 
-            // add the point
-            chart.series[0].addPoint(point, true, shift);
-          
-
-            // call it again after one second
-        },
-        cache: false
-    });
-
-    $.ajax({
-        url: '/data1',
-        success: function(point) {
-            var series = chart.series[0],
-                shift = series.data.length > 20; // shift if the series is
-                                                 // longer than 20
-                
-            // add the point
-            
-            charta.series[0].addPoint(point, true, shift);
-           
-
-           
-        },
-        cache: false
-    });
-
+                charta.series[0].addPoint(point, true, shift);
+               
     
-    $.ajax({
-        url: '/data2',
-        success: function(point) {
-            var series = chart.series[0],
-                shift = series.data.length > 20; // shift if the series is
-                                                 // longer than 20
+               
+            },
+            cache: false
+        });
+        i=0;
+    }
+
+    if(j==5){
+        $.ajax({
+            url: '/data',
+            success: function(point) {
+                var series = chart.series[0],
+                    shift = series.data.length > 20; // shift if the series is
+                                                    // longer than 20
+                    
+                // add the point
+                chart.series[0].addPoint(point, true, shift);
+            
+
+                // call it again after one second
+            },
+            cache: false
+        });
+        j=0;
+
+    }
+
+    if(k==10){
+        $.ajax({
+            url: '/data2',
+            success: function(point) {
+                var series = chart.series[0],
+                    shift = series.data.length > 20; // shift if the series is
+                                                    // longer than 20
+                    
+                // add the point
                 
-            // add the point
+                chartb.series[0].addPoint(point, true, shift);
             
-            chartb.series[0].addPoint(point, true, shift);
-           
 
-            // call it again after one second
-            
-        },
-        cache: false
-    });
-
-    $.ajax({
-        url: '/data3',
-        success: function(point) {
-            var series = chart.series[0],
-                shift = series.data.length > 20; // shift if the series is
-                                                 // longer than 20
+                // call it again after one second
                 
-            // add the point
-            
-            chartc.series[0].addPoint(point, true, shift);
-           
+            },
+            cache: false
+        });
+        k=0;
+    }
 
-            // call it again after one second
-            setTimeout(requestData, 1000);
-        },
-        cache: false
-    });
+   
+    if(l==15){
+        $.ajax({
+            url: '/data3',
+            success: function(point) {
+                var series = chart.series[0],
+                    shift = series.data.length > 20; // shift if the series is
+                                                    // longer than 20
+                    
+                // add the point
+                
+                chartc.series[0].addPoint(point, true, shift);
+            
+
+                // call it again after one second
+                
+            },
+            cache: false
+        });
+        l=0;
+    }
+
+    i=i+1;
+    j=j+1;
+    k=k+1;
+    l=l+1;
+
+    setTimeout(requestData, 300);
 }
 
 
