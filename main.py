@@ -159,7 +159,8 @@ def details():
                 age = request.form["uage"]
                 weight = request.form["uweight"]
                 height = request.form["uheight"]
-                cursor.execute("UPDATE info1 SET uname=(?),uage=(?),uweight=(?),uheight=(?) WHERE name_user=(?)",(name,age,weight,height,dataform['name_user']))
+                selectbtn=request.form["selectbtn"]
+                cursor.execute("UPDATE info1 SET uname=(?),uage=(?),uweight=(?),uheight=(?),selectbtn=(?) WHERE name_user=(?)",(name,age,weight,height,selectbtn,dataform['name_user']))
                 db.commit()
                 return redirect(url_for("select"))
             
@@ -171,16 +172,18 @@ def details():
                 uage = dataform['uage']
                 uweight = dataform['uweight']
                 uheight = dataform['uheight']
+                selectbtn=dataform['selectbtn']
                 if request.method == 'POST':
                     name = request.form["uname"]
                     age = request.form["uage"]
                     weight = request.form["uweight"]
                     height = request.form["uheight"]
-                    cursor.execute("UPDATE info1 SET uname=(?),uage=(?),uweight=(?),uheight=(?) WHERE name_user=(?)",(name,age,weight,height,dataform['name_user']))
+                    selectbtn =request.form["selectbtn"]
+                    cursor.execute("UPDATE info1 SET uname=(?),uage=(?),uweight=(?),uheight=(?),selectbtn=(?) WHERE name_user=(?)",(name,age,weight,height,selectbtn,dataform['name_user']))
                     db.commit()
                     return redirect(url_for("select"))
                     
-                return render_template("form.html",uname=uname,uage=uage,uweight=uweight,uheight=uheight)
+                return render_template("form.html",uname=uname,uage=uage,uweight=uweight,uheight=uheight,selectbtn=selectbtn)
     else:
         return redirect(url_for("login"))
 

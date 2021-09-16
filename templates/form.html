@@ -6,10 +6,86 @@
         <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/form.css') }}"></link>
         <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/select.css') }}"></link>
         <link rel="stylesheet" href="{{ url_for('static', filename='css/bootstrap.min.css') }}">
+
+        <script type="text/javascript">
+          function check() 
+        {
+          
+	        let a = "{{selectbtn}}";
+
+          if ( a == "Passvie") 
+          {
+            document.getElementById("btn1").focus();
+          }
+          if ( a == "Freedrive") 
+          {
+            document.getElementById("btn2").focus();
+          }
+          if ( a == "Active isotonic") 
+          {
+            document.getElementById("btn3").focus();
+          }
+          if ( a == "Active isometric") 
+          {
+            document.getElementById("btn4").focus();
+          }
+          if ( a == "cctive isokinetic") 
+          {
+            document.getElementById("btn5").focus();
+          }
+          
+        }
+
+      window.onload = check;
+          </script>
  
      </head>
 
     <body>
+
+      <script>
+              
+        function disable()
+        {
+            document.getElementById("iheight").disabled = "true";
+            document.getElementById("iweight").disabled = "true";
+            document.getElementById("iage").disabled = "true";
+            document.getElementById("iname").disabled = "true";
+        }
+        function enable()
+        {
+
+            document.getElementById("iheight").removeAttribute('disabled');
+            document.getElementById("iweight").removeAttribute('disabled');
+            document.getElementById("iage").removeAttribute('disabled');
+            document.getElementById("iname").removeAttribute('disabled');
+        }
+     
+        function passive(){
+          
+          document.getElementById("btnselect").value = "Passvie";
+        }
+
+        function passive1(){
+          
+          document.getElementById("btnselect").value = "Freedrive";
+        }
+
+        function passive2(){
+          
+          document.getElementById("btnselect").value = "Active isotonic";
+        }
+
+        function passive3(){
+          
+          document.getElementById("btnselect").value = "Active isometric";
+        }
+        function passive4(){
+          
+          document.getElementById("btnselect").value = "Acctive isokinetic";
+        }
+        
+     </script>
 
        <!-- drawer -->
   
@@ -79,8 +155,8 @@
                 <center>
                 <input class="form-control" value="{{uheight}}" style="width: 50%; margin-bottom: 16.5%;" type="text" id="iheight" name="uheight" placeholder="Height (cm)">
                 <br> </center>
-                <input value="{{uheight}}"  type="hidden" id="selectbtn" name="uselectbtn">
                 <br>
+                <input name="selectbtn" value="{{selectbtn}}" type="hidden" placeholder="btn" type="text" id="btnselect"  >
           
               </div>
               <!-- Second -->
@@ -89,26 +165,26 @@
                 <h1 class="sdetails" style="margin-top: 5%;">Choose Type Of Treatment</h1>
                 <center>
                 <div style="margin: auto; margin-top: 1%;">
-                <button type="button" name="button" value="Passive" class="button1" style="margin-top: 6%;" >Passive</button>
+                <button id="btn1" type="button" onclick="passive()" name="button" value="Passive" class="button1" style="margin-top: 6%;" >Passive</button>
                 <br>
                 <br>
-                <button type="button" class="button1">Freedrive</button>
+                <button type="button"  onclick="passive1()" id="btn2" class="button1">Freedrive</button>
                 <br>
                 <br>
-                <button type="button" class="button1">Active isotonic</button>
+                <button type="button" onclick="passive2()" id="btn3" class="button1">Active isotonic</button>
                 <br>
                 <br>
-                <button type="button" class="button1">Active isometric</button>
+                <button type="button" onclick="passive3()" id="btn4" class="button1">Active isometric</button>
                 <br>
                 <br>
-                <button type="button" class="button1">Active isokinetic</button>
+                <button type="button" onclick="passive4()" id="btn5" class="button1">Active isokinetic</button>
                 <br>
                 <br>
               </center>
               <div style="margin-top: 3%;">
                 
                 <div style="float: left; width: 50%;">
-                  <button style="margin-left: 70%; margin-top:3%;"  class="btn btn-primary mb-2" >Update</button>
+                  <button style="margin-left: 70%; margin-top:3%;" class="btn btn-primary mb-2" >Update</button>
                 </div>
                 <div style="float: right; width: 50%;">
                   <a href="select">
@@ -124,25 +200,9 @@
           </form>
 
 
-          <!-- <script>
-           
-              function disable()
-              {
-                  document.getElementById("iheight").disabled = "true";
-                  document.getElementById("iweight").disabled = "true";
-                  document.getElementById("iage").disabled = "true";
-                  document.getElementById("iname").disabled = "true";
-              }
-              function enable()
-              {
+        
 
-                  document.getElementById("iheight").removeAttribute('disabled');
-                  document.getElementById("iweight").removeAttribute('disabled');
-                  document.getElementById("iage").removeAttribute('disabled');
-                  document.getElementById("iname").removeAttribute('disabled');
-              }
-           
-           </script> -->
+
            
            
         </div>
