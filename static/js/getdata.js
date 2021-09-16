@@ -217,7 +217,7 @@ $(document).ready(function() {
         },
         xAxis: {
             type: 'datetime',
-            tickPixelInterval: 150,
+            tickPixelInterval: 50,
             maxZoom: 20 * 1000
         },
         yAxis: {
@@ -225,7 +225,7 @@ $(document).ready(function() {
             maxPadding: 0.2,
             title: {
                 text: 'Value',
-                margin: 10
+                margin: 0
             }
         },
         series: [{

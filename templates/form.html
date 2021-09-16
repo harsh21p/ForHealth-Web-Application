@@ -1,218 +1,222 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <title>Patient Details</title>
-        <link rel="stylesheet" type="text/css"  href="{{ url_for('static',filename='css/bootstrap.css') }}" ></link>
-        <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/form.css') }}"></link>
-        <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/select.css') }}"></link>
-        <link rel="stylesheet" href="{{ url_for('static', filename='css/bootstrap.min.css') }}">
 
-        <script type="text/javascript">
-          function check() 
-        {
-          
-	        let a = "{{selectbtn}}";
+<head>
+  <title>Patient Details</title>
+  <link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='css/bootstrap.css') }}">
+  </link>
+  <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/form.css') }}">
+  </link>
+  <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/select.css') }}">
+  </link>
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/bootstrap.min.css') }}">
 
-          if ( a == "Passvie") 
-          {
-            document.getElementById("btn1").focus();
-          }
-          if ( a == "Freedrive") 
-          {
-            document.getElementById("btn2").focus();
-          }
-          if ( a == "Active isotonic") 
-          {
-            document.getElementById("btn3").focus();
-          }
-          if ( a == "Active isometric") 
-          {
-            document.getElementById("btn4").focus();
-          }
-          if ( a == "cctive isokinetic") 
-          {
-            document.getElementById("btn5").focus();
-          }
-          
-        }
+  <script type="text/javascript">
+    function check() {
 
-      window.onload = check;
-          </script>
- 
-     </head>
+      let a = "{{selectbtn}}";
 
-    <body>
+      if (a == "Passvie") {
+        document.getElementById("btn1").focus();
+      }
+      if (a == "Freedrive") {
+        document.getElementById("btn2").focus();
+      }
+      if (a == "Active isotonic") {
+        document.getElementById("btn3").focus();
+      }
+      if (a == "Active isometric") {
+        document.getElementById("btn4").focus();
+      }
+      if (a == "cctive isokinetic") {
+        document.getElementById("btn5").focus();
+      }
 
-      <script>
-              
-        function disable()
-        {
-            document.getElementById("iheight").disabled = "true";
-            document.getElementById("iweight").disabled = "true";
-            document.getElementById("iage").disabled = "true";
-            document.getElementById("iname").disabled = "true";
-        }
-        function enable()
-        {
+    }
 
-            document.getElementById("iheight").removeAttribute('disabled');
-            document.getElementById("iweight").removeAttribute('disabled');
-            document.getElementById("iage").removeAttribute('disabled');
-            document.getElementById("iname").removeAttribute('disabled');
-        }
-     
-        function passive(){
-          
-          document.getElementById("btnselect").value = "Passvie";
-        }
+    window.onload = check;
+  </script>
 
-        function passive1(){
-          
-          document.getElementById("btnselect").value = "Freedrive";
-        }
+</head>
 
-        function passive2(){
-          
-          document.getElementById("btnselect").value = "Active isotonic";
-        }
+<body>
 
-        function passive3(){
-          
-          document.getElementById("btnselect").value = "Active isometric";
-        }
-        function passive4(){
-          
-          document.getElementById("btnselect").value = "Acctive isokinetic";
-        }
-        
-     </script>
+  <script>
 
-       <!-- drawer -->
-  
-       <div id="mySidenav" class="sidenav">
-        <a style="text-decoration: none;" href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
-        <div style=" margin:4%; opacity:100%">
-          <a style="text-decoration: none;" href="login">Login</a>
+    function disable() {
+      document.getElementById("iheight").disabled = "true";
+      document.getElementById("iweight").disabled = "true";
+      document.getElementById("iage").disabled = "true";
+      document.getElementById("iname").disabled = "true";
+    }
+    function enable() {
+
+      document.getElementById("iheight").removeAttribute('disabled');
+      document.getElementById("iweight").removeAttribute('disabled');
+      document.getElementById("iage").removeAttribute('disabled');
+      document.getElementById("iname").removeAttribute('disabled');
+    }
+
+    function passive() {
+
+      document.getElementById("btnselect").value = "Passvie";
+    }
+
+    function passive1() {
+
+      document.getElementById("btnselect").value = "Freedrive";
+    }
+
+    function passive2() {
+
+      document.getElementById("btnselect").value = "Active isotonic";
+    }
+
+    function passive3() {
+
+      document.getElementById("btnselect").value = "Active isometric";
+    }
+    function passive4() {
+
+      document.getElementById("btnselect").value = "Acctive isokinetic";
+    }
+
+  </script>
+
+  <!-- drawer -->
+
+  <div id="mySidenav" class="sidenav">
+    <a style="text-decoration: none;" href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+    <div style=" margin:4%; opacity:100%">
+      <a style="text-decoration: none;" href="login">Login</a>
+    </div>
+    <div style=" margin:4%;">
+      <a style="text-decoration: none;" href="/">Home</a>
+    </div>
+    <div style="margin:4%;">
+      <a style="text-decoration: none;" href="details">Details</a>
+    </div>
+    <div style="margin:4%;">
+      <a style="text-decoration: none;" href="select">Select</a>
+    </div>
+    <div style="margin:4%;">
+      <a style="text-decoration: none;" href="information">Info</a>
+    </div>
+  </div>
+
+  <script>
+    function openNav() {
+      document.getElementById("mySidenav").style.width = "350px";
+    }
+
+    function closeNav() {
+      document.getElementById("mySidenav").style.width = "0";
+    }
+  </script>
+
+  <!-- button of drawer -->
+  <!-- navbar -->
+  <div class="navbar">
+    <span style="transition: transform .2s;font-size:30px;cursor:pointer;color: white;"
+      onclick="openNav()">&#9776;</span>
+    <h6 name="username">Details</h6>
+    <img onclick="myprofile('dashboard')" src="{{ url_for('static', filename='images/profile.png') }}" name="profilepic"
+      class="profileimg" />
+  </div>
+
+  <script>
+    function myprofile(clr) {
+      location.href = clr;
+    }
+  </script>
+  <!-- drower+navbar -->
+
+  <!-- First -->
+
+  <form class="form1" method="post">
+    <div class="first">
+      <h1 class="pdetails" style="margin-top: 5%;">Patient Details</h1>
+
+      <label for="fname" style="margin-top: 12%; margin-left: 25%;">Name</label>
+      <center>
+        <input type="text" value="{{uname}}" class="form-control" style="width: 50%; " id="iname" name="uname"
+          placeholder="Name">
+        <br>
+      </center>
+      <label for="fage" style="margin-left: 25%;">Age</label>
+      <center>
+        <input class="form-control" value="{{uage}}" style="width: 50%;" type="text" id="iage" name="uage" v
+          placeholder="Age  (Years)">
+        <br>
+      </center>
+      <label for="fweight" style="margin-left: 25%;">Weight</label>
+      <center>
+        <input class="form-control" value="{{uweight}}" style="width: 50%;" type="text" id="iweight" name="uweight"
+          placeholder="Weight (Kg)">
+        <br>
+      </center>
+      <label for="fheight" style="margin-left: 25%;">Height</label>
+      <center>
+        <input class="form-control" value="{{uheight}}" style="width: 50%; margin-bottom: 16.5%;" type="text"
+          id="iheight" name="uheight" placeholder="Height (cm)">
+        <br>
+      </center>
+      <br>
+      <input name="selectbtn" value="{{selectbtn}}" type="hidden" placeholder="btn" type="text" id="btnselect">
+
+    </div>
+    <!-- Second -->
+    <div class="second">
+
+      <h1 class="sdetails" style="margin-top: 5%;">Choose Type Of Treatment</h1>
+      <center>
+        <div style="margin: auto; margin-top: 1%;">
+          <button id="btn1" type="button" onclick="passive()" name="button" value="Passive" class="button1"
+            style="margin-top: 6%;">Passive</button>
+          <br>
+          <br>
+          <button type="button" onclick="passive1()" id="btn2" class="button1">Freedrive</button>
+          <br>
+          <br>
+          <button type="button" onclick="passive2()" id="btn3" class="button1">Active isotonic</button>
+          <br>
+          <br>
+          <button type="button" onclick="passive3()" id="btn4" class="button1">Active isometric</button>
+          <br>
+          <br>
+          <button type="button" onclick="passive4()" id="btn5" class="button1">Active isokinetic</button>
+          <br>
+          <br>
+      </center>
+      <div style="margin-top: 0%;">
+
+        <div style="float: left; width: 50%;">
+          <button style="margin-left: 70%; ;" class="btn btn-primary mb-2">Update</button>
         </div>
-        <div style=" margin:4%;">
-          <a style="text-decoration: none;" href="/">Home</a>
+        <div style="float: right; width: 50%;">
+          <a href="select">
+            <button style="margin-left: 10%; " type="submit"
+              class="btn btn-primary mb-2">Continue</button>
+          </a>
         </div>
-        <div style="margin:4%;">
-          <a  style="text-decoration: none;" href="details">Details</a>
-        </div>
-        <div style="margin:4%;">
-          <a style="text-decoration: none;" href="select">Select</a>
-        </div>
-        <div style="margin:4%;">
-          <a style="text-decoration: none;" href="information">Info</a>
-        </div>
+
+
       </div>
 
-    <script>
-      function openNav() {
-        document.getElementById("mySidenav").style.width = "350px";
-      }
-  
-      function closeNav() {
-       document.getElementById("mySidenav").style.width = "0";
-      }
-      </script>
-  
-    <!-- button of drawer -->
-    <!-- navbar -->
-    <div class="navbar">
-      <span style="transition: transform .2s;font-size:30px;cursor:pointer;color: white;" onclick="openNav()">&#9776;</span>
-      <h6 name="username">Details</h6>
-      <img onclick="myprofile('dashboard')" src="{{ url_for('static', filename='images/profile.png') }}" name="profilepic" class="profileimg"/>
     </div>
-  
-    <script>
-      function myprofile(clr) {
-        location.href = clr;
-      }
-    </script>
-  <!-- drower+navbar -->
-         
-        <!-- First -->
-      
-           <form class="form1" method="post">
-              <div class="first">
-                <h1 class="pdetails" style="margin-top: 5%;">Patient Details</h1>
-                
-                <label for="fname" style="margin-top: 12%; margin-left: 25%;">Name</label>
-                <center>
-                <input  type="text" value="{{uname}}" class="form-control" style="width: 50%; "  id="iname" name="uname" placeholder="Name">
-                <br> </center>                
-                <label  for="fage" style="margin-left: 25%;">Age</label>
-                <center>
-                <input class="form-control" value="{{uage}}" style="width: 50%;" type="text" id="iage" name="uage"v placeholder="Age  (Years)">
-                <br> </center>
-                <label for="fweight" style="margin-left: 25%;">Weight</label>
-                <center>
-                <input class="form-control" value="{{uweight}}" style="width: 50%;" type="text" id="iweight" name="uweight" placeholder="Weight (Kg)">
-                <br> </center>
-                <label for="fheight" style="margin-left: 25%;">Height</label>
-                <center>
-                <input class="form-control" value="{{uheight}}" style="width: 50%; margin-bottom: 16.5%;" type="text" id="iheight" name="uheight" placeholder="Height (cm)">
-                <br> </center>
-                <br>
-                <input name="selectbtn" value="{{selectbtn}}" type="hidden" placeholder="btn" type="text" id="btnselect"  >
-          
-              </div>
-              <!-- Second -->
-              <div class="second">
-            
-                <h1 class="sdetails" style="margin-top: 5%;">Choose Type Of Treatment</h1>
-                <center>
-                <div style="margin: auto; margin-top: 1%;">
-                <button id="btn1" type="button" onclick="passive()" name="button" value="Passive" class="button1" style="margin-top: 6%;" >Passive</button>
-                <br>
-                <br>
-                <button type="button"  onclick="passive1()" id="btn2" class="button1">Freedrive</button>
-                <br>
-                <br>
-                <button type="button" onclick="passive2()" id="btn3" class="button1">Active isotonic</button>
-                <br>
-                <br>
-                <button type="button" onclick="passive3()" id="btn4" class="button1">Active isometric</button>
-                <br>
-                <br>
-                <button type="button" onclick="passive4()" id="btn5" class="button1">Active isokinetic</button>
-                <br>
-                <br>
-              </center>
-              <div style="margin-top: 3%;">
-                
-                <div style="float: left; width: 50%;">
-                  <button style="margin-left: 70%; margin-top:3%;" class="btn btn-primary mb-2" >Update</button>
-                </div>
-                <div style="float: right; width: 50%;">
-                  <a href="select">
-                  <button style="margin-left: 10%; margin-top:3%;" type="submit"  class="btn btn-primary mb-2" >Continue</button>
-                </a>
-                </div>
-                
-
-                </DIV>
-            
-              </div>
-            </div>
-          </form>
+    </div>
+  </form>
 
 
-        
 
 
-           
-           
-        </div>
-      
 
-        <div style="background-color: black;">
-        
-        <h1 style="margin: 10%; color: black;">.</h1>  
-        
-        </div>
 
-    </body>
+
+  </div>
+
+
+
+</body>
+
 </html>
