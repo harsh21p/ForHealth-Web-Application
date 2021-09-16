@@ -28,12 +28,12 @@
 
 }
 
-.form1{
+/* .form1{
     border: 1px solid white;
 }
 .form2{
     border: 1px solid black;
-}
+} */
 
 .button{
     background-color:yellow;
@@ -42,7 +42,7 @@
 
 .button1:hover{background-color:orange;}
 
-/* .button1:focus{background-color:rgb(71, 240, 71);} */
+.button1:focus{background-color:rgb(71, 240, 71);}
  
  
 /* *************************************************************************************************** */

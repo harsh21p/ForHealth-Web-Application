@@ -2,6 +2,7 @@
 <html>
     <head>
         <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/select.css') }}"></link>
+        <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/form.css') }}"></link>
         <link rel="stylesheet" href="{{ url_for('static', filename='css/bootstrap.min.css') }}">
         <link rel="stylesheet" href="{{ url_for('static', filename='css/w3.css') }}">
         <script src="{{ url_for('static', filename='js/Supporting_docs/jquery.js') }}"></script>
@@ -51,7 +52,7 @@
 
             <button style="margin-top: 25%;" onclick="enable()"class="button1">Manual</button>
             <br>
-            <button style="margin-top: 25%;"  onclick="disable()" class="button2">Auto</button>
+            <button style="margin-top: 25%;"  onclick="disable()" class="button1">Auto</button>
         </div>
       </center>
         <form action="" id="formofselect" method="POST">
