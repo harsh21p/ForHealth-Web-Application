@@ -7,9 +7,18 @@
         <link rel="stylesheet" href="{{ url_for('static', filename='css/w3.css') }}">
         <script src="{{ url_for('static', filename='js/Supporting_docs/jquery.js') }}"></script>
         <script src="{{ url_for('static', filename='js/Supporting_docs/bootstrap.bundle.min.js') }}"></script>
+        <style>
+            
+          .navbar img:hover{
+            transform: scale(1.1);
+    
+          }
+        </style>
     </head>
     <title>Input End Points</title>
     <body>
+
+
    
 
     <!-- drawer -->
@@ -50,7 +59,7 @@
         <center>
         <div class="part1">
 
-            <button style="margin-top: 25%;" onclick="enable()"class="button1">Manual</button>
+            <button style="margin-top: 15%;" onclick="enable()"class="button1">Manual</button>
             <br>
             <button style="margin-top: 25%;"  onclick="disable()" class="button1">Auto</button>
         </div>
@@ -58,14 +67,17 @@
         <form action="" id="formofselect" method="POST">
         <div class="part2">
 
-          <button type="button" class="btn btn-primary mb-2" style="margin-top: 15%; margin-left: 38%;background-color: black;" onclick="record1()" >Record</button>  
-          <button type="button" class="btn btn-primary mb-2" style="margin-top: 15%; margin-left: 3%; background-color: black;" onclick="record2()" >Record</button>  
+          <button type="button" class="btn btn-primary mb-2" style="margin-top: 8%; margin-left: 38%;background-color: black;" onclick="record1()" >Record</button>  
+          <button type="button" class="btn btn-primary mb-2" style="margin-top: 8%; margin-left: 3%; background-color: black;" onclick="record2()" >Record</button>  
           <br>
           <center>
             <input name="point1" value="{{point1}}"  class="input1" id="first"/>
          
             <input name="point2" value="{{point2}}" class="input2" id="second"/><br>
             </center>
+            <button type="button" class="btn btn-primary mb-2" style="margin-top: 2%; margin-left: 39.5%;background-color: black;" onclick="edit1()" >Edit</button>  
+            <button type="button" class="btn btn-primary mb-2" style="margin-top: 2%; margin-left: 6.5%; background-color: black;" onclick="edit2()" >Edit</button>  
+
             <button type="button" class="btn btn-primary mb-2" style="margin-top: 14%; margin-left: 38%;background-color: black;" onclick="record3()" >Record</button>  
             <button type="button" class="btn btn-primary mb-2" style="margin-top: 14%; margin-left: 3%; background-color: black;" onclick="record4()" >Record</button> 
             <br>
@@ -74,13 +86,15 @@
          
             <input name="point2" value="{{point2}}" class="input4" id="fourth"/>
             <br>
-           
+            </center>
+            <button type="button" class="btn btn-primary mb-2" style="margin-top: 2%; margin-left: 39.5%;background-color: black;" onclick="edit3()" >Edit</button>  
+            <button type="button" class="btn btn-primary mb-2" style="margin-top: 2%; margin-left: 6.5%; background-color: black;" onclick="edit4()" >Edit</button>  
               <a href="information">
-              <button style="margin-left: 50%; margin-top: 10%;" type="submit" class="btn btn-primary mb-2">Continue</button>
+              <button style="margin-left: 80%; margin-top: 10%;" type="submit" class="btn btn-primary mb-2">Continue</button>
               </a>
             
 
-        </center>
+       
             
 
         </div>
@@ -100,11 +114,15 @@
         function disable(){
           document.getElementById("first").disabled = "true";
           document.getElementById("second").disabled = "true";
+          document.getElementById("third").removeAttribute('disabled');
+          document.getElementById("fourth").removeAttribute('disabled');
         }
 
         function enable(){
           document.getElementById("first").removeAttribute('disabled');
           document.getElementById("second").removeAttribute('disabled');
+          document.getElementById("third").disabled = "true";
+          document.getElementById("fourth").disabled = "true";
         }
 
         function record1(){
@@ -121,6 +139,22 @@
 
           function record4(){
           document.getElementById("fourth").disabled = "true";
+          }
+
+          function edit1(){
+            document.getElementById("first").removeAttribute('disabled');
+
+        }
+        function edit2(){
+          document.getElementById("second").removeAttribute('disabled');
+        }
+
+          function edit3(){
+            document.getElementById("third").removeAttribute('disabled');
+          }
+
+          function edit4(){
+            document.getElementById("fourth").removeAttribute('disabled');
           }
 
 

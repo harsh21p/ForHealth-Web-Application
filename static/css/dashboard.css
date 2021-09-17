@@ -8,6 +8,9 @@ body{
     font-family:sans-serif;
 }
 
+.subbutton:hover{background-color:rgb(255, 16, 16);}
+.subbutton1:hover{background-color:rgb(16, 255, 36);}
+
 .lat{
     margin-top: 40px;
     font-size: large;
@@ -15,13 +18,17 @@ body{
 
 }
 
-.subbutton{
-    font-size: large;
-    margin-top: 50px;
-    margin-bottom: 20px;
-}
+
 
 .subbutton{
+    background-color: black;
+    width: 200px;
+    height: 40px;
+    color: white;
+}
+
+.subbutton1{
+    margin-top: 4%;
     background-color: black;
     width: 200px;
     height: 40px;

@@ -6,7 +6,13 @@
     <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/form.css') }}"></link>
     <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/select.css') }}"></link>
     <link rel="stylesheet" href="{{ url_for('static', filename='css/bootstrap.min.css') }}">
-    
+    <style>
+            
+      .navbar img:hover{
+        transform: scale(1.1);
+
+      }
+    </style>
 </head>
 <body>
 
@@ -60,7 +66,7 @@
         <button type="fbutton2" class="fbutton2"> Pause</button>
         <button type="fbutton3" class="fbutton3">stop</button>
         <a href="login">
-        <button type="fbutton4" class="fbutton4">Logout</button>
+        <button type="fbutton4" style="margin-left: 18%;" class="fbutton4">Logout</button>
       </a>
 
     </div>

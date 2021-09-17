@@ -5,3 +5,6 @@ create table info1(name_user varchar(50),password_user varchar(50) ,email_user v
 select * from info1;
 create table dataform(ID INTEGER PRIMARY KEY AUTOINCREMENT,value1 int,value2 int);
 select * from dataform;
+drop table dataform;
+drop table info1;
+
