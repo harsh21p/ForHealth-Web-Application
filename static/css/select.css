@@ -199,15 +199,7 @@ button:focus{background-color:rgb(71, 240, 71);} */
       color: white;
     }
   
-    
-  .loginbox{
-    width: 320px;
-    height:450px;
-    background:rgb(44, 43, 43);
-    color:#fff;
-    box-sizing: border-box;
-    padding:70px 30px;
-  }
+   
   
   
   .loginbox p{

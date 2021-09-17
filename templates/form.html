@@ -18,12 +18,13 @@
     }
   </style>
   <script type="text/javascript">
-    function check() {
+    function check() 
+    {
 
       let a = "{{selectbtn}}";
 
-      if (a == "Passvie") {
-        document.getElementById("btn1").focus();
+      if (a == "Passive") {
+        document.getElementById("btn1").style.background="green";
       }
       if (a == "Freedrive") {
         document.getElementById("btn2").focus();
@@ -37,6 +38,39 @@
       if (a == "cctive isokinetic") {
         document.getElementById("btn5").focus();
       }
+      let z = "{{uname}}";
+
+      if(z != null)
+      {
+            document.getElementById("iheight").disabled = "true";
+            document.getElementById("iweight").disabled = "true";
+            document.getElementById("iage").disabled = "true";
+            document.getElementById("iname").disabled = "true";
+            document.getElementById("btnselect").disabled = "true";
+            document.getElementById("btn1").disabled = "true";
+            document.getElementById("btn2").disabled = "true";
+            document.getElementById("btn3").disabled = "true";
+            document.getElementById("btn4").disabled = "true";
+            document.getElementById("btn5").disabled = "true";
+
+
+
+
+            
+      }
+    }
+
+    function edit(){
+      document.getElementById("iheight").removeAttribute('disabled');
+      document.getElementById("iweight").removeAttribute('disabled');
+      document.getElementById("iage").removeAttribute('disabled');
+      document.getElementById("iname").removeAttribute('disabled');
+      document.getElementById("btnselect").removeAttribute('disabled');
+      document.getElementById("btn1").removeAttribute('disabled');
+      document.getElementById("btn2").removeAttribute('disabled');
+      document.getElementById("btn3").removeAttribute('disabled');
+      document.getElementById("btn4").removeAttribute('disabled');
+      document.getElementById("btn5").removeAttribute('disabled');
 
     }
 
@@ -49,23 +83,10 @@
 
   <script>
 
-    function disable() {
-      document.getElementById("iheight").disabled = "true";
-      document.getElementById("iweight").disabled = "true";
-      document.getElementById("iage").disabled = "true";
-      document.getElementById("iname").disabled = "true";
-    }
-    function enable() {
-
-      document.getElementById("iheight").removeAttribute('disabled');
-      document.getElementById("iweight").removeAttribute('disabled');
-      document.getElementById("iage").removeAttribute('disabled');
-      document.getElementById("iname").removeAttribute('disabled');
-    }
-
+   
     function passive() {
 
-      document.getElementById("btnselect").value = "Passvie";
+      document.getElementById("btnselect").value = "Passive";
     }
 
     function passive1() {
@@ -197,7 +218,7 @@
       <div style="margin-top: 0%;">
 
         <div style="float: left; width: 50%;">
-          <button style="margin-left: 70%; ;" class="btn btn-primary mb-2">Update</button>
+          <button type="button" onclick="edit();" style="margin-left: 70%; ;" class="btn btn-primary mb-2">Update</button>
         </div>
         <div style="float: right; width: 50%;">
           <a href="select">
