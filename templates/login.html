@@ -18,7 +18,7 @@
 @font-face {
     
     font-family: Poppins;
-    src: url(Poppins-Black.woff);
+    src: url(./static/css/fonts/Poppins-Light.woff);
     font-style: normal;
     font-weight: 500;
     font-size: 36px;
@@ -26,17 +26,18 @@
 
   }
 
-/* * {
+* {
    font-family: Poppins;
-} */
+}
 
   .lname {
     position: absolute;
     width: 105px;
     height: 48px;
     left: 48%;
-    top: 0%;
 
+    top: 15px;
+    
     font-family: Poppins;
     font-style: normal;
     font-weight: 500;
@@ -102,16 +103,14 @@ color: #000000;
 .loginbutton{
 width: 129px;
 height: 45px;
-/* left: 319px;
-top: 596px; */
-
+margin-top: 25px;
 background: #EE723D;
 box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
 border-radius: 16px;
-margin-left: 23%;
+margin-left: 19.5%;
 color:white;
 width: 149px;
-margin-bottom: 8%;
+margin-bottom: 29px;
 box-shadow: 0px 4px 2px rgba(0, 0, 0, 0.4);
 border: 2px solid #EE723D;
 
@@ -120,17 +119,15 @@ border: 2px solid #EE723D;
 
 
 
-
-
 .forgot{
   font-family:poppins;
-  margin-left: 30%;
+  margin-left: 29%;
   margin-top: 20px;
 }
 
 .dna{
   font-family: Poppins;
-  margin-left: 20%;
+  margin-left: 12%;
 }
 
 .textfield1{
@@ -160,7 +157,6 @@ border: 2px solid #EE723D;
 }
 .drowclass{
   width: 3.5%;
-  margin-top: 1.2%;
 }
 
 </style>
@@ -183,9 +179,10 @@ border: 2px solid #EE723D;
 
   <!-- button of drawer -->
   <!-- navbar -->
-  <div class="navbar">
-    <span style="transition: transform .2s;font-size:30px;cursor:pointer;color:black; margin-left: 2%;"
-      onclick="openNav()"><img src="{{ url_for('static', filename='images/drow.png') }}" alt="img" class="drowclass"></span>
+  <div class="navbar" style="padding-top: 3%; padding-left:3%; padding-bottom: 4%;">
+    <span style="transition: transform .2s;font-size:30px;cursor:pointer;color:black;"
+      onclick="openNav()">
+      <img  src="{{ url_for('static', filename='images/drow.png') }}" alt="img" class="drowclass"></span>
     <div>
       <h6 class="lname">Login</h6>
       <!-- <p style="  font-size: 36px;margin-left: 0%;margin-top: 0%;"><span style="color: #EE723D;" >for</span><span style=" font-size: 33px;  color:#042A73;font-weight: bold;">health</span></p> -->
@@ -200,7 +197,7 @@ border: 2px solid #EE723D;
     }
   </script>
   <!-- drower+navbar -->
-  <div class="loginbox">
+  <div class="loginbox" style="margin-top: 4%;">
     <img src="{{ url_for('static', filename='images/Profileimg.png') }}" alt="img" class="imgclass">
     <center><img src="{{ url_for('static', filename='images/logo.png') }}" alt="img" class="logoclass"></center>
     <form action="" name="login" method="post">
@@ -212,8 +209,8 @@ border: 2px solid #EE723D;
       <a href="details">
        <button class="loginbutton">Login</button>
       </a><br>
-      <a href="#" class="forgot">Forgot Password ?</a><br>
-      <a href="signup" class="dna">Don’t have an account? <span style="color: #EE723D;">Signup</span></a>
+      <a style="text-decoration: none;" href="#" class="forgot">Forgot Password ?</a><br>
+      <a href="signup" style="text-decoration: none;" class="dna">Don’t have an account? <span style="color: #EE723D;"><b>Signup</b></span></a>
     </form>
   </div>
   <script>
