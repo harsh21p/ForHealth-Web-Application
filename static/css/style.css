@@ -35,6 +35,23 @@ h1{
 }
 
 
+@font-face {
+    
+    font-family: Poppins;
+    src: url(fonts/Poppins-Light.woff);
+    font-style: normal;
+    font-weight: 500;
+    font-size: 36px;
+    line-height: 54px;
+
+  }
+
+* {
+   font-family: Poppins;
+}
+
+
+
 .loginbox p{
     margin:0;
     padding-bottom: 3%;

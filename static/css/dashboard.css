@@ -8,6 +8,22 @@ body{
     font-family:sans-serif;
 }
 
+@font-face {
+    
+    font-family: Poppins;
+    src: url(fonts/Poppins-Light.woff);
+    font-style: normal;
+    font-weight: 500;
+    font-size: 36px;
+    line-height: 54px;
+
+  }
+
+* {
+   font-family: Poppins;
+}
+
+
 .subbutton:hover{background-color:rgb(255, 16, 16);}
 .subbutton1:hover{background-color:rgb(16, 255, 36);}
 

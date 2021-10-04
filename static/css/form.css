@@ -9,6 +9,22 @@
     margin-left: 10%;
 }
 
+@font-face {
+    
+    font-family: Poppins;
+    src: url(fonts/Poppins-Light.woff);
+    font-style: normal;
+    font-weight: 500;
+    font-size: 36px;
+    line-height: 54px;
+
+  }
+
+* {
+   font-family: Poppins;
+}
+
+
 .second{
     float: right;
     background: #BCBCBC33;
