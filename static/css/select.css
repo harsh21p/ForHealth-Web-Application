@@ -9,12 +9,7 @@
     width: 50%;
      margin: auto;
 }
-.button1{
-    background-color: black;
-    width: 400px;
-    height: 70px;
-    color: white;
-}
+
 .button2{
 
     background-color: black;
@@ -80,8 +75,9 @@ button:focus{background-color:rgb(71, 240, 71);} */
   .navbar{
     
     height:70px;
-    background:rgb(0, 0, 0);
-    color:#fff;
+    /* background:#BCBCBC 20%; */
+    background: #BCBCBC33;
+    color:black;
     opacity: 0.9;
     box-sizing: border-box;
     padding: 1%;
@@ -221,7 +217,7 @@ button:focus{background-color:rgb(71, 240, 71);} */
   text-decoration: none;
   font-size: 12px;
   line-height: 20px;
-  color: darkgrey;
+  color: rgba(0, 0, 0, 0.5);
   }
   
 

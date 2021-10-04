@@ -1,48 +1,142 @@
-
 <html>
-    <head>
-        <title>Signup</title>
-        <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/style.css') }}"></link>
-        <link rel="stylesheet" href="{{ url_for('static', filename='css/w3.css') }}">
-        <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/select.css') }}"></link>
-        <link rel="stylesheet" href="{{ url_for('static', filename='css/bootstrap.min.css') }}">
-        <link rel="stylesheet" href="{{ url_for('static', filename='css/w3.css') }}">
-        <script src="{{ url_for('static', filename='js/Supporting_docs/jquery.js') }}"></script>
-        <script src="{{ url_for('static', filename='js/Supporting_docs/bootstrap.bundle.min.js') }}"></script>
-        <title>Signup</title>
-        <body>
-    
 
-            <div class="loginboxsignup">
-            <h1>Signup Here</h1>
-            <form name="signup" action="" method="post">
-                <p>Username</p>
-                <input class="w3-input w3-border w3-round" type="text" name="username" placeholder="Enter Username" required>
-                <p>Email</p>
-                <input type="email" class="w3-input w3-border w3-round" name="email" placeholder="Enter Email" required>
-                <p>Contact No</p>
-                <input type="number" class="w3-input w3-border w3-round" name="phone" placeholder="Enter Contact No" required>
-                <p>Address</p>
-                <input type="text" class="w3-input w3-border w3-round" name="address"placeholder="Enter Address" required>
-                <p>Password</p>
-                <input type="password" name="password" class="w3-input w3-border w3-round"  placeholder="Enter Password" required>
-                <p>Confirm Password</p>
-                <input type="password" name="password1" class="w3-input w3-border w3-round" placeholder="Confirm Password" required>
-                <p style="text-align: center; font-size: x-small; color: red;"><b>{{message}}</b></p>
-                <input type="submit" value="Signup"><br>
-                <a href="login" >Already have an account?</a>
-            </form>
+<head>
+    <title>Signup</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/style.css') }}">
+    </link>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/w3.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/select.css') }}">
+    </link>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/bootstrap.min.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/w3.css') }}">
+    <script src="{{ url_for('static', filename='js/Supporting_docs/jquery.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/Supporting_docs/bootstrap.bundle.min.js') }}"></script>
+</head>
+<title>Signup</title>
+<style>
+    .lname {
+        position: absolute;
+        width: 105px;
+        height: 48px;
+        left: 48%;
+        top: 0%;
+
+        font-family: "Poppins";
+        font-style: normal;
+        font-weight: 500;
+        font-size: 36px;
+        line-height: 54px;
+        font-weight: bold;
+        color: #042A73;
+
+    }
+
+    .textfield1 {
+        border-radius: 25px;
+        border: 2px solid #BCBCBC33;
+        padding: 15px;
+        width: 180px;
+        height: 10px;
+        background:  rgb(196, 196, 196, 0.36);
+    }
+
+    .lable1 {
+      
+        width: 73px;
+        height: 21px;
+        left: 162px;
+        top: 156px;
+
+        font-family: Poppins;
+        font-style: normal;
+        font-weight: normal;
+        font-size: 14px;
+        line-height: 21px;
+        /* identical to box height */
+
+
+        color: #000000;
+    }
+</style>
+
+<body>
+    <!-- drawwer -->
+    <div>
+        <div id="mySidenav" class="sidenav">
+            <a style="text-decoration: none;" href="javascript:void(0)" class="userimg" onclick="closeNav()">&times;</a>
+            <div style=" margin:4%; opacity:100%">
+                <a style="text-decoration: none;" href="login">Login</a>
             </div>
-            <script>
-                function openNav() {
-                  document.getElementById("mySidenav").style.width = "350px";
-                }
-            
-                function closeNav() {
-                 document.getElementById("mySidenav").style.width = "0";
-                }
-                </script>
-            
-        </body>
-    </head>
+            <div style=" margin:4%;">
+                <a style="text-decoration: none;" href="signup">Signup</a>
+            </div>
+            <div style=" margin:4%;">
+                <a style="text-decoration: none;" href="/">Home</a>
+            </div>
+        </div>
+    </div>
+    <!-- navbar -->
+    <div class="navbar">
+        <span style="transition: transform .2s;font-size:30px;cursor:pointer;color:black;"
+            onclick="openNav()">&#9776;</span>
+        <div>
+            <h6 class="lname">Signup</h6>
+            <p style="  font-size: 36px;margin-left: 0%;margin-top: 0%;"><span style="color: #EE723D;">for</span><span
+                    style=" font-size: 33px;  color:#042A73;font-weight: bold;">Health</span></p>
+
+        </div>
+
+    </div>
+
+    <script>
+        function myprofile(clr) {
+            location.href = clr;
+        }
+    </script>
+    <!-- drower+navbar -->
+    <!-- drawerend -->
+
+    <!-- signup  -->
+    <div class="loginboxsignup">
+        <!-- <h1>Signup Here</h1> -->
+        <form name="signup" action="" method="post">
+            <p
+                style="font-family: Poppins;  font-size: 14px;font-style:normal;font-weight:400;line-height: 21px;letter-spacing: 0em;text-align: left;margin-top: 10%;">
+                Username
+            </p>
+
+            <input class="textfield1" type="text" name="username" placeholder="Enter Username" required>
+            <p class="lable1">Email</p>
+            <input type="email" class="textfield1" name="email" placeholder="Enter Email" required>
+            <p class="lable1">Contact No</p>
+            <input type="number" class="textfield1" name="phone" placeholder="Enter Contact No"
+                required>
+            <p class="lable1">Address</p>
+            <input type="text" class="textfield1" name="address" placeholder="Enter Address" required>
+            <p class="lable1">Password</p>
+            <input type="password" name="password" class="textfield1" placeholder="Enter Password"
+                required>
+            <p style="font-family: Poppins; font-style: normal;font-weight: normal;font-size: 14px;line-height: 21px;">Confirm Password</p>
+            <input type="password" name="password1" class="textfield1" placeholder="Confirm Password"
+                required>
+            <p style="text-align: center; font-size: x-small; color: red;"><b>{{message}}</b></p>
+            <input style="background-color:#EE723D" type="submit" value="Signup"><br>
+            <a href="login" style="margin-left: 10%;">Already have an account ? <span style="color: #EE723D;">Signin</span> </a>
+        </form>
+    </div>
+    <div>
+        <img class="transform -rotate-90 rounded-3xl" style="width: 575px; height: 509px;margin-left: 70%;margin-top: 3%;border-radius: 84px;" src="https://via.placeholder.com/645x589"/>
+    </div>
+    <script>
+        function openNav() {
+            document.getElementById("mySidenav").style.width = "350px";
+        }
+
+        function closeNav() {
+            document.getElementById("mySidenav").style.width = "0";
+        }
+    </script>
+
+</body>
+
 </html>

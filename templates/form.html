@@ -16,6 +16,41 @@
       transform: scale(1.1);
 
     }
+
+    .lname {
+        position: absolute;
+        width: 105px;
+        height: 48px;
+        left: 48%;
+        top: 0%;
+
+        font-family: "Poppins";
+        font-style: normal;
+        font-weight: 500;
+        font-size: 36px;
+        line-height: 54px;
+        font-weight: bold;
+        color: #042A73;
+
+    }
+    .imgclass{
+    width:120px;
+    height:120px;
+    border-radius:50%;
+    position:absolute;
+    margin-left: 7.3%;
+    margin-top: 3%;
+}
+
+.textfield1 {
+        border-radius: 25px;
+        border: 2px solid #BCBCBC33;
+        padding: 20px;
+        width: 250px;
+        height: 15px;
+        background:  rgb(196, 196, 196, 0.36);
+    }
+
   </style>
   <script type="text/javascript">
     function check() 
@@ -110,81 +145,69 @@
 
   </script>
 
-  <!-- drawer -->
-
-  <div id="mySidenav" class="sidenav">
-    <a style="text-decoration: none;" href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
-    <div style=" margin:4%; opacity:100%">
-      <a style="text-decoration: none;" href="login">Login</a>
+   <!-- drawwer -->
+   <div>
+    <div id="mySidenav" class="sidenav">
+        <a style="text-decoration: none;" href="javascript:void(0)" class="userimg" onclick="closeNav()">&times;</a>
+        <div style=" margin:4%; opacity:100%">
+            <a style="text-decoration: none;" href="login">Login</a>
+        </div>
+        <div style=" margin:4%;">
+            <a style="text-decoration: none;" href="signup">Signup</a>
+        </div>
+        <div style=" margin:4%;">
+            <a style="text-decoration: none;" href="/">Home</a>
+        </div>
     </div>
-    <div style=" margin:4%;">
-      <a style="text-decoration: none;" href="/">Home</a>
-    </div>
-    <div style="margin:4%;">
-      <a style="text-decoration: none;" href="details">Details</a>
-    </div>
-    <div style="margin:4%;">
-      <a style="text-decoration: none;" href="select">Select</a>
-    </div>
-    <div style="margin:4%;">
-      <a style="text-decoration: none;" href="information">Info</a>
-    </div>
-  </div>
+</div>
+<!-- navbar -->
+<div class="navbar">
+    <span style="transition: transform .2s;font-size:30px;cursor:pointer;color:black;"
+        onclick="openNav()">&#9776;</span>
+    <div>
+        <h6 class="lname">Details</h6>
+        <p style="  font-size: 36px;margin-left: 0%;margin-top: 0%;"><span style="color: #EE723D;">for</span><span
+                style=" font-size: 33px;  color:#042A73;font-weight: bold;">Health</span></p>
 
-  <script>
-    function openNav() {
-      document.getElementById("mySidenav").style.width = "350px";
-    }
+    </div>
 
-    function closeNav() {
-      document.getElementById("mySidenav").style.width = "0";
-    }
-  </script>
+</div>
 
-  <!-- button of drawer -->
-  <!-- navbar -->
-  <div class="navbar">
-    <span style="transition: transform .2s;font-size:30px;cursor:pointer;color: white;"
-      onclick="openNav()">&#9776;</span>
-    <h6 name="username">Details</h6>
-    <img onclick="myprofile('dashboard')" src="{{ url_for('static', filename='images/profile.png') }}" name="profilepic"
-      class="profileimg" />
-  </div>
-
-  <script>
+<script>
     function myprofile(clr) {
-      location.href = clr;
+        location.href = clr;
     }
-  </script>
-  <!-- drower+navbar -->
+</script>
+<!-- drower+navbar -->
+<!-- drawerend -->
 
   <!-- First -->
 
   <form class="form1" method="post">
     <div class="first">
-      <h1 class="pdetails" style="margin-top: 5%;">Patient Details</h1>
+      <img src="{{ url_for('static', filename='images/Profileimg.png') }}" alt="img" class="imgclass">
 
-      <label for="fname" style="margin-top: 12%; margin-left: 25%;">Name</label>
+      <label for="fname" style="margin-top: 50%; margin-left: 20%;font-family: Poppins;">Name</label>
       <center>
-        <input type="text" value="{{uname}}" class="form-control" style="width: 50%; " id="iname" name="uname"
+        <input type="text" value="{{uname}}" class="textfield1"  id="iname" name="uname"
           placeholder="Name">
         <br>
       </center>
-      <label for="fage" style="margin-left: 25%;">Age</label>
+      <label for="fage" style=" margin-left: 20%;font-family: Poppins;">Age</label>
       <center>
-        <input class="form-control" value="{{uage}}" style="width: 50%;" type="text" id="iage" name="uage" v
+        <input value="{{uage}}"class="textfield1" type="text" id="iage" name="uage" v
           placeholder="Age  (Years)">
         <br>
       </center>
-      <label for="fweight" style="margin-left: 25%;">Weight</label>
+      <label for="fweight" style=" margin-left: 20%;font-family: Poppins;">Weight</label>
       <center>
-        <input class="form-control" value="{{uweight}}" style="width: 50%;" type="text" id="iweight" name="uweight"
+        <input class="textfield1" value="{{uweight}}"  type="text" id="iweight" name="uweight"
           placeholder="Weight (Kg)">
         <br>
       </center>
-      <label for="fheight" style="margin-left: 25%;">Height</label>
+      <label for="fheight" style=" margin-left: 20%;font-family: Poppins;">Height</label>
       <center>
-        <input class="form-control" value="{{uheight}}" style="width: 50%; margin-bottom: 16.5%;" type="text"
+        <input class="textfield1" value="{{uheight}}"  margin-bottom: 16.5%;" type="text"
           id="iheight" name="uheight" placeholder="Height (cm)">
         <br>
       </center>
@@ -195,9 +218,9 @@
     <!-- Second -->
     <div class="second">
 
-      <h1 class="sdetails" style="margin-top: 5%;">Choose Type Of Treatment</h1>
+      <h1 class="sdetails" style="margin-top: 10%;font-size: medium;">Type Of Treatment</h1>
       <center>
-        <div style="margin: auto; margin-top: 1%;">
+        <div style="margin: auto; margin-top: 5%;">
           <button id="btn1" type="button" onclick="passive()" name="button" value="Passive" class="button1"
             style="margin-top: 6%;">Passive</button>
           <br>
@@ -217,7 +240,7 @@
       </center>
       <div style="margin-top: 0%;">
 
-        <div style="float: left; width: 50%;">
+        <!-- <div style="float: left; width: 50%;">
           <button type="button" onclick="edit();" style="margin-left: 70%; ;" class="btn btn-primary mb-2">Update</button>
         </div>
         <div style="float: right; width: 50%;">
@@ -225,6 +248,9 @@
             <button style="margin-left: 10%; " type="submit"
               class="btn btn-primary mb-2">Continue</button>
           </a>
+        </div> -->
+        <div>
+          <button class="confirm">Confirm</button>
         </div>
 
 
