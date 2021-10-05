@@ -1,0 +1,222 @@
+
+
+
+.lname
+{
+    position: absolute;
+    width: 105px;
+    height: 48px;
+    left: 48%;
+
+    top: 15px;
+    
+    font-family: Poppins;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 36px;
+    line-height: 54px;
+    font-weight: bold;
+    color: #042A73;
+  
+  }
+
+  .userimg {
+    position: absolute;
+    width: 132px;
+    height: 132px;
+    left: 537px;
+    top: 132px;
+
+    background: url(.jpg), #C4C4C4;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  }
+
+  .lforname{
+    /* forhealth */
+
+
+position: absolute;
+width: 167px;
+height: 48px;
+left: 519px;
+top: 215px;
+
+font-family: Poppins;
+font-style: normal;
+font-weight: normal;
+font-size: 36px;
+line-height: 54px;
+
+
+color: #EE723D;
+
+  }
+.up{
+  /* Username */
+position: absolute;
+width: 73px;
+height: 21px;
+left: 451px;
+top: 389px;
+
+font-family: Poppins;
+font-style: normal;
+font-weight: normal;
+font-size: 14px;
+line-height: 21px;
+/* identical to box height */
+color: #000000;
+}
+
+.loginbutton{
+width: 129px;
+height: 45px;
+margin-top: 25px;
+background: #EE723D;
+box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+border-radius: 16px;
+margin-left: 19.5%;
+color:white;
+width: 149px;
+margin-bottom: 29px;
+box-shadow: 0px 4px 2px rgba(0, 0, 0, 0.4);
+border: 2px solid #EE723D;
+
+/* outline: none; */
+}
+
+
+
+.forgot{
+  font-family:poppins;
+  margin-left: 29%;
+  margin-top: 20px;
+}
+
+.dna{
+  font-family: Poppins;
+  margin-left: 12%;
+}
+
+.textfield1{
+  border-radius: 15px;
+    border: 2px;
+    padding: 20px; 
+    width: 200px;
+    height: 15px;  
+    
+    
+}
+
+.textfield2{
+  border-radius: 15px;
+    border: 2px;
+    padding: 20px; 
+    width: 200px;
+    height: 15px; 
+    
+}
+.logoclass{
+
+  width: 70%;
+  
+}
+.drowclass{
+  width: 3.5%;
+}
+
+
+.loginbox{
+    width: 320px;
+    height:480px;
+    background: #C4C4C436;
+    color:#fff;
+    opacity: 0.9;
+    top:50%;
+    left:50%;
+    position:absolute;
+    transform:translate(-50%,-50%);
+    box-sizing: border-box;
+    padding:70px 40px;
+    position: absolute;
+    border-radius: 60px;
+
+
+}
+
+.imgclass{
+    width:300px;
+    height:300px;
+    border-radius:50%;
+    position:absolute;
+    top:-150px;
+    left: calc(50% - 150px);
+}
+
+h1{
+    margin:0;
+    padding:2%;
+    text-align: center;
+    font-size:22px;
+}
+
+
+@font-face {
+    
+    font-family: Poppins;
+    src: url(fonts/Poppins-Light.woff);
+    font-style: normal;
+    font-weight: 500;
+    font-size: 36px;
+    line-height: 54px;
+
+  }
+
+* {
+   font-family: Poppins;
+}
+
+.loginbox p{
+    margin:0;
+    padding-bottom: 3%;
+}
+
+.loginbox input{
+width:100%;
+margin-bottom: 15px;
+}
+
+.loginbox input[type="text"], input[type="password"], input[type="number"], input[type="email"],input[type="date"]
+{
+
+    background: transparent; 
+    height: 30px;
+    font-size: 10px;
+}
+
+
+.loginbox a{
+text-decoration: none;
+font-size: 12px;
+line-height: 20px;
+}
+
+.loginbox a:hover
+{
+color: #11100e;
+text-align: center;
+}
+
+
+.forgot{
+  font-family:poppins;
+  margin-left: 29%;
+  margin-top: 20px;
+  color: gray;
+}
+
+.dna{
+  font-family: Poppins;
+  margin-left: 12%;
+  color: gray;
+}

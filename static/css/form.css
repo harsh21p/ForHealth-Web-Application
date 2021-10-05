@@ -1,4 +1,24 @@
-.first{
+
+ .lname {
+    position: absolute;
+    width: 105px;
+    height: 48px;
+    left: 48%;
+
+    top: 15px;
+    
+    font-family: Poppins;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 36px;
+    line-height: 54px;
+    font-weight: bold;
+    color: #042A73;
+  
+  }
+
+.first
+{
     float: left;
     background: #BCBCBC33;
     color: black;
@@ -9,23 +29,8 @@
     margin-left: 10%;
 }
 
-@font-face {
-    
-    font-family: Poppins;
-    src: url(fonts/Poppins-Light.woff);
-    font-style: normal;
-    font-weight: 500;
-    font-size: 36px;
-    line-height: 54px;
-
-  }
-
-* {
-   font-family: Poppins;
-}
-
-
-.second{
+.second
+{
     float: right;
     background: #BCBCBC33;
     color: black;
@@ -36,29 +41,22 @@
     margin-right: 10%;
 }
 
-.pdetails{
+.sdetails
+{
     margin:auto;
     text-align:center;
 }
 
-.sdetails{
-    margin:auto;
-    text-align:center;
-}
-
-.pf{
-    width: 50%;
-    height: 50px
-
-}
 
 
-.button{
+.button
+{
     background-color:yellow;
     height:50px;
     
 }
-.button1{
+.button1
+{
     /* position: absolute; */
     width: 292.76px;
     height: 46.33px;
@@ -74,12 +72,11 @@
 }
 
 .button1:hover{background-color:orange;} 
-/* background: #0000005C;
- */
 
 .button1:focus{background-color:rgb(71, 240, 71);}
  
-.confirm{
+.confirm
+{
     position: absolute;
     width: 157.61px;
     height: 60.21px;
@@ -89,99 +86,39 @@
     border-color:#ff7337;
     margin-left: 7%;
 }
+  
+.imgclass
+{
+  width:120px;
+  height:120px;
+  border-radius:50%;
+  position:absolute;
+  margin-left: 7.3%;
+  margin-top: 3%;
+}
 
-
-
-
+.textfield1 
+{
+      border-radius: 25px;
+      border: 2px solid #BCBCBC33;
+      padding: 20px;
+      width: 250px;
+      height: 15px;
+      background:  rgb(196, 196, 196, 0.36);
+}
  
-/* *************************************************************************************************** */
 
-/* Forthpage CSS */
-
-.fbutton1{
-    background-color:black;
-    height:60px;
-    width:200px;
-    color:white;
-    margin: 4%;
-    margin-top: 5%;
+@font-face 
+{ 
+    font-family: Poppins;
+    src: url(fonts/Poppins-Light.woff);
+    font-style: normal;
+    font-weight: 500;
+    font-size: 36px;
+    line-height: 54px;
 }
 
-.fbutton2{
-    background-color:black;
-    height:60px;
-    width:200px;
-    color:white;
-    margin: 4%;
+* 
+{
+   font-family: Poppins;
 }
-
-.fbutton3{
-    background-color:black;
-    height:60px;
-    width:200px;
-    color:white;
-    margin: 4%;
-}
-
-.fbutton4{
-    background-color:black;
-    height:60px;
-    width:100px;
-    color:white;
-    margin-left: 25%;
-    border-radius: 10%;
-}
-
-
-.fbutton1:hover{background-color:rgb(28, 202, 255);}
-.fbutton2:hover{background-color:rgb(255, 238, 2);}
-.fbutton3:hover{background-color:rgb(16, 128, 255);}
-.fbutton4:hover{background-color:rgb(255, 16, 16);}
-
-
-.fbutton1:focus{background-color:rgb(94, 255, 30);}
-.fbutton2:focus{background-color:rgb(248, 121, 1);}
-.fbutton3:focus{background-color:rgb(255, 0, 0);}
-
-
-.float-container {
-    border: 3px solid #fff;
-    padding: 20px;
-}
-
-.float-child1{
-    width: 30%;
-    float: left;
-    padding: 10px;
-    border: 2px solid rgb(0, 0, 0);
-    margin-left: 2%;
-}  
-
-.float-child2 {
-    background-color: rgb(0, 0, 0);
-    width: 65%;
-    float: left;
-    padding: 10px;
-    border: 2px solid rgb(0, 0, 0);
-    margin-left: 2%;
-}  
-
-.float-child3{
-    width: 47%;
-    float: left;
-    padding: 10px;
-    border: 2px solid rgb(0, 0, 0);
-    margin-left: 2%;
-    margin-top: 5%;
-}  
-
-.float-child4{
-    width: 47%;
-    float: left;
-    padding: 10px;
-    border: 2px solid rgb(0, 0, 0);
-    margin-left: 2%;
-    margin-top: 5%;
-
-}  
-

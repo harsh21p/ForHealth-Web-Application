@@ -1,0 +1,70 @@
+
+
+/* signup */
+
+.loginboxsignup{
+    width: 400px;
+    height:600px;
+    background: #C4C4C436;
+    color:rgb(2, 2, 2);
+    top:50%;
+    left:20%;
+    position:absolute;
+    opacity: 0.9;
+    transform:translate(-50%,-50%);
+    box-sizing: border-box;
+    padding-left: 70px;
+    padding-right: 70px;
+    margin-top: 3%;
+    border-radius: 20%;
+    
+}
+
+.loginboxsignup p{
+    margin:0;
+    padding-bottom: 3%;
+}
+
+.loginboxsignup input{
+width:100%;
+margin-bottom: 20px;
+color: #fff;
+}
+
+.loginboxsignup input[type="text"], input[type="password"], input[type="number"], input[type="email"],input[type="date"]
+{
+
+    background: transparent; 
+    height: 30px;
+    font-size: 10px;
+}
+
+.loginboxsignup input[type="submit"]
+{ 
+border:none;
+outline: none;
+height: 30px;
+background-color: rgb(69, 193, 241);
+color: #fff;
+font-size: 12px;
+border-radius: 20px;
+}
+.loginboxsignup input[type="submit"]:hover
+{
+cursor:pointer;
+background: #ffc107;
+color: #000;
+
+}
+.loginboxsignup a{
+text-decoration: none;
+font-size: 12px;
+line-height: 20px;
+/* color: darkgrey; */
+}
+
+.loginboxsignup a:hover
+{
+color: #ffc107;
+text-align: center;
+}
