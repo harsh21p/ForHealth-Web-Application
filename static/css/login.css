@@ -51,7 +51,10 @@ line-height: 54px;
 color: #EE723D;
 
   }
-.up{
+  
+.up
+{
+
   /* Username */
 position: absolute;
 width: 73px;
@@ -104,8 +107,6 @@ border: 2px solid #EE723D;
     padding: 20px; 
     width: 200px;
     height: 15px;  
-    
-    
 }
 
 .textfield2{

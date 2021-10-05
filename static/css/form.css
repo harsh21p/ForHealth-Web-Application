@@ -4,9 +4,7 @@
     width: 105px;
     height: 48px;
     left: 48%;
-
     top: 15px;
-    
     font-family: Poppins;
     font-style: normal;
     font-weight: 500;
@@ -26,7 +24,7 @@
     height: 533px;
     border-radius: 60px;
     margin-top: 3%;
-    margin-left: 10%;
+    margin-left: 12%;
 }
 
 .second
@@ -38,7 +36,7 @@
     height: 533px;
     border-radius: 60px;
     margin-top: 3%;
-    margin-right: 10%;
+    margin-right: 12%;
 }
 
 .sdetails
@@ -47,14 +45,6 @@
     text-align:center;
 }
 
-
-
-.button
-{
-    background-color:yellow;
-    height:50px;
-    
-}
 .button1
 {
     /* position: absolute; */
@@ -71,9 +61,9 @@
     
 }
 
-.button1:hover{background-color:orange;} 
+.button1:hover{background-color:#16161659;} 
 
-.button1:focus{background-color:rgb(71, 240, 71);}
+.button1:focus{background-color:#16161659;}
  
 .confirm
 {
@@ -89,24 +79,12 @@
   
 .imgclass
 {
-  width:120px;
-  height:120px;
+  width:300px;
+  height:300px;
   border-radius:50%;
   position:absolute;
-  margin-left: 7.3%;
-  margin-top: 3%;
+  margin-left: 2%;
 }
-
-.textfield1 
-{
-      border-radius: 25px;
-      border: 2px solid #BCBCBC33;
-      padding: 20px;
-      width: 250px;
-      height: 15px;
-      background:  rgb(196, 196, 196, 0.36);
-}
- 
 
 @font-face 
 { 
@@ -122,3 +100,39 @@
 {
    font-family: Poppins;
 }
+
+.textfield1{
+      border-radius: 15px;
+      border: 2px;
+      padding: 21px; 
+      width: 280px;
+      height: 15px;
+      font-size: 13px;  
+  }
+
+  .vl {
+    border-left: 4px solid rgba(163, 163, 163, 0.2);;
+    height: 600px;
+    position: absolute;
+    left: 50%;
+    margin-left: -3px;
+    margin-top: 2%;
+  }
+  
+
+  .up{
+    /* Username */
+  position: absolute;
+  width: 73px;
+  height: 21px;
+  left: 451px;
+  top: 389px;
+  
+  font-family: Poppins;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 14px;
+  line-height: 21px;
+  /* identical to box height */
+  color: #000000;
+  }

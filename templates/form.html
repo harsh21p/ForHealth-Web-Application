@@ -53,39 +53,33 @@
     <!-- first -->
     <div class="first">
       <img src="{{ url_for('static', filename='images/Profileimg.png') }}" alt="img" class="imgclass">
+      <p style="color:black;font-size: small; margin-left: 13%; margin-top: 50%;" >Name</p>
+      <center>
+      <input type="text" value="{{uname}}" class="textfield1" style="background: rgba(196, 196, 196, 0.36);" name="uname" id="iname" placeholder="Admin" required>
+      </center>
 
-      <label for="fname" style="margin-top: 50%; margin-left: 20%;font-family: Poppins;">Name</label>
+      <p style="color:black;font-size: small;margin-left: 13%;">Age</p>
       <center>
-        <input type="text" value="{{uname}}" class="textfield1"  id="iname" name="uname"
-          placeholder="Name">
-        <br>
+      <input type="number" value="{{uage}}" class="textfield1" style="background: rgba(196, 196, 196, 0.36);" name="uage" id="iage" placeholder="Age" required>
       </center>
-      <label for="fage" style=" margin-left: 20%;font-family: Poppins;">Age</label>
+      <p style="color:black;font-size: small; margin-left: 13%;" >Weight</p>
       <center>
-        <input value="{{uage}}"class="textfield1" type="text" id="iage" name="uage" v
-          placeholder="Age  (Years)">
-        <br>
+      <input type="number" class="textfield1" style="background: rgba(196, 196, 196, 0.36);" name="uweight" value="{{uweight}}" id="iweight" placeholder="Weight" required>
       </center>
-      <label for="fweight" style=" margin-left: 20%;font-family: Poppins;">Weight</label>
+
+      <p style="color:black;font-size: small;margin-left: 13%;">Height</p>
       <center>
-        <input class="textfield1" value="{{uweight}}"  type="text" id="iweight" name="uweight"
-          placeholder="Weight (Kg)">
-        <br>
+      <input type="number" class="textfield1" style="background: rgba(196, 196, 196, 0.36);" name="uheight" value="{{uheight}}" id="iheight" placeholder="Height" required>
       </center>
-      <label for="fheight" style=" margin-left: 20%;font-family: Poppins;">Height</label>
-      <center>
-        <input class="textfield1" value="{{uheight}}"  margin-bottom: 16.5%;" type="text"
-          id="iheight" name="uheight" placeholder="Height (cm)">
-        <br>
-      </center>
-      <br>
       <input name="selectbtn" value="{{selectbtn}}" type="hidden" placeholder="btn" type="text" id="btnselect">
 
     </div>
+
+    <div class="vl"></div>
     <!-- Second -->
     <div class="second">
 
-      <h1 class="sdetails" style="margin-top: 10%;font-size: medium;">Type Of Treatment</h1>
+      <h1 class="sdetails" style="margin-top: 10%;font-size: 150%;">Type of Treatment</h1>
       <center>
         <div style="margin: auto; margin-top: 5%;">
           <button id="btn1" type="button" onclick="passive()" name="button" value="Passive" class="button1" style="margin-top: 6%;">Passive</button>
@@ -104,7 +98,7 @@
           <br>
           <br>
       </center>
-      <div style="margin-top: 0%;">
+      <div style="margin-top: 4%;">
         <div>
           <button class="confirm">Confirm</button>
         </div>

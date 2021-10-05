@@ -1,3 +1,7 @@
+
+
+window.onload = check;
+
 function check() 
     {
 
@@ -18,9 +22,8 @@ function check()
       if (a == "cctive isokinetic") {
         document.getElementById("btn5").focus();
       }
-      let z = "{{uname}}";
-
-    window.onload = check;
+    }
+      
 
     function passive() {
 
@@ -45,9 +48,9 @@ function check()
 
       document.getElementById("btnselect").value = "Acctive isokinetic";
     }
-  }
+  
 
-  function myprofile(clr) {
+function myprofile(clr) {
     location.href = clr;
 }
 
