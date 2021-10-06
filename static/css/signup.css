@@ -1,37 +1,110 @@
 
 
-/* signup */
 
-.loginboxsignup{
-    width: 400px;
+.loginbox{
+    width: 360px;
     height:600px;
     background: #C4C4C436;
-    color:rgb(2, 2, 2);
+    color:#fff;
+    opacity: 0.9;
     top:50%;
     left:20%;
-    position:absolute;
-    opacity: 0.9;
     transform:translate(-50%,-50%);
     box-sizing: border-box;
-    padding-left: 70px;
-    padding-right: 70px;
-    margin-top: 3%;
-    border-radius: 20%;
+    padding:40px 40px;
+    position: absolute;
+    border-radius: 60px;
+}
+
+.lname
+{
+    position: absolute;
+    width: 105px;
+    height: 48px;
+    left: 47%;
+    top: 15px;
+    font-family: Poppins;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 36px;
+    line-height: 54px;
+    font-weight: bold;
+    color: #042A73;
+  
+  }
+
+.signupbutton{
+width: 275px;
+height: 36px;
+margin-top: 13px;
+background: #EE723D;
+box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+border-radius: 25px;
+color:white;
+font-size: 20px;
+margin-bottom: 29px;
+box-shadow: 0px 4px 2px rgba(0, 0, 0, 0.4);
+border: 2px solid #EE723D;
+}
+
+.forgot{
+  font-family:poppins;
+  margin-left: 30%;
+  margin-top: 10px;
+}
+
+.dna{
+  font-family: Poppins;
+  margin-left: 14%;
+}
+
+.textfield1{
+    border-radius: 15px;
+    border: 2px;
+    padding: 20px; 
+    width: 200px;
+    height: 15px;  
+}
+
+.textfield2{
+  border-radius: 15px;
+    border: 2px;
+    padding: 20px; 
+    width: 200px;
+    height: 15px; 
     
 }
 
-.loginboxsignup p{
+.logoclass{
+
+  width: 70%;
+  
+}
+.drowclass{
+  width: 3.5%;
+}
+
+
+.imgclass{
+    width:100px;
+    height:100px;
+    border-radius:50%;
+    position:absolute;
+    top:-50px;
+    left: calc(50% - 50px);
+}
+
+.loginbox p{
     margin:0;
     padding-bottom: 3%;
 }
 
-.loginboxsignup input{
+.loginbox input{
 width:100%;
-margin-bottom: 20px;
-color: #fff;
+margin-bottom: 15px;
 }
 
-.loginboxsignup input[type="text"], input[type="password"], input[type="number"], input[type="email"],input[type="date"]
+.loginbox input[type="text"], input[type="password"], input[type="number"], input[type="email"],input[type="date"]
 {
 
     background: transparent; 
@@ -39,32 +112,44 @@ color: #fff;
     font-size: 10px;
 }
 
-.loginboxsignup input[type="submit"]
-{ 
-border:none;
-outline: none;
-height: 30px;
-background-color: rgb(69, 193, 241);
-color: #fff;
-font-size: 12px;
-border-radius: 20px;
-}
-.loginboxsignup input[type="submit"]:hover
-{
-cursor:pointer;
-background: #ffc107;
-color: #000;
-
-}
-.loginboxsignup a{
+.loginbox a{
 text-decoration: none;
 font-size: 12px;
 line-height: 20px;
-/* color: darkgrey; */
 }
 
-.loginboxsignup a:hover
+.loginbox a:hover
 {
-color: #ffc107;
+color: #11100e;
 text-align: center;
+}
+
+
+.forgot{
+  font-family:poppins;
+  margin-left: 29%;
+  margin-top: 20px;
+  color: gray;
+}
+
+.dna{
+  font-family: Poppins;
+  margin-left: 12%;
+  color: gray;
+}
+
+
+@font-face {
+    
+    font-family: Poppins;
+    src: url(fonts/Poppins-Light.woff);
+    font-style: normal;
+    font-weight: 500;
+    font-size: 36px;
+    line-height: 54px;
+
+  }
+
+* {
+   font-family: Poppins;
 }
