@@ -16,8 +16,11 @@
 
 .select1{
   width: 90%;
-  height: 212px;
-  margin: 5%;
+  height: 240px;
+  margin-left: 5%;
+  margin-right: 5%;
+  margin-top: 2%;
+  margin-bottom: 2%;
   background: rgba(196, 196, 196, 0.25);
   border-radius: 47px;
 }
@@ -30,7 +33,7 @@
   background: #EE723D;
   border-radius: 14px;
   font-size: large;
-  margin-top: 15%;
+  margin-top: 19%;
   color:white;
   border: 2px solid #EE723D;
   }
