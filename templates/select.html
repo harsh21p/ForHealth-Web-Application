@@ -1,227 +1,206 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/select.css') }}">
-        <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/navbar.css') }}">
-        <link rel="stylesheet" href="{{ url_for('static', filename='css/bootstrap.min.css') }}">
-        <link rel="stylesheet" href="{{ url_for('static', filename='css/w3.css') }}">
-        <link rel="stylesheet" href="{{ url_for('static', filename='css/input.css') }}">
-        <script src="{{ url_for('static', filename='js/Supporting_docs/jquery.js') }}"></script>
-        <script src="{{ url_for('static', filename='js/Supporting_docs/bootstrap.bundle.min.js') }}"></script>
-        <style>
 
-        </style>
-    </head>
-    <title>Input End Points</title>
-    <body>
-    <!-- drawer -->
-  
-    <div id="mySidenav" class="sidenav">
-      <a style="text-decoration: none;" href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
-      <div style=" margin:4%; opacity:100%">
-        <a style="text-decoration: none;" href="login">Login</a>
-      </div>
-      <div style=" margin:4%;">
-        <a style="text-decoration: none;" href="/">Home</a>
-      </div>
-      <div style="margin:4%;">
-        <a  style="text-decoration: none;" href="details">Details</a>
-      </div>
-      <div style="margin:4%;">
-        <a style="text-decoration: none;" href="select">Select</a>
-      </div>
-      <div style="margin:4%;">
-        <a style="text-decoration: none;" href="information">Info</a>
-      </div>
+<head>
+  <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/select.css') }}">
+  <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/navbar.css') }}">
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/bootstrap.min.css') }}">
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/w3.css') }}">
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/input.css') }}">
+  <script src="{{ url_for('static', filename='js/Supporting_docs/jquery.js') }}"></script>
+  <script src="{{ url_for('static', filename='js/Supporting_docs/bootstrap.bundle.min.js') }}"></script>
+  <style>
+
+  </style>
+</head>
+<title>Input End Points</title>
+
+<body>
+  <!-- drawer -->
+
+  <div id="mySidenav" class="sidenav">
+    <a style="text-decoration: none;" href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+    <div style=" margin:4%; opacity:100%">
+      <a style="text-decoration: none;" href="login">Login</a>
     </div>
-  
-    <!-- button of drawer -->
-    <div class="navbar" style="padding-top: 0.4%; padding-left:3%; padding-bottom: 6.6%;">
-      <div style="float: left; width: 25%; padding-top: 0.4%;" >
-        <span onclick="openNav()">
-          <img  src="{{ url_for('static', filename='images/drow.png') }}" alt="img" style="width: 9.0%;"></span>
-      </div>
-    
-      <div style="float: left; width: 50%;"> 
-        <h6 class="lname">Information</h6>
-      </div>
-    
-      <div style="float: right; width: 25%; padding-top: 0.5%;">
-        <img  src="{{ url_for('static', filename='images/logo.png') }}" alt="img" style="width: 60%; margin-left: 40%;"></span>
-      </div>
+    <div style=" margin:4%;">
+      <a style="text-decoration: none;" href="/">Home</a>
     </div>
-    <br><br>
-    <!-- button of drawer -->
-    <div class="navbar" style="padding-top: 0.4%; padding-left:3%; padding-bottom: 6.6%; background-color: white; opacity: 100%;">
-      <div style="float: left; width: 25%; padding-top: 0.4%;" >
-        <span onclick="openNav()">
-          <img  src="{{ url_for('static', filename='images/back.png') }}" alt="img" style="width: 9.0%;"></span>
-      </div>
-    
-      <div style="float: left; width: 50%;"> 
-        <center><h6 class="lname1">Input end points</h6></center>
-        
-      </div>
-    
-      <div style="float: right; width: 25%; padding-top: 0.5%;">
-        <img  src="{{ url_for('static', filename='images/Profileimg.png') }}" alt="img" class="imgclass"></span>
-      </div>
+    <div style="margin:4%;">
+      <a style="text-decoration: none;" href="details">Details</a>
+    </div>
+    <div style="margin:4%;">
+      <a style="text-decoration: none;" href="select">Select</a>
+    </div>
+    <div style="margin:4%;">
+      <a style="text-decoration: none;" href="information">Info</a>
+    </div>
+  </div>
+
+  <!-- button of drawer -->
+  <div class="navbar" style="padding-top: 0.4%; padding-left:3%; padding-bottom: 6.6%;">
+    <div style="float: left; width: 25%; padding-top: 0.4%;">
+      <span onclick="openNav()">
+        <img src="{{ url_for('static', filename='images/drow.png') }}" alt="img" style="width: 9.0%;"></span>
     </div>
 
-    <div style="float: left; width: 25%; margin-left: 8%;">
-      <input type="range">
+    <div style="float: left; width: 50%;">
+      <h6 class="lname">Information</h6>
     </div>
 
-    
-
-    <div class="select1">
-      <div style="float: left; width: 35%;">
-
-        <a href="#">
-          <center>
-             <button class="manualbtn">Manual</button>
-          </center>
-         </a>
-
-      </div>
-
-      <div style="float: right; width: 65%;">
-
-        <a href="#">
-          <center>
-            Hello
-          </center>
-         </a>
-
-      </div>
-    
+    <div style="float: right; width: 25%; padding-top: 0.5%;">
+      <img src="{{ url_for('static', filename='images/logo.png') }}" alt="img"
+        style="width: 60%; margin-left: 40%;"></span>
     </div>
+  </div>
+  <br><br>
+  <!-- button of drawer -->
+  <div class="navbar"
+    style="padding-top: 0.4%; padding-left:3%; padding-bottom: 6.6%; background-color: white; opacity: 100%;">
+    <div style="float: left; width: 25%; padding-top: 0.4%;">
+      <a href="details">
+        <span>
+          <img src="{{ url_for('static', filename='images/back.png') }}" alt="img" style="width: 9.0%;"></span>
+    </div></a>
 
-    <div class="select1">
-      <div style="float: left; width: 35%;">
-
-        <a href="#">
-          <center>
-             <button class="manualbtn">Auto</button>
-          </center>
-         </a>
-
-      </div>
-
-      <div style="float: right; width: 65%;">
-
-        <a href="#">
-          <center>
-            Hello
-          </center>
-         </a>
-
-      </div>
-    
-    </div>
-
-
-  <!-- drower+navbar -->
-        <center>
-        <div class="part1">
-
-            <button style="margin-top: 15%;" onclick="enable()"class="button1">Manual</button>
-            <br>
-            <button style="margin-top: 25%;"  onclick="disable()" class="button1">Auto</button>
-        </div>
+    <div style="float: left; width: 50%;">
+      <center>
+        <h6 class="lname1">Input end points</h6>
       </center>
-        <form action="" id="formofselect" method="POST">
-        <div class="part2">
 
-          <button type="button" class="btn btn-primary mb-2" style="margin-top: 8%; margin-left: 38%;background-color: black;" onclick="record1()" >Record</button>  
-          <button type="button" class="btn btn-primary mb-2" style="margin-top: 8%; margin-left: 3%; background-color: black;" onclick="record2()" >Record</button>  
-          <br>
-          <center>
-            <input name="point1" value="{{point1}}"  class="input1" id="first"/>
-         
-            <input name="point2" value="{{point2}}" class="input2" id="second"/><br>
-            </center>
-            <button type="button" class="btn btn-primary mb-2" style="margin-top: 2%; margin-left: 39.5%;background-color: black;" onclick="edit1()" >Edit</button>  
-            <button type="button" class="btn btn-primary mb-2" style="margin-top: 2%; margin-left: 6.5%; background-color: black;" onclick="edit2()" >Edit</button>  
+    </div>
 
-            <button type="button" class="btn btn-primary mb-2" style="margin-top: 14%; margin-left: 38%;background-color: black;" onclick="record3()" >Record</button>  
-            <button type="button" class="btn btn-primary mb-2" style="margin-top: 14%; margin-left: 3%; background-color: black;" onclick="record4()" >Record</button> 
-            <br>
-            <center>
-            <input  name="point1" value="{{point1}}" class="input3" id="third"/>
-         
-            <input name="point2" value="{{point2}}" class="input4" id="fourth"/>
-            <br>
-            </center>
-            <button type="button" class="btn btn-primary mb-2" style="margin-top: 2%; margin-left: 39.5%;background-color: black;" onclick="edit3()" >Edit</button>  
-            <button type="button" class="btn btn-primary mb-2" style="margin-top: 2%; margin-left: 6.5%; background-color: black;" onclick="edit4()" >Edit</button>  
-              <a href="information">
-              <button style="margin-left: 80%; margin-top: 10%;" type="submit" class="btn btn-primary mb-2">Continue</button>
-              </a>
+    <div style="float: right; width: 25%; padding-top: 0.5%;">
+      <img src="{{ url_for('static', filename='images/Profileimg.png') }}" alt="img" class="imgclass"></span>
+    </div>
+  </div>
 
-        </div>
-       
-      </form>
+  <div style="float: left; width: 25%; margin-left: 8%; font-family: Poppinsbold; font-weight: 600; font-size: 18px;">
+    <center><b>Resistance</b></center>
+    <input type="range" style="position: relative;">
+    <div style="margin-top: -4%;">
+      <div style="float: left; width: 10%; font-size: small;">
+        <center>Low</center>
+      </div>
+      <div style="float: left; width: 80%;font-size: small;">
+        <center>Medium</center>
+      </div>
+      <div style="float: right; width: 10%;font-size: small;">
+        <center>High</center>
+      </div>
+    </div>
+  </div>
+  <br><br><br><br>
 
 
-    <script>
-      function openNav() {
-        document.getElementById("mySidenav").style.width = "350px";
-      }
-  
-      function closeNav() {
-       document.getElementById("mySidenav").style.width = "0";
-      }
 
-        function disable(){
-          document.getElementById("first").disabled = "true";
-          document.getElementById("second").disabled = "true";
-          document.getElementById("third").removeAttribute('disabled');
-          document.getElementById("fourth").removeAttribute('disabled');
-        }
+  <div class="select1">
+    <div style="float: left; width: 35%;">
 
-        function enable(){
-          document.getElementById("first").removeAttribute('disabled');
-          document.getElementById("second").removeAttribute('disabled');
-          document.getElementById("third").disabled = "true";
-          document.getElementById("fourth").disabled = "true";
-        }
+      <center>
+        <button onclick="enable()" class="manualbtn">Manual</button>
+      </center>
 
-        function record1(){
-          document.getElementById("first").disabled = "true";
+    </div>
 
-        }
-        function record2(){
-          document.getElementById("second").disabled = "true";
-        }
+    <div style="float: right; width: 65%;">
+      <button type="button" class="btnrec" onclick="record1()"><b>Record</b></button>
+      <button type="button" class="btnrec" style="margin-left: 20.7%;" onclick="record2()"><b>Record</b></button>
+      <center>
+        <input name="point1" value="{{point1}}" class="input1" id="first">
+        <input name="point2" value="{{point2}}" class="input2" id="second" /><br>
+      </center>
 
-          function record3(){
-          document.getElementById("third").disabled = "true";
-          }
+    </div>
 
-          function record4(){
-          document.getElementById("fourth").disabled = "true";
-          }
+  </div>
+  <form action="" id="formofselect" method="POST">
 
-          function edit1(){
-            document.getElementById("first").removeAttribute('disabled');
+    <div class="select1">
+      <div style="float: left; width: 35%;">
+        <center>
+          <button onclick="disable()" class="manualbtn">Auto</button>
+        </center>
 
-        }
-        function edit2(){
-          document.getElementById("second").removeAttribute('disabled');
-        }
+      </div>
 
-          function edit3(){
-            document.getElementById("third").removeAttribute('disabled');
-          }
+      <div style="float: right; width: 65%;">
+        <button type="button" class="btnrec" onclick="record3()"><b>Record</b></button>
+        <button type="button" class="btnrec" style="margin-left: 20.7%;" onclick="record4()"><b>Record</b></button>
+        <center>
+          <input name="point1" value="{{point1}}" class="input1" id="third">
+          <input name="point2" value="{{point2}}" class="input2" id="fourth" /><br>
+        </center>
 
-          function edit4(){
-            document.getElementById("fourth").removeAttribute('disabled');
-          }
+      </div>
+
+    </div>
+
+    <a href="information">
+      <button style="margin-left: 80%; margin-top: 10%;" type="submit" class="btn btn-primary mb-2">Continue</button>
+    </a>
+
+    </div>
+
+  </form>
 
 
-        
-      </script>
+  <script>
+    function openNav() {
+      document.getElementById("mySidenav").style.width = "350px";
+    }
 
-    </body>
+    function closeNav() {
+      document.getElementById("mySidenav").style.width = "0";
+    }
+
+    function disable() {
+      document.getElementById("first").disabled = "true";
+      document.getElementById("second").disabled = "true";
+      document.getElementById("third").removeAttribute('disabled');
+      document.getElementById("fourth").removeAttribute('disabled');
+    }
+
+    function enable() {
+      document.getElementById("first").removeAttribute('disabled');
+      document.getElementById("second").removeAttribute('disabled');
+      document.getElementById("third").disabled = "true";
+      document.getElementById("fourth").disabled = "true";
+    }
+
+    function record1() {
+      document.getElementById("first").disabled = "true";
+
+    }
+    function record2() {
+      document.getElementById("second").disabled = "true";
+    }
+
+    function record3() {
+      document.getElementById("third").disabled = "true";
+    }
+
+    function record4() {
+      document.getElementById("fourth").disabled = "true";
+    }
+
+    function edit1() {
+      document.getElementById("first").removeAttribute('disabled');
+
+    }
+    function edit2() {
+      document.getElementById("second").removeAttribute('disabled');
+    }
+
+    function edit3() {
+      document.getElementById("third").removeAttribute('disabled');
+    }
+
+    function edit4() {
+      document.getElementById("fourth").removeAttribute('disabled');
+    }
+  </script>
+
+</body>
+
 </html>

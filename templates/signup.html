@@ -1,69 +1,76 @@
 <html>
 
 <head>
-  <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/signup.css') }}">
-  <link rel="stylesheet" href="{{ url_for('static', filename='css/bootstrap.min.css') }}">
-  <link rel="stylesheet" href="{{ url_for('static', filename='css/w3.css') }}">
-  <link rel="stylesheet" href="{{ url_for('static', filename='css/navbar.css') }}">
-  <script src="{{ url_for('static', filename='js/Supporting_docs/jquery.js') }}"></script>
-  <script src="{{ url_for('static', filename='js/Supporting_docs/bootstrap.bundle.min.js') }}"></script>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/signup.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/bootstrap.min.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/w3.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/navbar.css') }}">
+    <script src="{{ url_for('static', filename='js/Supporting_docs/jquery.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/Supporting_docs/bootstrap.bundle.min.js') }}"></script>
 </head>
 
 <title>Signup</title>
- 
+
 <body>
-  <!-- drawer -->
+    <!-- drawer -->
 
-  <div id="mySidenav" class="sidenav">
-    <a style="text-decoration: none;" href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
-    <div style=" margin:4%; opacity:100%">
-      <a style="text-decoration: none;" href="login">Login</a>
+    <div id="mySidenav" class="sidenav">
+        <a style="text-decoration: none;" href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+        <div style=" margin:4%; opacity:100%">
+            <a style="text-decoration: none;" href="login">Login</a>
+        </div>
+        <div style=" margin:4%;">
+            <a style="text-decoration: none;" href="signup">Signup</a>
+        </div>
+        <div style=" margin:4%;">
+            <a style="text-decoration: none;" href="/">Home</a>
+        </div>
     </div>
-    <div style=" margin:4%;">
-      <a style="text-decoration: none;" href="signup">Signup</a>
-    </div>
-    <div style=" margin:4%;">
-      <a style="text-decoration: none;" href="/">Home</a>
-    </div>
-  </div>
 
-  <!-- button of drawer -->
-  <!-- navbar -->
-  <div class="navbar" style="padding-top: 0.4%; padding-left:3%; padding-bottom: 6.6%;">
-    <div style="float: left; width: 25%; padding-top: 0.4%;" >
-      <span onclick="openNav()">
-        <img  src="{{ url_for('static', filename='images/drow.png') }}" alt="img" style="width: 9.0%;"></span>
-    </div>
-  
-    <div style="float: left; width: 50%;"> 
-      <h6 class="lname">Signup</h6>
-    </div>
-  
-    <div style="float: right; width: 25%; padding-top: 0.5%;">
-      <img  src="{{ url_for('static', filename='images/logo.png') }}" alt="img" style="width: 60%; margin-left: 40%;"></span>
-    </div>
-  </div>
-  <!-- drower+navbar -->
+    <!-- button of drawer -->
+    <!-- navbar -->
+    <div class="navbar" style="padding-top: 0.4%; padding-left:3%; padding-bottom: 6.6%;">
+        <div style="float: left; width: 25%; padding-top: 0.4%;">
+            <span onclick="openNav()">
+                <img src="{{ url_for('static', filename='images/drow.png') }}" alt="img" style="width: 9.0%;"></span>
+        </div>
 
-  <div style="float: left; width: 50%;">
+        <div style="float: left; width: 50%;">
+            <h6 class="lname">Signup</h6>
+        </div>
+
+        <div style="float: right; width: 25%; padding-top: 0.5%;">
+            <img src="{{ url_for('static', filename='images/logo.png') }}" alt="img"
+                style="width: 60%; margin-left: 40%;"></span>
+        </div>
+    </div>
+    <!-- drower+navbar -->
+
+    <div style="float: left; width: 50%;">
         <div class="loginbox" style="margin-top: 4%;">
             <form action="" name="login" method="post">
-            <p style="color:black;font-size: small;">Username</p>
-            <input type="text" class="textfield1" style="background: rgba(196, 196, 196, 0.36);" name="username" placeholder="Enter Username" required>
-            <p style="color:black;font-size: small;">Email</p>
-            <input type="email" class="textfield2" style="background: rgba(196, 196, 196, 0.36);" name="password" placeholder="Enter Email" required>
-            <p style="color:black;font-size: small;">Address</p>
-            <input type="text" class="textfield1" style="background: rgba(196, 196, 196, 0.36);" name="username" placeholder="Enter Address" required>
-            <p style="color:black;font-size: small;">Password</p>
-            <input type="password" class="textfield2" style="background: rgba(196, 196, 196, 0.36);" name="password" placeholder="Enter Password" required>
-            <p style="color:black;font-size: small;">Confirm Password</p>
-            <input type="password" class="textfield1" style="background: rgba(196, 196, 196, 0.36);" name="username" placeholder="Enter Password" required>
-            <p style="text-align: center; font-size: x-small; color: red;"><b>{{message1}}</b></p>
-            <a href="login">
-            <button class="signupbutton">Signup</button>
-            </a><br>
-            <a style="text-decoration: none;" href="#" class="forgot">Forgot Password ?</a><br>
-            <a href="login" style="text-decoration: none;" class="dna">Already have an account? <span style="color: #EE723D;"><b>Login</b></span></a>
+                <p style="color:black;font-size: small;">Username</p>
+                <input type="text" class="textfield1" style="background: rgba(196, 196, 196, 0.36);" name="username"
+                    placeholder="Enter Username" required>
+                <p style="color:black;font-size: small;">Email</p>
+                <input type="email" class="textfield2" style="background: rgba(196, 196, 196, 0.36);" name="password"
+                    placeholder="Enter Email" required>
+                <p style="color:black;font-size: small;">Address</p>
+                <input type="text" class="textfield1" style="background: rgba(196, 196, 196, 0.36);" name="username"
+                    placeholder="Enter Address" required>
+                <p style="color:black;font-size: small;">Password</p>
+                <input type="password" class="textfield2" style="background: rgba(196, 196, 196, 0.36);" name="password"
+                    placeholder="Enter Password" required>
+                <p style="color:black;font-size: small;">Confirm Password</p>
+                <input type="password" class="textfield1" style="background: rgba(196, 196, 196, 0.36);" name="username"
+                    placeholder="Enter Password" required>
+                <p style="text-align: center; font-size: x-small; color: red;"><b>{{message1}}</b></p>
+                <a href="login">
+                    <button class="signupbutton">Signup</button>
+                </a><br>
+                <a style="text-decoration: none;" href="#" class="forgot">Forgot Password ?</a><br>
+                <a href="login" style="text-decoration: none;" class="dna">Already have an account? <span
+                        style="color: #EE723D;"><b>Login</b></span></a>
             </form>
         </div>
     </div>
@@ -80,19 +87,19 @@
         background-size: 80%;
         border-radius: 84px;">
         </div>
-    
+
     </div>
 
 
-  <script>
-    function openNav() {
-      document.getElementById("mySidenav").style.width = "350px";
-    }
+    <script>
+        function openNav() {
+            document.getElementById("mySidenav").style.width = "350px";
+        }
 
-    function closeNav() {
-      document.getElementById("mySidenav").style.width = "0";
-    }
-  </script>
+        function closeNav() {
+            document.getElementById("mySidenav").style.width = "0";
+        }
+    </script>
 </body>
 
 

@@ -10,11 +10,10 @@
   font-size: 36px;
   line-height: 54px;
   font-weight: bold;
-  color: #042A73;
-
+  color: #042a73;
 }
 
-.select1{
+.select1 {
   width: 90%;
   height: 240px;
   margin-left: 5%;
@@ -25,32 +24,21 @@
   border-radius: 47px;
 }
 
-.manualbtn{
+.manualbtn {
   width: 240px;
   height: 60px;
   margin: auto;
   font-family: Poppinsdark;
-  background: #EE723D;
+  background: #ee723d;
   border-radius: 14px;
   font-size: large;
   margin-top: 19%;
-  color:white;
-  border: 2px solid #EE723D;
-  }
-
-  @font-face 
-{ 
-    font-family: Poppinsdark;
-    src: url(fonts/Poppins-Medium.woff);
-    font-style: normal;
-    font-weight: 500;
-    font-size: 36px;
-    line-height: 54px;
+  color: white;
+  border: 2px solid #ee723d;
 }
 
-.imgclass
-{
-  border-radius:50%;
+.imgclass {
+  border-radius: 50%;
   width: 23%;
   margin-top: 1%;
   margin-left: 67%;
@@ -67,80 +55,109 @@
   font-size: 36px;
   line-height: 54px;
   font-weight: bold;
-  color: #042A73;
-
+  color: #042a73;
 }
 
-
-.part1{ 
-    float: left;
-    width: 50%;
-
+.part1 {
+  float: left;
+  width: 50%;
 }
 
-.part2{
-    float: right;
-    width: 50%;
-     margin: auto;
+.part2 {
+  float: right;
+  width: 50%;
+  margin: auto;
 }
 
-.button2{
-
-    background-color: black;
-    width: 400px;
-    height: 70px;
-    color: white;
+.button2 {
+  background-color: black;
+  width: 400px;
+  height: 70px;
+  color: white;
 }
-.input1{
-    height: 70px;
-    width: 70px;
-    border-radius: 20%;
-    margin-top: 1%;
-    margin-right: 4%;
-    text-align: center;
-
-}
-.input2{
-    height: 70px;
-    width: 70px;
-    border-radius: 20%;
-    margin-top: 1%;
-    text-align: center;
-}
-
-.input3{
+.input1 {
   height: 70px;
   width: 70px;
   border-radius: 20%;
-  margin-top: 1%;
-  margin-right: 4%;
+  margin-right: 20%;
   text-align: center;
-
+  border: none;
 }
-.input4{
+.input2 {
   height: 70px;
   width: 70px;
   border-radius: 20%;
   margin-top: 1%;
   text-align: center;
+  border: none;
+}
+.btnrec {
+  background: rgba(131, 130, 130, 0.089);
+  border: none;
+  margin-top: 4%;
+  margin-left: 32.3%;
+  width: 62px;
+  height: 23px;
+  font-size: 10px;
+  color: #042a73;
+  padding: 2px;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  margin-bottom: 1.5%;
+  border-radius: 5px;
 }
 
-  @font-face {
-    
-    font-family: Poppins;
-    src: url(fonts/Poppins-Light.woff);
-    font-style: normal;
-    font-weight: 500;
-    font-size: 36px;
-    line-height: 54px;
+.btnrec:focus {
+  background-color: #16161659;
+  color: white;
+}
+.btnrec:hover {
+  background-color: #16161659;
+  color: white;
+}
 
-  }
+.input3 {
+  height: 70px;
+  width: 70px;
+  border-radius: 20%;
+  margin-top: 10%;
+  margin-right: 20%;
+  text-align: center;
+  border: none;
+}
+.input4 {
+  height: 70px;
+  width: 70px;
+  border-radius: 20%;
+  margin-top: 1%;
+  text-align: center;
+  border: none;
+}
+
+@font-face {
+  font-family: Poppins;
+  src: url(fonts/Poppins-Light.woff);
+  font-style: normal;
+  font-weight: 500;
+  font-size: 36px;
+  line-height: 54px;
+}
 
 * {
-   font-family: Poppins;
+  font-family: Poppins;
 }
 
-  
+@font-face {
+  font-family: Poppinsdark;
+  src: url(fonts/Poppins-Medium.woff);
+  font-style: normal;
+  font-weight: 500;
+  font-size: 36px;
+  line-height: 54px;
+}
 
-
- 
+@font-face {
+  font-family: Poppinsbold;
+  src: url(fonts/Poppins-Bold.woff);
+  font-style: normal;
+  font-weight: 600;
+}
