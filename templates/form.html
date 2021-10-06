@@ -87,14 +87,16 @@ function check()
     </div>
   </div>
 <!-- navbar -->
-<div class="navbar" style="padding-top: 0.4%; padding-left:3%; padding-bottom: 6.6%;">
+<div class="navbar" style="padding-top: 0.4%; padding-left:3%; padding-bottom: 7.6%;">
   <div style="float: left; width: 25%; padding-top: 0.4%;" >
     <span onclick="openNav()">
-      <img  src="{{ url_for('static', filename='images/drow.png') }}" alt="img" style="width: 9.0%;"></span>
+      <img  src="{{ url_for('static', filename='images/drow.png') }}" alt="img" style="width: 11%;"></span>
   </div>
 
   <div style="float: left; width: 50%;"> 
+    <center>
     <h6 class="lname">Details</h6>
+  </center>
   </div>
 
   <div style="float: right; width: 25%; padding-top: 0.5%;">
@@ -107,23 +109,22 @@ function check()
     <div class="first">
       <center>
       <img src="{{ url_for('static', filename='images/Profileimg.png') }}" alt="img" class="imgclass"></center>
-      <p style="color:black;font-size: small; margin-left: 13%; margin-top: 10%;" >Name</p>
+      <p style="color:black; font-size: small; margin-left: 13%; margin-top: 10%; margin-bottom: 3.5%;" >Name</p>
       <center>
-      <input type="text" value="{{uname}}" class="textfield1" style="background: rgba(196, 196, 196, 0.36);" name="uname" id="iname" placeholder="Name" required>
+      <input type="text" value="{{uname}}" class="textfield1" style="margin-top: -5%; background: rgba(196, 196, 196, 0.36);" name="uname" id="iname" placeholder="Name" required>
+      </center>
+      <p style="color:black; font-size: small; margin-left: 13%; margin-bottom: 3.5%; margin-top: 5%;">Age</p>
+      <center>
+      <input type="number" value="{{uage}}" class="textfield1" style="margin-top: -5%; background: rgba(196, 196, 196, 0.36);" name="uage" id="iage" placeholder="Age (year)" required>
+      </center>
+      <p style="color:black; font-size: small; margin-left: 13%; margin-bottom: 3.5%;margin-top: 5%;" >Weight</p>
+      <center>
+      <input type="number" class="textfield1" style="margin-top: -5%; background: rgba(196, 196, 196, 0.36);" name="uweight" value="{{uweight}}" id="iweight" placeholder="Weight (kg)" required>
       </center>
 
-      <p style="color:black;font-size: small;margin-left: 13%;">Age</p>
+      <p style="color:black; font-size: small;margin-left: 13%; margin-bottom: 3.5%;margin-top: 5%;">Height</p>
       <center>
-      <input type="number" value="{{uage}}" class="textfield1" style="background: rgba(196, 196, 196, 0.36);" name="uage" id="iage" placeholder="Age (year)" required>
-      </center>
-      <p style="color:black;font-size: small; margin-left: 13%;" >Weight</p>
-      <center>
-      <input type="number" class="textfield1" style="background: rgba(196, 196, 196, 0.36);" name="uweight" value="{{uweight}}" id="iweight" placeholder="Weight (kg)" required>
-      </center>
-
-      <p style="color:black;font-size: small;margin-left: 13%;">Height</p>
-      <center>
-      <input type="number" class="textfield1" style="background: rgba(196, 196, 196, 0.36);" name="uheight" value="{{uheight}}" id="iheight" placeholder="Height (cm)" required>
+      <input type="number" class="textfield1" style=" margin-top: -5%; background: rgba(196, 196, 196, 0.36);" name="uheight" value="{{uheight}}" id="iheight" placeholder="Height (cm)" required>
       </center>
       <input name="selectbtn" value="{{selectbtn}}" type="hidden" placeholder="btn" type="text" id="btnselect">
 
@@ -154,7 +155,9 @@ function check()
       </center>
       <div style="margin-top: 4%;">
         <div>
+          <center>
           <button class="confirm">Confirm</button>
+        </center>
         </div>
       </div>
 

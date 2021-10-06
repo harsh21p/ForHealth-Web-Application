@@ -29,14 +29,16 @@
 
     <!-- button of drawer -->
     <!-- navbar -->
-    <div class="navbar" style="padding-top: 0.4%; padding-left:3%; padding-bottom: 6.6%;">
+    <div class="navbar" style="padding-top: 0.4%; padding-left:3%; padding-bottom: 7.6%;">
         <div style="float: left; width: 25%; padding-top: 0.4%;">
             <span onclick="openNav()">
-                <img src="{{ url_for('static', filename='images/drow.png') }}" alt="img" style="width: 9.0%;"></span>
+                <img src="{{ url_for('static', filename='images/drow.png') }}" alt="img" style="width: 11%;"></span>
         </div>
 
         <div style="float: left; width: 50%;">
-            <h6 class="lname">Signup</h6>
+            <center>
+                <h6 class="lname">Signup</h6>
+            </center>
         </div>
 
         <div style="float: right; width: 25%; padding-top: 0.5%;">
@@ -58,6 +60,9 @@
                 <p style="color:black;font-size: small;">Email</p>
                 <input type="email" class="textfield2" style="background: rgba(196, 196, 196, 0.36);" name="password"
                     placeholder="Enter Email" required>
+                    <p style="color:black;font-size: small;">Contact No.</p>
+                <input type="text" class="textfield2" style="background: rgba(196, 196, 196, 0.36);" name="password"
+                    placeholder="Enter Contact No." required>
                 <p style="color:black;font-size: small;">Address</p>
                 <input type="text" class="textfield1" style="background: rgba(196, 196, 196, 0.36);" name="username"
                     placeholder="Enter Address" required>
@@ -78,18 +83,9 @@
         </div>
     </div>
 
-    <div style="float: right; width: 50%; position: absolute;">
+    <div style="float: right; width: 50%;">
 
-        <div style="
-        width: 635px;
-        height: 555px;
-        margin-top: 15%; 
-        margin-left: 115%;
-        background: url(./static/images/backgroundsignup.jpg), #C4C4C4;
-        background-repeat: no-repeat;
-        background-size: 80%;
-        border-radius: 84px;">
-        </div>
+        <img src="{{ url_for('static', filename='images/signupphoto.png') }}" alt="img" style="margin-right: 0%; width: 90%; margin-top: 10%; margin-left:  10%;">
 
     </div>
 

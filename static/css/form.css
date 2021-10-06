@@ -1,10 +1,9 @@
 
  .lname {
-    position: absolute;
+    
     width: 105px;
     height: 48px;
-    left: 46%;
-    top: 15px;
+    margin-left: 3%;
     font-family: Poppins;
     font-style: normal;
     font-weight: 500;
@@ -23,7 +22,7 @@
     width: 364px;
     height: 533px;
     border-radius: 60px;
-    margin-top: 3%;
+    margin-top: 6%;
     margin-left: 12%;
 }
 
@@ -35,7 +34,7 @@
     width: 364px;
     height: 533px;
     border-radius: 60px;
-    margin-top: 3%;
+    margin-top: 6%;
     margin-right: 12%;
 }
 
@@ -47,7 +46,6 @@
 
 .button1
 {
-    /* position: absolute; */
     width: 292.76px;
     height: 46.33px;
     left: 716.04px;
@@ -68,14 +66,12 @@
  
 .confirm
 {
-    position: absolute;
     width: 157.61px;
     height: 60.21px;
     background: #EE723D;
     font-family: Poppinsdark;
     border-radius: 28px;
     border-color:#ff7337;
-    margin-left: 7%;
     border: 0px;
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
     color: white;
@@ -87,6 +83,41 @@
   height:100px;
   border-radius:50%;
   margin-top: 10%;
+}
+
+.textfield1{
+  border-radius: 15px;
+  border: 2px;
+  padding: 21px; 
+  width: 280px;
+  height: 15px;
+  font-size: 13px;  
+}
+
+.vl {
+border-left: 3px solid rgba(163, 163, 163, 0.2);;
+height: 650px;
+position: absolute;
+left: 50%;
+margin-left: -3px;
+margin-top: 2%;
+}
+
+
+.up{
+/* Username */
+position: absolute;
+width: 73px;
+height: 21px;
+left: 451px;
+top: 389px;
+
+font-family: Poppins;
+font-style: normal;
+font-weight: normal;
+font-size: 14px;
+line-height: 21px;
+color: #000000;
 }
 
 @font-face 
@@ -114,37 +145,3 @@
    font-family: Poppins;
 }
 
-.textfield1{
-      border-radius: 15px;
-      border: 2px;
-      padding: 21px; 
-      width: 280px;
-      height: 15px;
-      font-size: 13px;  
-  }
-
-  .vl {
-    border-left: 4px solid rgba(163, 163, 163, 0.2);;
-    height: 600px;
-    position: absolute;
-    left: 50%;
-    margin-left: -3px;
-    margin-top: 2%;
-  }
-  
-
-  .up{
-    /* Username */
-  position: absolute;
-  width: 73px;
-  height: 21px;
-  left: 451px;
-  top: 389px;
-  
-  font-family: Poppins;
-  font-style: normal;
-  font-weight: normal;
-  font-size: 14px;
-  line-height: 21px;
-  color: #000000;
-  }

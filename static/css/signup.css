@@ -1,11 +1,11 @@
 .loginbox {
   width: 360px;
-  height: 600px;
+  height: 680px;
   background: #c4c4c436;
   color: #fff;
   opacity: 0.9;
-  top: 50%;
-  left: 20%;
+  top: 49%;
+  left: 23%;
   transform: translate(-50%, -50%);
   box-sizing: border-box;
   padding: 40px 40px;
@@ -14,11 +14,8 @@
 }
 
 .lname {
-  position: absolute;
   width: 105px;
   height: 48px;
-  left: 47%;
-  top: 15px;
   font-family: Poppins;
   font-style: normal;
   font-weight: 500;
