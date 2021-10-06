@@ -1,26 +1,18 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/select.css') }}"></link>
-        <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/form.css') }}"></link>
+        <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/select.css') }}">
+        <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/navbar.css') }}">
         <link rel="stylesheet" href="{{ url_for('static', filename='css/bootstrap.min.css') }}">
         <link rel="stylesheet" href="{{ url_for('static', filename='css/w3.css') }}">
         <script src="{{ url_for('static', filename='js/Supporting_docs/jquery.js') }}"></script>
         <script src="{{ url_for('static', filename='js/Supporting_docs/bootstrap.bundle.min.js') }}"></script>
         <style>
-            
-          .navbar img:hover{
-            transform: scale(1.1);
-    
-          }
+
         </style>
     </head>
     <title>Input End Points</title>
     <body>
-
-
-   
-
     <!-- drawer -->
   
     <div id="mySidenav" class="sidenav">
@@ -43,20 +35,88 @@
     </div>
   
     <!-- button of drawer -->
-    <!-- navbar -->
-    <div class="navbar">
-      <span style="transition: transform .2s;font-size:30px;cursor:pointer;color: white;" onclick="openNav()">&#9776;</span>
-      <h6>Input End Points</h6>
-      <img onclick="myprofile('dashboard')" src="{{ url_for('static', filename='images/profile.png') }}" name="profilepic" class="profileimg"/>
+    <div class="navbar" style="padding-top: 0.4%; padding-left:3%; padding-bottom: 6.6%;">
+      <div style="float: left; width: 25%; padding-top: 0.4%;" >
+        <span onclick="openNav()">
+          <img  src="{{ url_for('static', filename='images/drow.png') }}" alt="img" style="width: 9.0%;"></span>
+      </div>
+    
+      <div style="float: left; width: 50%;"> 
+        <h6 class="lname">Information</h6>
+      </div>
+    
+      <div style="float: right; width: 25%; padding-top: 0.5%;">
+        <img  src="{{ url_for('static', filename='images/logo.png') }}" alt="img" style="width: 60%; margin-left: 40%;"></span>
+      </div>
     </div>
-  
-    <script>
-      function myprofile(clr) {
-        location.href = clr;
-      }
-    </script>
+    <br><br>
+    <!-- button of drawer -->
+    <div class="navbar" style="padding-top: 0.4%; padding-left:3%; padding-bottom: 6.6%; background-color: white; opacity: 100%;">
+      <div style="float: left; width: 25%; padding-top: 0.4%;" >
+        <span onclick="openNav()">
+          <img  src="{{ url_for('static', filename='images/back.png') }}" alt="img" style="width: 9.0%;"></span>
+      </div>
+    
+      <div style="float: left; width: 50%;"> 
+        <center><h6 class="lname1">Input end points</h6></center>
+        
+      </div>
+    
+      <div style="float: right; width: 25%; padding-top: 0.5%;">
+        <img  src="{{ url_for('static', filename='images/Profileimg.png') }}" alt="img" class="imgclass"></span>
+      </div>
+    </div>
+
+    <div class="select1">
+      <div style="float: left; width: 35%;">
+
+        <a href="#">
+          <center>
+             <button class="manualbtn">Manual</button>
+          </center>
+         </a>
+
+      </div>
+
+      <div style="float: right; width: 65%;">
+
+        <a href="#">
+          <center>
+            Hello
+          </center>
+         </a>
+
+      </div>
+    
+    </div>
+
+
+    <div class="select1">
+      <div style="float: left; width: 35%;">
+
+        <a href="#">
+          <center>
+             <button class="manualbtn">Auto</button>
+          </center>
+         </a>
+
+      </div>
+
+      <div style="float: right; width: 65%;">
+
+        <a href="#">
+          <center>
+            Hello
+          </center>
+         </a>
+
+      </div>
+    
+    </div>
+
+
   <!-- drower+navbar -->
-        <center>
+        <!-- <center>
         <div class="part1">
 
             <button style="margin-top: 15%;" onclick="enable()"class="button1">Manual</button>
@@ -99,7 +159,7 @@
 
         </div>
        
-      </form>
+      </form> -->
 
 
     <script>
