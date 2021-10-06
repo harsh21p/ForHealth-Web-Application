@@ -47,6 +47,23 @@
     font-size: 36px;
     margin-left: 50px;
   }
+
+  .lname{
+    position: absolute;
+    width: 105px;
+    height: 48px;
+    left: 42%;
+    top: 15px;
+    font-family: Poppins;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 36px;
+    line-height: 54px;
+    font-weight: bold;
+    color: #042A73;
+    
+  }
+
   
   @media screen and (max-height: 450px) {
     .sidenav {padding-top: 15px;}

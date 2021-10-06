@@ -192,7 +192,7 @@ $(document).ready(function() {
             maxPadding: 0.2,
             title: {
                 text: 'Value',
-                margin: 10
+                margin: 0
             }
         },
         series: [{
