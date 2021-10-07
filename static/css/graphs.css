@@ -1,115 +1,107 @@
-
-
-.fbutton1{
-    height:60px;
-    width:170px;
-    /* position: absolute; */
-    background: #EE723D;
-    font-family: Poppinsdark;
-    border-radius: 20px;
-    border-color:#ff7337;
-    border: 0px;
-    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-    color: white;
-    margin: 2%;
-    margin-left: 15%;
+.lname {
+  width: 105px;
+  height: 48px;
+  font-family: Poppins;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 36px;
+  line-height: 54px;
+  font-weight: bold;
+  color: #042a73;
 }
 
-.fbutton2{
-    height:60px;
-    width:170px;
-    /* position: absolute; */
-    background: #EE723D;
-    font-family: Poppinsdark;
-    border-radius: 20px;
-    border-color:#ff7337;
-    border: 0px;
-    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-    color: white;
-    margin: 2%;
-
+.angle {
+  position: absolute;
+  width: 386px;
+  height: 452px;
+  left: 52px;
+  top: 300px;
+  background: #c4c4c436;
+  border-radius: 10px;
 }
 
-.fbutton3{
-    height:60px;
-    width:170px;
-    /* position: absolute; */
-    background: #EE723D;
-    font-family: Poppinsdark;
-    border-radius: 20px;
-    border-color:#ff7337;
-    border: 0px;
-    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-    color: white;
-    margin: 2%;
-
+.graphs {
+  position: absolute;
+  width: 658px;
+  height: 452px;
+  left: 487px;
+  top: 300px;
+  background: #c4c4c436;
+  border-radius: 10px;
 }
 
-.fbutton4{
-    background-color:black;
-    height:60px;
-    width:100px;
-    color:white;
-    margin-left: 25%;
-    border-radius: 10%;
+.imgclass {
+  border-radius: 50%;
+  width: 38%;
+  margin-left: 45%;
 }
 
+.play{
+width: 154px;
+height: 75px;
+background: #EE723D;
+border-radius: 15px;
+border: none;
+box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
 
-.fbutton1:hover{background-color:rgb(28, 202, 255);}
-.fbutton2:hover{background-color:rgb(255, 238, 2);}
-.fbutton3:hover{background-color:rgb(16, 128, 255);}
-.fbutton4:hover{background-color:rgb(255, 16, 16);}
+}
+.graph1{
 
-
-.fbutton1:focus{background-color:rgb(94, 255, 30);}
-.fbutton2:focus{background-color:rgb(248, 121, 1);}
-.fbutton3:focus{background-color:rgb(255, 0, 0);}
-
-
-.float-container {
-    border: 3px solid #fff;
-    padding: 20px;
+height: 310px;
+background: #FFFFFF;
+border-radius: 10px;
+float: left;
+width: 45%;
+margin-left: 3%;
 }
 
-.float-child1{
-    width: 30%;
-    height: 450px;
-    float: left;
-    /* padding: 10px; */
-    /* border: 2px solid rgb(0, 0, 0); */
-    margin-left: 2%;
-    border-radius: 5%;
+.graph2{
+  height: 310px;
+  background: #FFFFFF;
+  border-radius: 10px;
+  float: right;
+  width: 45%;
+  margin-right: 3%;
+  }
+
+    .anglediv{
+      width: 180px;
+    height: 50px;
+    background: white;
+    border-radius: 6px;
+    border: none;
+    margin-left: 46%;
+    margin-top: 82%;
+    padding: 2%;
     
-}  
 
-.float-child2 {
-    background-color: #C4C4C440;
-    width: 65%;
-    float: left;
-    padding: 0px;
-    /* border: 2px solid rgb(0, 0, 0); */
-    margin-left: 2%;
-    border-radius: 5%;
+    }
 
-}  
+@font-face {
+  font-family: Poppins;
+  src: url(fonts/Poppins-Light.woff);
+  font-style: normal;
+  font-weight: 500;
+  font-size: 36px;
+  line-height: 54px;
+}
 
-.float-child3{
-    width: 47%;
-    float: left;
-    padding: 10px;
-    /* border: 2px solid rgb(0, 0, 0);  */
-    margin-left: 2%;
-    margin-top: 2%;
-}  
+* {
+  font-family: Poppins;
+}
 
-.float-child4{
-    width: 47%;
-    float: left;
-    padding: 10px;
-    /* border: 2px solid rgb(0, 0, 0); */
-    margin-left: 2%;
-    margin-top: 2%;
+@font-face {
+  font-family: Poppinsdark;
+  src: url(fonts/Poppins-Medium.woff);
+  font-style: normal;
+  font-weight: 500;
+  font-size: 36px;
+  line-height: 54px;
+}
 
-}  
-
-
+@font-face {
+  font-family: Poppinsbold;
+  src: url(fonts/Poppins-Bold.woff);
+  font-style: normal;
+  font-weight: 600;
+}

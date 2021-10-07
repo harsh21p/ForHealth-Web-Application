@@ -1,9 +1,6 @@
 .lname {
-  position: absolute;
   width: 105px;
   height: 48px;
-  left: 44%;
-  top: 15px;
   font-family: Poppins;
   font-style: normal;
   font-weight: 500;
@@ -62,8 +59,6 @@
 .lname1 {
   width: 305px;
   height: 48px;
-  left: 38%;
-  top: 15px;
   font-family: Poppins;
   font-style: normal;
   font-weight: 500;
