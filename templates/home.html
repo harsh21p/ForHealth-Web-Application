@@ -1,60 +1,48 @@
 <html>
 
 <head>
-  <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/select.css') }}">
-  </link>
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/home.css') }}">
   <link rel="stylesheet" href="{{ url_for('static', filename='css/bootstrap.min.css') }}">
   <link rel="stylesheet" href="{{ url_for('static', filename='css/w3.css') }}">
-  <link rel="stylesheet" href="{{ url_for('static', filename='css/navbar.css') }}">
   <script src="{{ url_for('static', filename='js/Supporting_docs/jquery.js') }}"></script>
   <script src="{{ url_for('static', filename='js/Supporting_docs/bootstrap.bundle.min.js') }}"></script>
 </head>
 <title>Home</title>
 
 <body>
-  <!-- drawer -->
-
-  <div id="mySidenav" class="sidenav">
-    <a style="text-decoration: none;" href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
-    <div style=" margin:4%; opacity:100%">
-      <a style="text-decoration: none;" href="login">Login</a>
+  <div style="float: left; width: 40%;">
+    <div>
+      <center><img src="{{ url_for('static', filename='images/logo.png') }}" alt="img"
+          style="width: 70%;margin-top: 12%;"></center>
     </div>
-    <div style=" margin:4%;">
-      <a style="text-decoration: none;" href="signup">Signup</a>
+    <div>
+      <center><img src="{{ url_for('static', filename='images/photo1.png') }}" alt="img"
+          style="width: 45%;margin-top: 12%;">
+        <br>
+        <a href="login">
+          <button type="button" class="Loginbtn">Login</button></a>
+        <br>
+        <a href="signup">
+          <button class="Loginbtn">Register</button></a>
+      </center>
+
     </div>
-    <div style=" margin:4%;">
-      <a style="text-decoration: none;" href="/">Home</a>
+  </div>
+
+  <div style="float: right; width: 60%;">
+
+    <div class="div1">
+      <div class="div2">
+        <div class="div3">
+          <p class="ptag">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Scelerisque varius condimentum amet viverra sit in
+            platea at.
+          </p>
+        </div>
+      </div>
     </div>
 
   </div>
-
-  </div>
-
-  <!-- button of drawer -->
-  <!-- navbar -->
-  <div class="navbar">
-    <span style="transition: transform .2s;font-size:30px;cursor:pointer;color: white;"
-      onclick="openNav()">&#9776;</span>
-    <h6 name="username" style="text-align: center; margin:auto;">Welcome To ForHealth</h6>
-  </div>
-  <!-- drower+navbar -->
-  <div>
-    <br><br>
-    <center><img src="{{ url_for('static', filename='images/logo.png') }}" alt="Logo" height="100">
-      <h3>Home Page</h3>
-      <br><br>
-      <a href="login"><button type="button" class="button1">Login</button></a>
-    </center>
-  </div>
-  <script>
-    function openNav() {
-      document.getElementById("mySidenav").style.width = "350px";
-    }
-
-    function closeNav() {
-      document.getElementById("mySidenav").style.width = "0";
-    }
-  </script>
 
 </body>
 

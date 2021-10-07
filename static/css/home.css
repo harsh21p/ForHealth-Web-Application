@@ -1,0 +1,86 @@
+.Loginbtn {
+  width: 240px;
+  height: 60px;
+  margin: auto;
+  font-family: Poppinsdark;
+  background: #042a73;
+  border-radius: 14px;
+  font-size: large;
+  margin-top: 13%;
+  color: white;
+  border: 2px solid #042a73;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+
+.div1 {
+  position: absolute;
+  width: 872px;
+  height: 578px;
+  left: 464px;
+  top: 128px;
+  background: #ee723d;
+  box-shadow: -22px -13px 4px rgba(0, 0, 0, 0.1);
+  border-radius: 97px;
+}
+.div2 {
+  position: absolute;
+  width: 872px;
+  height: 578px;
+  left: 49px;
+  top: 49px;
+  background: #ed672d;
+  border-radius: 97px;
+}
+.div3 {
+  position: absolute;
+  width: 872px;
+  height: 578px;
+  left: 49px;
+  top: 49px;
+  background: #eb5e22;
+  border-radius: 97px;
+}
+.ptag {
+  position: absolute;
+  width: 514px;
+  height: 348px;
+  left: 99px;
+  top: 119px;
+
+  font-family: Poppins;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 36px;
+  line-height: 54px;
+
+  color: #ffffff;
+}
+
+@font-face {
+  font-family: Poppins;
+  src: url(fonts/Poppins-Light.woff);
+  font-style: normal;
+  font-weight: 500;
+  font-size: 36px;
+  line-height: 54px;
+}
+
+* {
+  font-family: Poppins;
+}
+
+@font-face {
+  font-family: Poppinsdark;
+  src: url(fonts/Poppins-Medium.woff);
+  font-style: normal;
+  font-weight: 500;
+  font-size: 36px;
+  line-height: 54px;
+}
+
+@font-face {
+  font-family: Poppinsbold;
+  src: url(fonts/Poppins-Bold.woff);
+  font-style: normal;
+  font-weight: 600;
+}
