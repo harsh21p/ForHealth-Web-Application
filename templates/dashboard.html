@@ -1,129 +1,118 @@
-
+<!DOCTYPE html>
 <html>
-  <head>
-      <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/dashboard.css') }}"></link>
-      <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/select.css') }}"></link>
-      <link rel="stylesheet" href="{{ url_for('static', filename='css/bootstrap.min.css') }}">
-      <link rel="stylesheet" href="{{ url_for('static', filename='css/w3.css') }}">
-      <script src="{{ url_for('static', filename='js/Supporting_docs/jquery.js') }}"></script>
-      <script src="{{ url_for('static', filename='js/Supporting_docs/bootstrap.bundle.min.js') }}"></script>
-      <title>
-          
-        Dashboard
 
-      </title>
+<head>
+  <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/graphs.css') }}">
+  <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/navbar.css') }}">
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/bootstrap.min.css') }}">
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/w3.css') }}">
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/input.css') }}">
+  <script src="{{ url_for('static', filename='js/Supporting_docs/jquery.js') }}"></script>
+  <script src="{{ url_for('static', filename='js/Supporting_docs/bootstrap.bundle.min.js') }}"></script>
+  <script src="{{ url_for('static', filename='js/form.js') }}"></script>
+</head>
+<title>Input End Points</title>
 
-      <style>
-            
-        .navbar img:hover{
-          transform: scale(1.1);
-  
-        }
-      </style>
-      <body>
-         <!-- drawer -->
-  
-         <div id="mySidenav" class="sidenav">
-          <a style="text-decoration: none;" href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
-          <div style=" margin:4%; opacity:100%">
-            <a style="text-decoration: none;" href="login">Login</a>
-          </div>
-          <div style=" margin:4%;">
-            <a style="text-decoration: none;" href="/">Home</a>
-          </div>
-          <div style="margin:4%;">
-            <a  style="text-decoration: none;" href="details">Details</a>
-          </div>
-          <div style="margin:4%;">
-            <a style="text-decoration: none;" href="select">Select</a>
-          </div>
-          <div style="margin:4%;">
-            <a style="text-decoration: none;" href="information">Info</a>
-          </div>
-        </div>
-  
-    <!-- button of drawer -->
-    <!-- navbar -->
-    <div class="navbar">
-      <span style="transition: transform .2s;font-size:30px;cursor:pointer;color: white;" onclick="openNav()">&#9776;</span>
-      <h6 name="username">Welcome!! &nbsp; {{user}}</h6>
-      <img onclick="myprofile('dashboard')" src="{{ url_for('static', filename='images/profile.png') }}" name="profilepic" class="profileimg"/>
+<body>
+  <!-- drawer -->
+
+  <!-- Myprofile drawer -->
+
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/myprofilenav.css') }}">
+
+  <div id="myPronav" class="divnav">
+   <div style="margin:4%;">
+    <a style="text-decoration: none;" href="/">
+    <center>
+      <button class="buttonnav2">Logout</button>
+    </center>
+    </a>
+   </div>
+   <div style="margin:4%;">
+    <a onclick="closeProNav()" style="text-decoration: none; cursor: pointer;" >
+    <center>
+      <button class="buttonnav3">Close</button>
+    </center>
+    </a>
+   </div>
+ </div>
+
+ <script>
+  function openProNav() {
+    document.getElementById("myPronav").style.width = "120px";
+  }
+
+  function closeProNav() {
+    document.getElementById("myPronav").style.width = "0";
+  }
+</script>
+
+  <div id="mySidenav" class="sidenav" style="height: 370px; top: 105px;">
+    <div style=" margin:4%;">
+     <a style="text-decoration: none;" href="/">Home</a>
+   </div>
+   <div style="margin:4%;">
+     <a  style="text-decoration: none;" href="details">Details</a>
+   </div>
+   <div style="margin:4%;">
+     <a style="text-decoration: none;" href="select">Input</a>
+   </div>
+   <div style="margin:4%;">
+     <a style="text-decoration: none;" href="information">Graphs</a>
+   </div>
+   <div style=" margin:4%;">
+     <a style="text-decoration: none; cursor: pointer;" onclick="closeNav()" >Close</a>
+   </div>
+ </div>
+
+ <script>
+   function openNav() {
+     document.getElementById("mySidenav").style.width = "236px";
+   }
+
+   function closeNav() {
+     document.getElementById("mySidenav").style.width = "0";
+   }
+ </script>
+  <!-- button of drawer -->
+  <div class="navbar" style="padding-top: 1%; padding-left:3%; padding-bottom: 7.6%;">
+    <div style="float: left; width: 25%; padding-top: 0.4%;" >
+      <span onclick="openNav()">
+        <img  src="{{ url_for('static', filename='images/drow.png') }}" alt="img" style="width: 11%;"></span>
     </div>
   
-    <script>
-      function myprofile(clr) {
-        location.href = clr;
-      }
-    </script>
-  <!-- drower+navbar -->
+    <div style="float: left; width: 50%;">
+      <center>
+      <h6 class="lname" style="margin-left: 3%;">Profile</h6>
+    </center>
+    </div>
+  
+    <div style="float: right; width: 25%; padding-top: 1%;">
+      <img src="{{ url_for('static', filename='images/logo.png') }}" alt="img"
+        style="width: 60%; margin-left: 40%;"></span>
+    </div>
+  </div>
+  <br>
+  <!-- button of drawer -->
+  <div class="navbar"
+    style="padding-top: 0.4%; padding-left:3%; padding-bottom: 6.6%; background-color: white; opacity: 100%;">
+    <div style="float: left; width: 15%; padding-top: 0.4%;">
+      <a href="details">
+        <span>
+          <img src="{{ url_for('static', filename='images/back.png') }}" alt="img" style="width: 15%; margin-left: 16%;"></span></a>
+    </div>
 
-          <div>
-              <br><br>
-            <center><img src="{{ url_for('static', filename='images/logo.png') }}" alt="Logo" height="100">
-              <br><br>
-             <h3 style="color: rgb(15, 161, 15);"> <b>Login Successful</b></h3>
-              </center>
-              <br>
+    <div style="float: left; width: 70%;">
+      <center>
+        <h6 class="lname">Welcome</h6>
+      </center>
+    </div>
+    <div style="float: right; width: 15%; padding-top: 0.5%;">
+      <a style="cursor: pointer; text-decoration: none;" onclick="openProNav()">
+        <img src="{{ url_for('static', filename='images/Profileimg.png') }}" alt="img" class="imgclass" ></a>
+    </div>
+  </div>
 
-              <div class="part1">
-                  <center>
-                  <form class="submitform" method="post" action="">
-                      <input type="text" class="lat"  name="value1" placeholder="Enter value1" required><br>
-                      <input type="text" class="lat"  name="value2" placeholder="Enter value2" required><br>
-                      <button class="subbutton1">Submit</button>
-                  </form>
-                  </center>
-                  <div>
-                    <center>
-                    <a href="/" >
-                      <button type="submit" style="margin: 0%;" class="subbutton" name="logout">Log out</button>
-                      </a>
-                    </center>
-                  </div>
-                  <center>
-                    <div >
-                      <br>
-                        <h6 style="color: green;"><b>Value1 = {{value1db}} </b></h6>
-                        <h6 style="color: green;"><b>Value2 = {{value2db}}</b></h6>
-                    </div>
-                  </center>
-              </div>
+</body>
 
-              <!-- chart starts -->
-              <div class="part2">
-            
-                <div class="container-fluid">
-                 
-                    <div class="row">
-          
-                        <div class="container-fluid" id="data-container"></div>
-          
-                    </div>
-                </div>
-
-              </div>
-
-          </div>
-         
-          <script>
-            function openNav() {
-              document.getElementById("mySidenav").style.width = "350px";
-            }
-        
-            function closeNav() {
-             document.getElementById("mySidenav").style.width = "0";
-            }
-            </script>
-
-           <!-- imports for chart -->
-
-           <script src="/static/js/Supporting_docs/jquery.min.js"></script>
-           <script src="/static/js/Supporting_docs/highchart.js"></script>
-           <script src="/static/js/Supporting_docs/highcharts-more.js"></script>
-           <script src="/static/js/Supporting_docs/exporting.js"></script>
-           <script src="/static/js/getdata.js"></script>
-
-
-      </body>
-  </head>
 </html>

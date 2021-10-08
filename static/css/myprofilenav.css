@@ -1,0 +1,74 @@
+.divnav{
+    width: 0;
+    left: 88.6%;
+    top: 25%;
+    background: rgba(196, 196, 196, 0.77);
+    border-radius: 11px;
+    position: fixed;
+    z-index: 1;
+    overflow-x: hidden;
+   
+}
+
+.buttonnav{
+
+    width: 104px;
+    height: 35px;
+    left: 1046px;
+    top: 292px;
+    color: white;
+    font-size: 12px;
+    background: #8E8E8E;
+    border-radius: 9px;
+    border: none;
+    margin-top: 15%;
+
+}
+.buttonnav2{
+
+    width: 104px;
+    height: 35px;
+    left: 1046px;
+    margin-top: 12%;
+    color: white;
+    font-size: 12px;
+    background: #8E8E8E;
+    border-radius: 9px;
+    border: none;
+
+}
+.buttonnav3{
+
+    width: 104px;
+    height: 35px;
+    left: 1046px;
+    margin-top: 12%;
+    color: white;
+    font-size: 12px;
+    background: #8E8E8E;
+    border-radius: 9px;
+    border: none;
+    margin-bottom: 15%;
+
+}
+
+.buttonnav:hover{
+
+    background: #EE723D;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+
+}
+
+.buttonnav2:focus{
+
+    background: #EE723D;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+
+}
+
+.buttonnav3:focus{
+
+    background: #EE723D;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+
+}

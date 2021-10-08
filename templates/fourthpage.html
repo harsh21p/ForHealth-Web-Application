@@ -16,6 +16,43 @@
 <body>
   <!-- drawer -->
 
+   <!-- Myprofile drawer -->
+
+   <link rel="stylesheet" href="{{ url_for('static', filename='css/myprofilenav.css') }}">
+
+   <div id="myPronav" class="divnav">
+     <div style=" margin:4%;">
+       <a style="text-decoration: none;" href="dashboard">
+         <center>
+         <button class="buttonnav">Profile</button>
+       </center>
+       </a>
+    </div>
+    <div style="margin:4%;">
+     <a style="text-decoration: none;" href="/">
+     <center>
+       <button class="buttonnav2">Logout</button>
+     </center>
+     </a>
+    </div>
+    <div style="margin:4%;">
+     <a onclick="closeProNav()" style="text-decoration: none; cursor: pointer;" >
+     <center>
+       <button class="buttonnav3">Close</button>
+     </center>
+     </a>
+    </div>
+  </div>
+ 
+  <script>
+   function openProNav() {
+     document.getElementById("myPronav").style.width = "120px";
+   }
+ 
+   function closeProNav() {
+     document.getElementById("myPronav").style.width = "0";
+   }
+ </script>
 
   <div id="mySidenav" class="sidenav" style="height: 370px; top: 105px;">
     <div style=" margin:4%;">
@@ -90,7 +127,9 @@
       </div>
     </div>
     <div style="float: right; width: 15%; padding-top: 0.5%;">
-      <img src="{{ url_for('static', filename='images/Profileimg.png') }}" alt="img" class="imgclass" ></span>
+      <a style="cursor: pointer; text-decoration: none;" onclick="openProNav()">
+      <img src="{{ url_for('static', filename='images/Profileimg.png') }}" alt="img" class="imgclass" ></a>
+
     </div>
   </div>
 
