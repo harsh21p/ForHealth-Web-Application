@@ -34,6 +34,11 @@
   border: 2px solid #ee723d;
 }
 
+.manualbtn:focus{
+background: #f05918;
+border:#f05918;
+}
+
 .imgclass {
   border-radius: 50%;
   width: 23%;
