@@ -26,37 +26,8 @@
       <a style="text-decoration: none;" href="signup">Signup</a>
     </div>
     <div style=" margin:4%;">
-      <a style="text-decoration: none; cursor: pointer;" onclick="closeNav()" >Close</a>
+      <a style="text-decoration: none; cursor: pointer;" onclick="closeNav()">Close</a>
     </div>
-  </div>
-
-  <!-- button of drawer -->
-  <!-- navbar -->
-  <div class="navbar" style="padding-top: 3%; padding-left:3%; padding-bottom: 5%;">
-    <span style="transition: transform .2s;font-size:30px;cursor:pointer;color:black;"
-      onclick="openNav()">
-      <img  src="{{ url_for('static', filename='images/drow.png') }}" alt="img" class="drowclass"></span>
-    <div>
-      <h6 class="lname">Login</h6>  
-    </div>
-
-  </div>
-  <!-- drower+navbar -->
-  <div class="loginbox" style="margin-top: 4%;">
-   <img src="{{ url_for('static', filename='images/Profileimg.png') }}" alt="img" class="imgclass">
-    <center><img src="{{ url_for('static', filename='images/logo.png') }}" alt="img" class="logoclass"></center>
-    <form action="" name="login" method="post">
-      <p style="color:black;font-size: small;">Username</p>
-      <input type="text" class="textfield1" style="background: rgba(196, 196, 196, 0.36);" name="username" placeholder="Enter Username" required>
-      <p style="color:black;font-size: small;">Password</p>
-      <input type="password" class="textfield2" style="background: rgba(196, 196, 196, 0.36);" name="password" placeholder="Enter Password" required>
-      <p style="text-align: center; font-size: x-small; color: red;"><b>{{message1}}</b></p>
-      <a href="details">
-       <button class="loginbutton">Login</button>
-      </a><br>
-      <a style="text-decoration: none;" href="#" class="forgot">Forgot Password ?</a><br>
-      <a href="signup" style="text-decoration: none;" class="dna">Don’t have an account? <span style="color: #EE723D;"><b>Signup</b></span></a>
-    </form>
   </div>
   <script>
     function openNav() {
@@ -67,6 +38,36 @@
       document.getElementById("mySidenav").style.width = "0";
     }
   </script>
+  <!-- button of drawer -->
+  <!-- navbar -->
+  <div class="navbar" style="padding-top: 3%; padding-left:3%; padding-bottom: 5%;">
+    <span style="transition: transform .2s;font-size:30px;cursor:pointer;color:black;" onclick="openNav()">
+      <img src="{{ url_for('static', filename='images/drow.png') }}" alt="img" class="drowclass"></span>
+    <div>
+      <h6 class="lname">Login</h6>
+    </div>
+
+  </div>
+  <!-- drower+navbar -->
+  <div class="loginbox" style="margin-top: 4%;">
+    <img src="{{ url_for('static', filename='images/Profileimg.png') }}" alt="img" class="imgclass">
+    <center><img src="{{ url_for('static', filename='images/logo.png') }}" alt="img" class="logoclass"></center>
+    <form action="" name="login" method="post">
+      <p style="color:black;font-size: small;">Username</p>
+      <input type="text" class="textfield1" style="background: rgba(196, 196, 196, 0.36);" name="username"
+        placeholder="Enter Username" required>
+      <p style="color:black;font-size: small;">Password</p>
+      <input type="password" class="textfield2" style="background: rgba(196, 196, 196, 0.36);" name="password"
+        placeholder="Enter Password" required>
+      <p style="text-align: center; font-size: x-small; color: red;"><b>{{message1}}</b></p>
+      <a href="details">
+        <button class="loginbutton">Login</button>
+      </a><br>
+      <a style="text-decoration: none;" href="#" class="forgot">Forgot Password ?</a><br>
+      <a href="signup" style="text-decoration: none;" class="dna">Don’t have an account? <span
+          style="color: #EE723D;"><b>Signup</b></span></a>
+    </form>
+  </div>
 </body>
 
 

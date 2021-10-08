@@ -16,84 +16,84 @@
 <body>
   <!-- drawer -->
 
-   <!-- Myprofile drawer -->
+  <!-- Myprofile drawer -->
 
-   <link rel="stylesheet" href="{{ url_for('static', filename='css/myprofilenav.css') }}">
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/myprofilenav.css') }}">
 
-   <div id="myPronav" class="divnav">
-     <div style=" margin:4%;">
-       <a style="text-decoration: none;" href="dashboard">
-         <center>
-         <button class="buttonnav">Profile</button>
-       </center>
-       </a>
+  <div id="myPronav" class="divnav">
+    <div style=" margin:4%;">
+      <a style="text-decoration: none;" href="dashboard">
+        <center>
+          <button class="buttonnav">Profile</button>
+        </center>
+      </a>
     </div>
     <div style="margin:4%;">
-     <a style="text-decoration: none;" href="/">
-     <center>
-       <button class="buttonnav2">Logout</button>
-     </center>
-     </a>
+      <a style="text-decoration: none;" href="/">
+        <center>
+          <button class="buttonnav2">Logout</button>
+        </center>
+      </a>
     </div>
     <div style="margin:4%;">
-     <a onclick="closeProNav()" style="text-decoration: none; cursor: pointer;" >
-     <center>
-       <button class="buttonnav3">Close</button>
-     </center>
-     </a>
+      <a onclick="closeProNav()" style="text-decoration: none; cursor: pointer;">
+        <center>
+          <button class="buttonnav3">Close</button>
+        </center>
+      </a>
     </div>
   </div>
- 
+
   <script>
-   function openProNav() {
-     document.getElementById("myPronav").style.width = "120px";
-   }
- 
-   function closeProNav() {
-     document.getElementById("myPronav").style.width = "0";
-   }
- </script>
+    function openProNav() {
+      document.getElementById("myPronav").style.width = "120px";
+    }
+
+    function closeProNav() {
+      document.getElementById("myPronav").style.width = "0";
+    }
+  </script>
 
   <div id="mySidenav" class="sidenav" style="height: 370px; top: 105px;">
     <div style=" margin:4%;">
-     <a style="text-decoration: none;" href="/">Home</a>
-   </div>
-   <div style="margin:4%;">
-     <a  style="text-decoration: none;" href="details">Details</a>
-   </div>
-   <div style="margin:4%;">
-     <a style="text-decoration: none;" href="select">Input</a>
-   </div>
-   <div style="margin:4%;">
-     <a style="text-decoration: none;" href="information">Graphs</a>
-   </div>
-   <div style=" margin:4%;">
-     <a style="text-decoration: none; cursor: pointer;" onclick="closeNav()" >Close</a>
-   </div>
- </div>
+      <a style="text-decoration: none;" href="/">Home</a>
+    </div>
+    <div style="margin:4%;">
+      <a style="text-decoration: none;" href="details">Details</a>
+    </div>
+    <div style="margin:4%;">
+      <a style="text-decoration: none;" href="select">Inputs</a>
+    </div>
+    <div style="margin:4%;">
+      <a style="text-decoration: none;" href="information">Graphs</a>
+    </div>
+    <div style=" margin:4%;">
+      <a style="text-decoration: none; cursor: pointer;" onclick="closeNav()">Close</a>
+    </div>
+  </div>
 
- <script>
-   function openNav() {
-     document.getElementById("mySidenav").style.width = "236px";
-   }
+  <script>
+    function openNav() {
+      document.getElementById("mySidenav").style.width = "236px";
+    }
 
-   function closeNav() {
-     document.getElementById("mySidenav").style.width = "0";
-   }
- </script>
+    function closeNav() {
+      document.getElementById("mySidenav").style.width = "0";
+    }
+  </script>
   <!-- button of drawer -->
   <div class="navbar" style="padding-top: 1%; padding-left:3%; padding-bottom: 7.6%;">
-    <div style="float: left; width: 25%; padding-top: 0.4%;" >
+    <div style="float: left; width: 25%; padding-top: 0.4%;">
       <span onclick="openNav()">
-        <img  src="{{ url_for('static', filename='images/drow.png') }}" alt="img" style="width: 11%;"></span>
+        <img src="{{ url_for('static', filename='images/drow.png') }}" alt="img" style="width: 11%;"></span>
     </div>
-  
+
     <div style="float: left; width: 50%;">
       <center>
-      <h6 class="lname">Information</h6>
-    </center>
+        <h6 class="lname">Information</h6>
+      </center>
     </div>
-  
+
     <div style="float: right; width: 25%; padding-top: 1%;">
       <img src="{{ url_for('static', filename='images/logo.png') }}" alt="img"
         style="width: 60%; margin-left: 40%;"></span>
@@ -106,38 +106,40 @@
     <div style="float: left; width: 15%; padding-top: 0.4%;">
       <a href="select">
         <span>
-          <img src="{{ url_for('static', filename='images/back.png') }}" alt="img" style="width: 15%; margin-left: 16%;"></span></a>
+          <img src="{{ url_for('static', filename='images/back.png') }}" alt="img"
+            style="width: 15%; margin-left: 16%;"></span></a>
     </div>
 
     <div style="float: left; width: 70%;">
       <div style="float: left; width: 25%;">
-          <button type="button" class="play" ><b style="color: white; font-weight: 500;
+        <button type="button" class="play"><b style="color: white; font-weight: 500;
             font-size: 24px;
             line-height: 36px;">Play</b></button>
       </div>
       <div style="float: left; width: 25%;  padding-left: 5%;">
-        <button type="button" class="play" ><b style="color: white; font-weight: 500;
+        <button type="button" class="play"><b style="color: white; font-weight: 500;
           font-size: 24px;
           line-height: 36px;">Pause</b></button>
       </div>
       <div style="float: left; width: 25%;padding-left: 10%;">
-        <button type="button" class="play" ><b style="color: white; font-weight: 500;
+        <button type="button" class="play"><b style="color: white; font-weight: 500;
           font-size: 24px;
           line-height: 36px;">Stop</b></button>
       </div>
     </div>
     <div style="float: right; width: 15%; padding-top: 0.5%;">
       <a style="cursor: pointer; text-decoration: none;" onclick="openProNav()">
-      <img src="{{ url_for('static', filename='images/Profileimg.png') }}" alt="img" class="imgclass" ></a>
+        <img src="{{ url_for('static', filename='images/Profileimg.png') }}" alt="img" class="imgclass"></a>
 
     </div>
   </div>
 
-    <div class="angle">
+  <div class="angle">
 
-      <!-- Angle -->
+    <!-- Angle -->
 
-      <center><p style="
+    <center>
+      <p style="
         width: 156px;
         height: 36px;;
         font-family: Poppins;
@@ -145,12 +147,13 @@
         font-weight: normal;
         font-size: 24px;
         line-height: 36px;
-        color: #000000;margin-top: 6%;">Device Angle</p></center>
-        
-        
-        <div class="anglediv">
-          <center>
-          <p style="
+        color: #000000;margin-top: 6%;">Device Angle</p>
+    </center>
+
+
+    <div class="anglediv">
+      <center>
+        <p style="
             width: 156px;
             height: 36px;;
             font-family: Poppins;
@@ -159,26 +162,27 @@
             font-size: 24px;
             line-height: 36px;
             color: #000000;margin-top: 0%;">Angle = <b>30°</b></p>
-      </div>
+    </div>
     </center>
 
 
 
-    </div>
+  </div>
 
-   <script src="/static/js/Supporting_docs/jquery.min.js"></script>
-    <script src="/static/js/Supporting_docs/highchart.js"></script>
-    <script src="/static/js/Supporting_docs/highcharts-more.js"></script>
-    <script src="/static/js/Supporting_docs/exporting.js"></script>
-    <script src="/static/js/getdata1.js"></script>
-    <script src="/static/js/getdata.js"></script>
+  <script src="/static/js/Supporting_docs/jquery.min.js"></script>
+  <script src="/static/js/Supporting_docs/highchart.js"></script>
+  <script src="/static/js/Supporting_docs/highcharts-more.js"></script>
+  <script src="/static/js/Supporting_docs/exporting.js"></script>
+  <script src="/static/js/getdata1.js"></script>
+  <script src="/static/js/getdata.js"></script>
 
 
-    <div class="graphs">
+  <div class="graphs">
 
-      <!-- Graphs -->
+    <!-- Graphs -->
 
-      <center><p style="
+    <center>
+      <p style="
         width: 156px;
         height: 36px;;
         font-family: Poppins;
@@ -186,14 +190,15 @@
         font-weight: normal;
         font-size: 24px;
         line-height: 36px;
-        color: #000000;margin-top: 6%;">Graphs</p></center>
+        color: #000000;margin-top: 6%;">Graphs</p>
+    </center>
 
-        <div class="graph1"  id="data-container">
-        </div>
+    <div class="graph1" id="data-container">
+    </div>
 
-        <div class="graph2"  id="data-container1">
-        </div>
-        <!-- <div class="graph1"  id="data-container2">
+    <div class="graph2" id="data-container1">
+    </div>
+    <!-- <div class="graph1"  id="data-container2">
         </div>
 
         <div class="graph2"  id="data-container3">

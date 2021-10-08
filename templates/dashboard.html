@@ -21,72 +21,72 @@
   <link rel="stylesheet" href="{{ url_for('static', filename='css/myprofilenav.css') }}">
 
   <div id="myPronav" class="divnav">
-   <div style="margin:4%;">
-    <a style="text-decoration: none;" href="/">
-    <center>
-      <button class="buttonnav2">Logout</button>
-    </center>
-    </a>
-   </div>
-   <div style="margin:4%;">
-    <a onclick="closeProNav()" style="text-decoration: none; cursor: pointer;" >
-    <center>
-      <button class="buttonnav3">Close</button>
-    </center>
-    </a>
-   </div>
- </div>
+    <div style="margin:4%;">
+      <a style="text-decoration: none;" href="/">
+        <center>
+          <button class="buttonnav2">Logout</button>
+        </center>
+      </a>
+    </div>
+    <div style="margin:4%;">
+      <a onclick="closeProNav()" style="text-decoration: none; cursor: pointer;">
+        <center>
+          <button class="buttonnav3">Close</button>
+        </center>
+      </a>
+    </div>
+  </div>
 
- <script>
-  function openProNav() {
-    document.getElementById("myPronav").style.width = "120px";
-  }
+  <script>
+    function openProNav() {
+      document.getElementById("myPronav").style.width = "120px";
+    }
 
-  function closeProNav() {
-    document.getElementById("myPronav").style.width = "0";
-  }
-</script>
+    function closeProNav() {
+      document.getElementById("myPronav").style.width = "0";
+    }
+  </script>
 
   <div id="mySidenav" class="sidenav" style="height: 370px; top: 105px;">
     <div style=" margin:4%;">
-     <a style="text-decoration: none;" href="/">Home</a>
-   </div>
-   <div style="margin:4%;">
-     <a  style="text-decoration: none;" href="details">Details</a>
-   </div>
-   <div style="margin:4%;">
-     <a style="text-decoration: none;" href="select">Input</a>
-   </div>
-   <div style="margin:4%;">
-     <a style="text-decoration: none;" href="information">Graphs</a>
-   </div>
-   <div style=" margin:4%;">
-     <a style="text-decoration: none; cursor: pointer;" onclick="closeNav()" >Close</a>
-   </div>
- </div>
+      <a style="text-decoration: none;" href="/">Home</a>
+    </div>
+    <div style="margin:4%;">
+      <a style="text-decoration: none;" href="details">Details</a>
+    </div>
+    <div style="margin:4%;">
+      <a style="text-decoration: none;" href="select">Inputs</a>
+    </div>
+    <div style="margin:4%;">
+      <a style="text-decoration: none;" href="information">Graphs</a>
+    </div>
+    <div style=" margin:4%;">
+      <a style="text-decoration: none; cursor: pointer;" onclick="closeNav()">Close</a>
+    </div>
+  </div>
 
- <script>
-   function openNav() {
-     document.getElementById("mySidenav").style.width = "236px";
-   }
+  <script>
+    function openNav() {
+      document.getElementById("mySidenav").style.width = "236px";
+    }
 
-   function closeNav() {
-     document.getElementById("mySidenav").style.width = "0";
-   }
- </script>
+    function closeNav() {
+      document.getElementById("mySidenav").style.width = "0";
+    }
+  </script>
   <!-- button of drawer -->
   <div class="navbar" style="padding-top: 1%; padding-left:3%; padding-bottom: 7.6%;">
-    <div style="float: left; width: 25%; padding-top: 0.4%;" >
+    <div style="float: left; width: 25%; padding-top: 0.4%;">
       <span onclick="openNav()">
-        <img  src="{{ url_for('static', filename='images/drow.png') }}" alt="img" style="width: 11%;"></span>
+        <img src="{{ url_for('static', filename='images/drow.png') }}" alt="img" style="width: 11%;"></span>
     </div>
-  
+
     <div style="float: left; width: 50%;">
       <center>
-      <h6 class="lname" style="margin-left: 3%;">Profile</h6>
-    </center>
+        <h6 class="lname" style="margin-left: 3%;">Profile</h6>
+      </center>
     </div>
-  
+
     <div style="float: right; width: 25%; padding-top: 1%;">
       <img src="{{ url_for('static', filename='images/logo.png') }}" alt="img"
         style="width: 60%; margin-left: 40%;"></span>
@@ -99,7 +99,8 @@
     <div style="float: left; width: 15%; padding-top: 0.4%;">
       <a href="details">
         <span>
-          <img src="{{ url_for('static', filename='images/back.png') }}" alt="img" style="width: 15%; margin-left: 16%;"></span></a>
+          <img src="{{ url_for('static', filename='images/back.png') }}" alt="img"
+            style="width: 15%; margin-left: 16%;"></span></a>
     </div>
 
     <div style="float: left; width: 70%;">
@@ -109,7 +110,7 @@
     </div>
     <div style="float: right; width: 15%; padding-top: 0.5%;">
       <a style="cursor: pointer; text-decoration: none;" onclick="openProNav()">
-        <img src="{{ url_for('static', filename='images/Profileimg.png') }}" alt="img" class="imgclass" ></a>
+        <img src="{{ url_for('static', filename='images/Profileimg.png') }}" alt="img" class="imgclass"></a>
     </div>
   </div>
 
