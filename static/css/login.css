@@ -1,13 +1,9 @@
 
-
-
 .lname
 {
-    position: absolute;
     width: 105px;
     height: 48px;
-    left: 47%;
-    top: 15px;
+    margin-left: 4%;
     font-family: Poppins;
     font-style: normal;
     font-weight: 500;
