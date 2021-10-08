@@ -193,16 +193,38 @@
         color: #000000;margin-top: 6%;">Graphs</p>
     </center>
 
-    <div class="graph1" id="data-container">
+    <div id="graph1" style="float: left; width: 100%; overflow: hidden; position: absolute;">
+        <div class="graph1" id="data-container"></div>
+        <div class="graph2" id="data-container1"></div>
     </div>
 
-    <div class="graph2" id="data-container1">
+    <div id="graph2" style="float: left; width: 100%; overflow: hidden;  position: absolute;">
+        <div class="graph1"  id="data-container2"></div>
+        <div class="graph2"  id="data-container3"></div>
     </div>
-    <!-- <div class="graph1"  id="data-container2">
+
+    <script>
+       function slidenext() {
+      document.getElementById("graph1").style.width = "100%";
+      document.getElementById("graph2").style.width = "0";
+
+    }
+
+    function slideprv() {
+      document.getElementById("graph2").style.width = "100%";
+      document.getElementById("graph1").style.width = "0";
+    }
+    </script>
+      <div style="margin-top: 7%;">
+        <div style="float: left; width: 50%;">
+          <button onclick="slidenext()" class="sliderbtn"></button>
         </div>
+        <div style="float: right; width: 50%;">
+          <button onclick="slideprv()" class="sliderbtn1"></button>
+        </div>
+      </div>
 
-        <div class="graph2"  id="data-container3">
-        </div> -->
+  </div>
 </body>
 
 </html>

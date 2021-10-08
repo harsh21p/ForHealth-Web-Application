@@ -1,3 +1,49 @@
+.sliderbtn{
+  width: 19px;
+  height: 19px;
+  margin-top: 90%;
+  margin-left: 93%;
+  border-radius: 50%;
+  border: none;
+  background: rgba(196, 196, 196, 0.4);
+
+}
+
+.sliderbtn1{
+  width: 19px;
+  height: 19px;
+  margin-top: 90%;
+  margin-left: 2%;
+  border-radius: 50%;
+  border: none;
+  background: rgba(196, 196, 196, 0.4);
+}
+
+.sliderbtn1:focus{
+
+  background: #9D9D9D;
+
+}
+
+.sliderbtn1:hover{
+  
+  background: #9D9D9D;
+
+}
+
+.sliderbtn:focus{
+
+  background: #9D9D9D;
+}
+
+.sliderbtn:hover{
+  
+  background: #9D9D9D;
+
+}
+
+
+
 .lname {
   width: 105px;
   height: 48px;

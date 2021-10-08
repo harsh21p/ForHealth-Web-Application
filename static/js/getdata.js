@@ -227,6 +227,22 @@ $(document).ready(function() {
                 margin: 0
             }
         },
+        plotOptions: {
+            
+            series: {
+                color:'hsl(18, 84%, 59%)',
+                allowPointSelect: true,
+                marker: {
+                    fillColor: 'hsl(18, 84%, 59%)',
+                    states: {
+                        select: {
+                            fillColor: 'red',
+                            lineWidth: 0
+                        }
+                    }
+                }
+            }
+        },
         series: [{
             name: 'Data',
             data: []
@@ -263,7 +279,7 @@ $(document).ready(function() {
         plotOptions: {
             
             series: {
-                
+                color:'hsl(18, 84%, 59%)',
                 allowPointSelect: true,
                 marker: {
                     fillColor: 'hsl(18, 84%, 59%)',
@@ -276,7 +292,6 @@ $(document).ready(function() {
                 }
             }
         },
-        
         series: [{
             name: 'Data',
             data: []
