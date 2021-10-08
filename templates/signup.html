@@ -15,17 +15,29 @@
     <!-- drawer -->
 
     <div id="mySidenav" class="sidenav">
-        <a style="text-decoration: none;" href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+        <div style=" margin:4%;">
+          <a style="text-decoration: none;" href="/">Home</a>
+        </div>
         <div style=" margin:4%; opacity:100%">
-            <a style="text-decoration: none;" href="login">Login</a>
+    
+          <a style="text-decoration: none;" href="login">Login</a>
         </div>
         <div style=" margin:4%;">
-            <a style="text-decoration: none;" href="signup">Signup</a>
+          <a style="text-decoration: none;" href="signup">Signup</a>
         </div>
         <div style=" margin:4%;">
-            <a style="text-decoration: none;" href="/">Home</a>
+          <a style="text-decoration: none; cursor: pointer;" onclick="closeNav()" >Close</a>
         </div>
-    </div>
+      </div>
+      <script>
+        function openNav() {
+          document.getElementById("mySidenav").style.width = "236px";
+        }
+    
+        function closeNav() {
+          document.getElementById("mySidenav").style.width = "0";
+        }
+      </script>
 
     <!-- button of drawer -->
     <!-- navbar -->
@@ -89,16 +101,6 @@
 
     </div>
 
-
-    <script>
-        function openNav() {
-            document.getElementById("mySidenav").style.width = "350px";
-        }
-
-        function closeNav() {
-            document.getElementById("mySidenav").style.width = "0";
-        }
-    </script>
 </body>
 
 

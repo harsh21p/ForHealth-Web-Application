@@ -16,26 +16,36 @@
 <body>
   <!-- drawer -->
 
-  <div id="mySidenav" class="sidenav">
-    <a style="text-decoration: none;" href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
-    <div style=" margin:4%; opacity:100%">
-      <a style="text-decoration: none;" href="login">Login</a>
-    </div>
+
+  <div id="mySidenav" class="sidenav" style="height: 370px; top: 105px;">
     <div style=" margin:4%;">
-      <a style="text-decoration: none;" href="/">Home</a>
-    </div>
-    <div style="margin:4%;">
-      <a style="text-decoration: none;" href="details">Details</a>
-    </div>
-    <div style="margin:4%;">
-      <a style="text-decoration: none;" href="select">Select</a>
-    </div>
-    <div style="margin:4%;">
-      <a style="text-decoration: none;" href="information">Info</a>
-    </div>
-  </div>
+     <a style="text-decoration: none;" href="/">Home</a>
+   </div>
+   <div style="margin:4%;">
+     <a  style="text-decoration: none;" href="details">Details</a>
+   </div>
+   <div style="margin:4%;">
+     <a style="text-decoration: none;" href="select">Input</a>
+   </div>
+   <div style="margin:4%;">
+     <a style="text-decoration: none;" href="information">Graphs</a>
+   </div>
+   <div style=" margin:4%;">
+     <a style="text-decoration: none; cursor: pointer;" onclick="closeNav()" >Close</a>
+   </div>
+ </div>
+
+ <script>
+   function openNav() {
+     document.getElementById("mySidenav").style.width = "236px";
+   }
+
+   function closeNav() {
+     document.getElementById("mySidenav").style.width = "0";
+   }
+ </script>
   <!-- button of drawer -->
-  <div class="navbar" style="padding-top: 0.4%; padding-left:3%; padding-bottom: 7.6%;">
+  <div class="navbar" style="padding-top: 1%; padding-left:3%; padding-bottom: 7.6%;">
     <div style="float: left; width: 25%; padding-top: 0.4%;" >
       <span onclick="openNav()">
         <img  src="{{ url_for('static', filename='images/drow.png') }}" alt="img" style="width: 11%;"></span>
@@ -47,7 +57,7 @@
     </center>
     </div>
   
-    <div style="float: right; width: 25%; padding-top: 0.5%;">
+    <div style="float: right; width: 25%; padding-top: 1%;">
       <img src="{{ url_for('static', filename='images/logo.png') }}" alt="img"
         style="width: 60%; margin-left: 40%;"></span>
     </div>
