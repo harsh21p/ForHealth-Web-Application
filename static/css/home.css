@@ -1,44 +1,73 @@
 .Loginbtn {
+  position: absolute;
   width: 240px;
   height: 60px;
-  margin: auto;
+  top: 56%;
+  left: 7%;
   font-family: Poppinsdark;
   background: #042a73;
   border-radius: 14px;
   font-size: large;
-  margin-top: 13%;
   color: white;
   border: 2px solid #042a73;
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
 }
 
+.regbtn {
+  position: absolute;
+  width: 240px;
+  height: 60px;
+  top: 71%;
+  left: 7%;
+  font-family: Poppinsdark;
+  background: #042a73;
+  border-radius: 14px;
+  font-size: large;
+  color: white;
+  border: 2px solid #042a73;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+.logo{
+  position: absolute;
+  width: 27%;
+  left: 5%;
+  top: 6%;
+
+}
+.photo{
+  position: absolute;
+  width: 15%;
+  top: 26%;
+  left: 10%;
+
+}
 .div1 {
   position: absolute;
-  width: 872px;
+  width: 760px;
   height: 578px;
-  left: 464px;
-  top: 128px;
+  left: 435px;
+  top: 120;
   background: #ee723d;
   box-shadow: -22px -13px 4px rgba(0, 0, 0, 0.1);
-  border-radius: 97px;
+  border-radius: 97px 0px 0px 97px;
 }
 .div2 {
   position: absolute;
-  width: 872px;
+  width: 710px;
   height: 578px;
   left: 49px;
   top: 49px;
   background: #ed672d;
-  border-radius: 97px;
+  border-radius: 97px 0px 0px 97px;
 }
 .div3 {
   position: absolute;
-  width: 872px;
+  width: 661px;
   height: 578px;
   left: 49px;
   top: 49px;
   background: #eb5e22;
-  border-radius: 97px;
+  border-radius: 97px 0px 0px 97px;
 }
 .ptag {
   position: absolute;
@@ -46,7 +75,6 @@
   height: 348px;
   left: 99px;
   top: 119px;
-
   font-family: Poppins;
   font-style: normal;
   font-weight: normal;

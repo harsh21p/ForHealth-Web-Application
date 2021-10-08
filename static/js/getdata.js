@@ -129,6 +129,22 @@ $(document).ready(function() {
                 margin: 10
             }
         },
+        plotOptions: {
+            
+            series: {
+                color:'hsl(18, 84%, 59%)',
+                allowPointSelect: true,
+                marker: {
+                    fillColor: 'hsl(18, 84%, 59%)',
+                    states: {
+                        select: {
+                            fillColor: 'red',
+                            lineWidth: 0
+                        }
+                    }
+                }
+            }
+        },
         series: [{
             name: 'Data',
             data: []
@@ -161,6 +177,22 @@ $(document).ready(function() {
             title: {
                 text: 'Value',
                 margin: 10
+            }
+        },
+        plotOptions: {
+            
+            series: {
+                color:'hsl(18, 84%, 59%)',
+                allowPointSelect: true,
+                marker: {
+                    fillColor: 'hsl(18, 84%, 59%)',
+                    states: {
+                        select: {
+                            fillColor: 'red',
+                            lineWidth: 0
+                        }
+                    }
+                }
             }
         },
         series: [{
@@ -225,9 +257,26 @@ $(document).ready(function() {
             maxPadding: 0.2,
             title: {
                 text: 'Value',
-                margin: 0
+                margin: 0,
             }
         },
+        plotOptions: {
+            
+            series: {
+                
+                allowPointSelect: true,
+                marker: {
+                    fillColor: 'hsl(18, 84%, 59%)',
+                    states: {
+                        select: {
+                            fillColor: 'red',
+                            lineWidth: 0
+                        }
+                    }
+                }
+            }
+        },
+        
         series: [{
             name: 'Data',
             data: []

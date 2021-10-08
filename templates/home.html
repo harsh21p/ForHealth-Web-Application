@@ -10,26 +10,20 @@
 <title>Home</title>
 
 <body>
-  <div style="float: left; width: 40%;">
     <div>
-      <center><img src="{{ url_for('static', filename='images/logo.png') }}" alt="img"
-          style="width: 70%;margin-top: 12%;"></center>
+     <img src="{{ url_for('static', filename='images/logo.png') }}" alt="img"
+          class="logo">
     </div>
     <div>
-      <center><img src="{{ url_for('static', filename='images/photo1.png') }}" alt="img"
-          style="width: 45%;margin-top: 12%;">
+      <img src="{{ url_for('static', filename='images/photo1.png') }}" alt="img"
+          class="photo">
         <br>
         <a href="login">
           <button type="button" class="Loginbtn">Login</button></a>
         <br>
         <a href="signup">
-          <button class="Loginbtn">Register</button></a>
-      </center>
-
+          <button class="regbtn">Register</button></a>
     </div>
-  </div>
-
-  <div style="float: right; width: 60%;">
 
     <div class="div1">
       <div class="div2">
@@ -41,8 +35,6 @@
         </div>
       </div>
     </div>
-
-  </div>
 
 </body>
 
