@@ -26,22 +26,17 @@
   }
 
   .lforname{
-    /* forhealth */
-
 
 position: absolute;
 width: 167px;
 height: 48px;
 left: 519px;
 top: 215px;
-
 font-family: Poppins;
 font-style: normal;
 font-weight: normal;
 font-size: 36px;
 line-height: 54px;
-
-
 color: #EE723D;
 
   }
@@ -67,32 +62,18 @@ color: #000000;
 
 .loginbutton{
 width: 129px;
-height: 45px;
+height: 50px;
 margin-top: 25px;
 background: #EE723D;
 box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
 border-radius: 16px;
-margin-left: 19.5%;
+margin-left: 25%;
 color:white;
+font-size: 17px;
 width: 149px;
 margin-bottom: 29px;
 box-shadow: 0px 4px 2px rgba(0, 0, 0, 0.4);
 border: 2px solid #EE723D;
-
-/* outline: none; */
-}
-
-
-
-.forgot{
-  font-family:poppins;
-  margin-left: 29%;
-  margin-top: 20px;
-}
-
-.dna{
-  font-family: Poppins;
-  margin-left: 12%;
 }
 
 .textfield1{
@@ -114,6 +95,7 @@ border: 2px solid #EE723D;
 .logoclass{
 
   width: 70%;
+  margin-top: 10%;
   
 }
 .drowclass{
@@ -122,8 +104,8 @@ border: 2px solid #EE723D;
 
 
 .loginbox{
-    width: 320px;
-    height:480px;
+    width: 370px;
+    height:540px;
     background: #C4C4C436;
     color:#fff;
     opacity: 0.9;
@@ -139,15 +121,14 @@ border: 2px solid #EE723D;
 
 }
 
-  
 
 .imgclass{
-    width:100px;
-    height:100px;
+    width:120px;
+    height:120px;
     border-radius:50%;
     position:absolute;
-    top:-50px;
-    left: calc(50% - 50px);
+    top:-60px;
+    left: calc(50% - 60px);
 }
 
 h1{
@@ -155,22 +136,6 @@ h1{
     padding:2%;
     text-align: center;
     font-size:22px;
-}
-
-
-@font-face {
-    
-    font-family: Poppins;
-    src: url(fonts/Poppins-Light.woff);
-    font-style: normal;
-    font-weight: 500;
-    font-size: 36px;
-    line-height: 54px;
-
-  }
-
-* {
-   font-family: Poppins;
 }
 
 .loginbox p{
@@ -207,13 +172,28 @@ text-align: center;
 
 .forgot{
   font-family:poppins;
-  margin-left: 29%;
+  margin-left: 32%;
   margin-top: 20px;
   color: gray;
 }
 
 .dna{
   font-family: Poppins;
-  margin-left: 12%;
+  margin-left: 18%;
   color: gray;
+}
+
+@font-face {
+    
+  font-family: Poppins;
+  src: url(fonts/Poppins-Light.woff);
+  font-style: normal;
+  font-weight: 500;
+  font-size: 36px;
+  line-height: 54px;
+
+}
+
+* {
+ font-family: Poppins;
 }
