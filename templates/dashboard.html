@@ -2,7 +2,7 @@
 <html>
 
 <head>
-  <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/graphs.css') }}">
+  <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/Profile.css') }}">
   <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/navbar.css') }}">
   <link rel="stylesheet" href="{{ url_for('static', filename='css/bootstrap.min.css') }}">
   <link rel="stylesheet" href="{{ url_for('static', filename='css/w3.css') }}">
@@ -105,7 +105,7 @@
 
     <div style="float: left; width: 70%;">
       <center>
-        <h6 class="lname">Welcome</h6>
+        <h6 class="lname" >Welcome {{user}}</h6>
       </center>
     </div>
     <div style="float: right; width: 15%; padding-top: 0.5%;">

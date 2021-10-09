@@ -84,33 +84,7 @@ def register():
 
 def dashboard():
   if session["username"]==session["username1"]:
-    if request.method == 'POST':
-        valuea = request.form["value1"]
-        valueb = request.form["value2"]
-
-        def addition(number):
-            revs_number = 0
-            while (number > 0):  
-                remainder = number % 10  
-                revs_number = (revs_number * 10) + remainder  
-                number = number // 10  
-            return revs_number   
-        
-        value1=addition(int(valuea))
-        value2=addition(int(valueb))
-        
-       
-        cursor.execute("INSERT INTO dataform(value1,value2) VALUES((?),(?))",(value1,value2))
-        db.commit()
-        cursor.execute("select * from dataform ORDER BY ID DESC LIMIT 1")
-
-        dataform=cursor.fetchone()
-        if dataform is not None:
-                value1dbl=dataform['value1']
-                value2dbl=dataform['value2']
-                return render_template("dashboard.html",value1db=value1dbl,value2db=value2dbl,user=session["username"])
-    else:
-        return render_template("dashboard.html",user=session["username"])
+    return render_template("dashboard.html",user=session["username"])
   else:
     return redirect(url_for("login"))
 
@@ -126,23 +100,26 @@ def select():
             if request.method == 'POST':
                 point1 = request.form["point1"]
                 point2 = request.form["point2"]
-                cursor.execute("UPDATE info1 SET point1=(?),point2=(?) WHERE name_user=(?)",(point1,point2,dataform['name_user']))
+                Resistance = request.form["Resistance"]
+                cursor.execute("UPDATE info1 SET point1=(?),point2=(?),Resistance=(?) WHERE name_user=(?)",(point1,point2,Resistance,dataform['name_user']))
                 db.commit()
-                return redirect(url_for("select"))
+                return redirect(url_for("information"))
             else:
                 return render_template("select.html")
 
         elif dataform['point1'] is not None:
                 point1 = dataform['point1']
                 point2 = dataform['point2']
+                Resistance = dataform['Resistance']
                 if request.method == 'POST':
                     point1 = request.form["point1"]
                     point2 = request.form["point2"]
-                    cursor.execute("UPDATE info1 SET point1=(?),point2=(?) WHERE name_user=(?)",(point1,point2,dataform['name_user']))
+                    Resistance = request.form["Resistance"]
+                    cursor.execute("UPDATE info1 SET point1=(?),point2=(?),Resistance=(?) WHERE name_user=(?)",(point1,point2,Resistance,dataform['name_user']))
                     db.commit()
                     return redirect(url_for("information"))
                     
-                return render_template("select.html",point1=point1,point2=point2)
+                return render_template("select.html",point1=point1,point2=point2,Resistance=Resistance)
     else:
         return redirect(url_for("login"))
 
@@ -197,10 +174,10 @@ def information():
 @app.route('/data')
 def data():
     if session["username"]==session["username1"]:
-        cursor.execute("select * from dataform ORDER BY ID DESC LIMIT 1")
-        dataform=cursor.fetchone()
-        if dataform is not None:
-            data = [time() * 10000,dataform["value1"]]
+        cursor.execute("select * from sdata ORDER BY ID DESC LIMIT 1")
+        sdata=cursor.fetchone()
+        if sdata is not None:
+            data = [time() * 10000,sdata["value1"]]
             response = make_response(json.dumps(data))
             response.content_type = 'application/json'
             return response

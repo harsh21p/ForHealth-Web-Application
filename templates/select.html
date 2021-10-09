@@ -131,7 +131,7 @@
       <div
         style="float: left; width: 25%; margin-left: 8%; font-family: Poppinsbold; font-weight: 600; font-size: 18px;">
         <center><b>Resistance</b></center>
-        <input type="range" style="position: relative;">
+        <input type="range" style="position: relative;" value="{{Resistance}}" id="Resistance" name="Resistance" min="0" max="100" onpointermove="updateTextInputr(this.value);" >
         <div style="margin-top: -4%;">
           <div style="float: left; width: 10%; font-size: small;">
             <center>Low</center>
@@ -163,11 +163,29 @@
           <input name="point1" value="{{point1}}" class="input1" id="first">
           <input name="point2" value="{{point2}}" class="input2" id="second" /><br>
         </center>
-        <input type="range" >
-        <input type="range" style="margin-left: 5%;" >
+        <input type="range" id="point1slide" value="{{point1}}" min="0" max="100" onpointermove="updateTextInput1(this.value);">
+        <input type="range" value="{{point2}}" style="margin-left: 5%;" id="point2slide"  min="0" max="100"  onpointermove="updateTextInput2(this.value);" >
       </div>
     </div>
 
+    <script>
+
+        function updateTextInput1(val) 
+        {
+          document.getElementById('point1slide').value=val; 
+          document.getElementById('first').value=val;
+        }
+        function updateTextInput2(val) 
+        {
+          document.getElementById('point2slide').value=val;
+          document.getElementById('second').value=val; 
+        }
+        function updateTextInputr(val) 
+        {
+          document.getElementById('Resistance').value=val;
+        }
+
+    </script>
 
     <div class="select1">
       <div style="float: left; width: 35%;">

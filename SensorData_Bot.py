@@ -7,7 +7,7 @@ db.row_factory = sqlite3.Row
 cursor=db.cursor()
 j=1
 while True:
-    cursor.execute("INSERT INTO dataform(value1,value2) VALUES((?),(?))",(random(),random()))
+    cursor.execute("INSERT INTO sdata(value1) VALUES((?))",(random(),))
     db.commit()
     print("Done")
     time.sleep(0.1)
