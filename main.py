@@ -9,11 +9,10 @@ from time import time
 from random import random
 
 #FLASK APP NEW
-
+ 
 app=Flask(__name__)
 
 app.secret_key="ForHealth"
-
 
 db=sqlite3.connect("Database.db",check_same_thread=False)
 db.row_factory = sqlite3.Row
@@ -140,7 +139,6 @@ def details():
                 cursor.execute("UPDATE info1 SET uname=(?),uage=(?),uweight=(?),uheight=(?),selectbtn=(?) WHERE name_user=(?)",(name,age,weight,height,selectbtn,dataform['name_user']))
                 db.commit()
                 return redirect(url_for("select"))
-            
             else:
                 return render_template("form.html")
 
@@ -177,7 +175,7 @@ def data():
         cursor.execute("select * from sdata ORDER BY ID DESC LIMIT 1")
         sdata=cursor.fetchone()
         if sdata is not None:
-            data = [time() * 10000,sdata["value1"]]
+            data = [time() * 10000,int(sdata["value1"])]
             response = make_response(json.dumps(data))
             response.content_type = 'application/json'
             return response
