@@ -233,26 +233,43 @@
 
     function record1() {
       document.getElementById("first").disabled = "true";
+      document.getElementById("point1slide").disabled = "true";
+      document.getElementById("third").disabled = "true";
+
+
 
     }
     function record2() {
       document.getElementById("second").disabled = "true";
+      document.getElementById("point2slide").disabled = "true";
+      document.getElementById("fourth").disabled = "true";
+
+
+      
     }
 
     function record3() {
       document.getElementById("third").disabled = "true";
+      document.getElementById("second").disabled = "true";
+
     }
 
     function record4() {
       document.getElementById("fourth").disabled = "true";
+      document.getElementById("first").disabled = "true";
+
     }
 
     function edit1() {
       document.getElementById("first").removeAttribute('disabled');
+      document.getElementById("point1slide").removeAttribute('disabled');
+
 
     }
     function edit2() {
       document.getElementById("second").removeAttribute('disabled');
+      document.getElementById("point2slide").removeAttribute('disabled');
+
     }
 
     function edit3() {
