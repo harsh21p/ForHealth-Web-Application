@@ -31,7 +31,7 @@ def myhome():
 @app.route('/login',methods=['GET','POST'])
 
 def login():
-    session['username'] = ""
+    session['username'] = "null"
     if request.method == 'POST':
         if 'username' in request.form and 'password' in request.form:
             username=request.form['username']
@@ -73,7 +73,7 @@ def register():
             else:
                 return render_template("signup.html",message="Password didn't match")
         else:
-            return "Enter all values"
+            return "404 NOT FOUND"
 
     return render_template("signup.html")
 
@@ -205,7 +205,6 @@ def data2():
        return redirect(url_for("login")) 
 
 
-
 @app.route('/data3')
 def data3():
     if session["username"]==session["username1"]:
@@ -223,3 +222,4 @@ if __name__ == '__main__' :
     app.run(debug=True,host="0.0.0.0",port=3000)
 
 
+# mongodb+srv://forhealth:forhealth@cluster0.g4m18.mongodb.net/myFirstDatabase?retryWrites=true&w=majority

@@ -62,7 +62,7 @@
       <a style="text-decoration: none;" href="details">Details</a>
     </div>
     <div style="margin:4%;">
-      <a style="text-decoration: none;" href="select">Inputs</a>
+      <a style="text-decoration: none; color: #EE723D;" href="select">Inputs</a>
     </div>
     <div style="margin:4%;">
       <a style="text-decoration: none;" href="information">Graphs</a>
@@ -131,7 +131,8 @@
       <div
         style="float: left; width: 25%; margin-left: 8%; font-family: Poppinsbold; font-weight: 600; font-size: 18px;">
         <center><b>Resistance</b></center>
-        <input type="range" style="position: relative;" value="{{Resistance}}" id="Resistance" name="Resistance" min="0" max="100" onpointermove="updateTextInputr(this.value);" >
+        <input type="range" style="position: relative;" value="{{Resistance}}" id="Resistance" name="Resistance" min="0"
+          max="100" onpointermove="updateTextInputr(this.value);">
         <div style="margin-top: -4%;">
           <div style="float: left; width: 10%; font-size: small;">
             <center>Low</center>
@@ -163,28 +164,25 @@
           <input name="point1" value="{{point1}}" class="input1" id="first">
           <input name="point2" value="{{point2}}" class="input2" id="second" /><br>
         </center>
-        <input type="range" id="point1slide" value="{{point1}}" min="0" max="100" onpointermove="updateTextInput1(this.value);">
-        <input type="range" value="{{point2}}" style="margin-left: 5%;" id="point2slide"  min="0" max="100"  onpointermove="updateTextInput2(this.value);" >
+        <input type="range" id="point1slide" value="{{point1}}" min="0" max="100"
+          onpointermove="updateTextInput1(this.value);">
+        <input type="range" value="{{point2}}" style="margin-left: 5%;" id="point2slide" min="0" max="100"
+          onpointermove="updateTextInput2(this.value);">
       </div>
     </div>
 
     <script>
-
-        function updateTextInput1(val) 
-        {
-          document.getElementById('point1slide').value=val; 
-          document.getElementById('first').value=val;
-        }
-        function updateTextInput2(val) 
-        {
-          document.getElementById('point2slide').value=val;
-          document.getElementById('second').value=val; 
-        }
-        function updateTextInputr(val) 
-        {
-          document.getElementById('Resistance').value=val;
-        }
-
+      function updateTextInput1(val) {
+        document.getElementById('point1slide').value = val;
+        document.getElementById('first').value = val;
+      }
+      function updateTextInput2(val) {
+        document.getElementById('point2slide').value = val;
+        document.getElementById('second').value = val;
+      }
+      function updateTextInputr(val) {
+        document.getElementById('Resistance').value = val;
+      }
     </script>
 
     <div class="select1">
@@ -235,41 +233,30 @@
       document.getElementById("first").disabled = "true";
       document.getElementById("point1slide").disabled = "true";
       document.getElementById("third").disabled = "true";
-
-
-
     }
     function record2() {
       document.getElementById("second").disabled = "true";
       document.getElementById("point2slide").disabled = "true";
       document.getElementById("fourth").disabled = "true";
-
-
-      
     }
 
     function record3() {
       document.getElementById("third").disabled = "true";
       document.getElementById("second").disabled = "true";
-
     }
 
     function record4() {
       document.getElementById("fourth").disabled = "true";
       document.getElementById("first").disabled = "true";
-
     }
 
     function edit1() {
       document.getElementById("first").removeAttribute('disabled');
       document.getElementById("point1slide").removeAttribute('disabled');
-
-
     }
     function edit2() {
       document.getElementById("second").removeAttribute('disabled');
       document.getElementById("point2slide").removeAttribute('disabled');
-
     }
 
     function edit3() {
