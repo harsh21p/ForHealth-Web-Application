@@ -127,7 +127,6 @@ def select():
 
 # Details of user form
 
-
 @app.route('/details', methods=['GET', 'POST'])
 def details():
     if session["username"] == session["username1"]:

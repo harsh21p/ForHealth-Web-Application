@@ -3,8 +3,8 @@
   position: absolute;
   width: 240px;
   height: 60px;
-  top: 56%;
-  left: 7%;
+  top: 62%;
+  left: 9%;
   font-family: Poppinsdark;
   background: #042a73;
   border-radius: 14px;
@@ -18,8 +18,8 @@
   position: absolute;
   width: 240px;
   height: 60px;
-  top: 71%;
-  left: 7%;
+  top: 82%;
+  left: 9%;
   font-family: Poppinsdark;
   background: #042a73;
   border-radius: 14px;
@@ -38,7 +38,7 @@
 .photo{
   position: absolute;
   width: 15%;
-  top: 26%;
+  top: 29%;
   left: 10%;
 
 }
@@ -46,8 +46,8 @@
   position: absolute;
   width: 761.5px;
   height: 578px;
-  left: 435px;
-  top: 120;
+  left: 635px;
+  top: 150;
   background: #ee723d;
   box-shadow: -22px -13px 4px rgba(0, 0, 0, 0.1);
   border-radius: 97px 0px 0px 97px;
