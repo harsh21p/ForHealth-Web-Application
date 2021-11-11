@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Patient List</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/list.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/bootstrap.min.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/w3.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/navbar.css') }}">
+    <script src="{{ url_for('static', filename='js/list.js') }}"></script>
+</head>
+
+<body>
+
+    <script>
+        window.onload = check;
+
+        function check() {
+
+        }
+
+    </script>
+    <!-- drawer -->
+
+    <div id="mySidenav" class="sidenav" style="height: 370px; top: 105px;">
+        <div style=" margin:4%;">
+            <a style="text-decoration: none;" href="/">Home</a>
+        </div>
+        <div style="margin:4%;">
+            <a style="text-decoration: none; color: #EE723D;" href="list">List</a>
+        </div>
+        <div style="margin:4%;">
+            <a style="text-decoration: none;" href="select">Inputs</a>
+        </div>
+        <div style="margin:4%;">
+            <a style="text-decoration: none;" href="information">Graphs</a>
+        </div>
+        <div style=" margin:4%;">
+            <a style="text-decoration: none; cursor: pointer;" onclick="closeNav()">Close</a>
+        </div>
+    </div>
+
+    <script>
+        function openNav() {
+            document.getElementById("mySidenav").style.width = "236px";
+        }
+
+        function closeNav() {
+            document.getElementById("mySidenav").style.width = "0";
+        }
+    </script>
+
+    <!-- navbar -->
+    <div class="navbar" style="padding-top: 1%; padding-left:3%; padding-bottom: 7.6%;">
+        <div style="float: left; width: 25%; padding-top: 0.4%;">
+            <span onclick="openNav()">
+                <img src="{{ url_for('static', filename='images/drow.png') }}" alt="img" style="width: 11%;"></span>
+        </div>
+
+        <div style="float: left; width: 50%;">
+            <center>
+                <h6 class="lname">List</h6>
+            </center>
+        </div>
+
+        <div style="float: right; width: 25%; padding-top: 1%;">
+            <img src="{{ url_for('static', filename='images/logo.png') }}" alt="img"
+                style="width: 60%; margin-left: 40%;"></span>
+        </div>
+    </div>
+    <div style="float: left; width: 25%; padding-top: 0.4%; position: absolute; left: 5%; top: 52%;">
+        <a href="details">
+            <span>
+                <img src="{{ url_for('static', filename='images/back.png') }}" alt="img"
+                    style="width: 9.0%;"></span></a>
+    </div>
+
+    <!-- List code -->
+
+    <div class="select">
+        <div class="select1">
+            <center>
+                <img src="{{ url_for('static', filename='images/Profileimg.png') }}" alt="img" class="imgclass">
+                <P style="font-size: 20px; margin-top: 10%;"><b>User Name</b></P>
+                <P style="font-size: 15px; margin-top: 6%;">Tretmant</P>
+            </center>
+
+        </div>
+        <div class="select2">
+
+            <center>
+                <img src="{{ url_for('static', filename='images/Profileimg.png') }}" alt="img" class="imgclass">
+                <P style="font-size: 20px; margin-top: 10%;"><b>User Name</b></P>
+                <P style="font-size: 15px; margin-top: 6%;">Tretmant</P>
+            </center>
+
+
+        </div>
+        <div class="select3">
+
+            <center>
+                <img src="{{ url_for('static', filename='images/Profileimg.png') }}" alt="img" class="imgclass">
+                <P style="font-size: 20px; margin-top: 10%;"><b>User Name</b></P>
+                <P style="font-size: 15px; margin-top: 6%;">Tretmant</P>
+            </center>
+        </div>
+
+    </div>
+
+    <style>  
+        .rotate90 {  
+          -webkit-transform:rotate(180deg);  
+          -moz-transform: rotate(180deg);  
+          -ms-transform: rotate(180deg);  
+          -o-transform: rotate(180deg);  
+          transform: rotate(180deg);  
+        }  
+        </style>  
+
+    <div style="float: left; width: 25%; padding-top: 0.4%; position: absolute; left: 92%; top: 52%;">
+        <a href="details">
+            <span>
+                <img src="{{ url_for('static', filename='images/back.png') }}" alt="img"
+                    style="width: 9.0%;" class="rotate90"></span></a>
+    </div>
+
+</body>
+
+</html>

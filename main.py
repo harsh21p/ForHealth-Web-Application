@@ -10,8 +10,8 @@ from random import random
 
 # FLASK APP NEW
 
-app = Flask(__name__)
-
+app = Flask(__name__)    
+  
 app.secret_key = "ForHealth"
 
 db = sqlite3.connect("Database.db", check_same_thread=False)
@@ -19,7 +19,7 @@ db.row_factory = sqlite3.Row
 cursor = db.cursor()
 
 # Home
-
+  
 
 @app.route('/', methods=['GET', 'POST'])
 def myhome():
@@ -99,7 +99,7 @@ def select():
         if dataform['point1'] is None:
             if request.method == 'POST':
                 point1 = request.form["point1"]
-                point2 = request.form["point2"]
+                point2 = request.form["point2"] 
                 Resistance = request.form["Resistance"]
                 cursor.execute("UPDATE info1 SET point1=(?),point2=(?),Resistance=(?) WHERE name_user=(?)", (
                     point1, point2, Resistance, dataform['name_user']))
@@ -173,6 +173,11 @@ def details():
 def information():
     if session["username"] == session["username1"]:
         return render_template("fourthpage.html")
+
+
+@app.route('/list', methods=['GET', 'POST'])
+def list():
+    return render_template("userlist.html")
 
 # @/data route to send data from database to webpage
 
