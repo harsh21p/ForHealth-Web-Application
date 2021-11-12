@@ -1,16 +1,16 @@
-1) Change Lore ipsum...
-2) page 1 icone
+#1) Change Lore ipsum...
+#2) page 1 icone
 3) Forhealth as domain
-4) Remove Register
-5) Doctor Registration
-6) Remove user login
-7) Add user button
-8) list of users
+#4) Remove Register
+#5) Doctor Registration
+#6) Remove user login
+#7) Add user button
+#8) list of users
 9) session node( Date ) ==> user node
-10) icon to img
-11) Resistance to Assistance only in passive
-12) fredrive ==> Graphs
-13) Resistance to Speed only in Isokinetic
-14) Change information to ....?
-15) Harshesh collabration with live data 
-16) admin Credentials from harshesh 
+10) icon to img from database
+#11) Resistance to Assistance only in passive
+#12) fredrive direct ==> Graphs
+#13) Resistance to Speed only in Isokinetic
+#14) Change information to ....?
+#15) Harshesh collabration with live data 
+#16) admin Credentials from harshesh 
