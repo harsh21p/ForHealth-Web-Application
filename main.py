@@ -92,6 +92,7 @@ def dashboard():
 
 @app.route('/select', methods=['GET', 'POST'])
 def select():
+    
     if session["username"] == session["username1"]:
         cursor.execute("select * from info1 WHERE name_user=(?)",
                        (session['username'],))

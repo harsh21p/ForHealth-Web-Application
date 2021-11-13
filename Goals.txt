@@ -1,6 +1,6 @@
 #1) Change Lore ipsum...
-#2) page 1 icone
-3) Forhealth as domain
+#2) page 1 icon
+#3) Forhealth as domain
 #4) Remove Register
 #5) Doctor Registration
 #6) Remove user login
