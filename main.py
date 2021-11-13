@@ -104,9 +104,12 @@ def select():
                 cursor.execute("UPDATE info1 SET point1=(?),point2=(?),Resistance=(?) WHERE name_user=(?)", (
                     point1, point2, Resistance, dataform['name_user']))
                 db.commit()
-                return redirect(url_for("information"))
+                if dataform['selectbtn']=="Freedrive":
+                    return render_template("information",back="details")
+                return render_template("information",back="select")
             else:
-                return render_template("select.html")
+
+                return render_template("select.html",RSA="Resistance")
 
         elif dataform['point1'] is not None:
             point1 = dataform['point1']
@@ -120,8 +123,15 @@ def select():
                     point1, point2, Resistance, dataform['name_user']))
                 db.commit()
                 return redirect(url_for("information"))
+            
+            if dataform['selectbtn']=="Freedrive":
+                return redirect(url_for("information"))
+            if dataform['selectbtn']=="Passive":
+                return render_template("select.html",RSA="Assistance", point1=point1, point2=point2, Resistance=Resistance)
+            if dataform['selectbtn']=="Active isokinetic":
+                return render_template("select.html",RSA="Speed",point1=point1, point2=point2, Resistance=Resistance)
 
-            return render_template("select.html", point1=point1, point2=point2, Resistance=Resistance)
+            return render_template("select.html", point1=point1, point2=point2, Resistance=Resistance,RSA="Resistance")
     else:
         return redirect(url_for("login"))
 
@@ -143,6 +153,7 @@ def details():
                 cursor.execute("UPDATE info1 SET uname=(?),uage=(?),uweight=(?),uheight=(?),selectbtn=(?) WHERE name_user=(?)", (
                     name, age, weight, height, selectbtn, dataform['name_user']))
                 db.commit()
+
                 return redirect(url_for("select"))
             else:
                 return render_template("form.html")
@@ -162,6 +173,7 @@ def details():
                 cursor.execute("UPDATE info1 SET uname=(?),uage=(?),uweight=(?),uheight=(?),selectbtn=(?) WHERE name_user=(?)", (
                     name, age, weight, height, selectbtn, dataform['name_user']))
                 db.commit()
+
                 return redirect(url_for("select"))
 
             return render_template("form.html", uname=uname, uage=uage, uweight=uweight, uheight=uheight, selectbtn=selectbtn)
@@ -171,13 +183,18 @@ def details():
 
 @app.route('/information', methods=['GET', 'POST'])
 def information():
+    cursor.execute("select * from info1 WHERE name_user=(?)",
+                       (session['username'],))
+    dataform = cursor.fetchone()
     if session["username"] == session["username1"]:
-        return render_template("fourthpage.html")
+        if dataform['selectbtn']=="Freedrive":
+            return render_template("fourthpage.html",back="details")
+        return render_template("fourthpage.html",back="select")
 
 
-@app.route('/list', methods=['GET', 'POST'])
-def list():
-    return render_template("userlist.html")
+# @app.route('/list', methods=['GET', 'POST'])
+# def list():
+#     return render_template("userlist.html")
 
 # @/data route to send data from database to webpage
 
@@ -230,10 +247,7 @@ def data3():
 
 # FLASK APP
 
-
 if __name__ == '__main__':
 
     app.run(debug=True, host="0.0.0.0", port=3000)
 
-
-# mongodb+srv://forhealth:forhealth@cluster0.g4m18.mongodb.net/myFirstDatabase?retryWrites=true&w=majority
