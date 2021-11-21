@@ -8,6 +8,8 @@ import json
 from time import time
 from random import random
 
+from flask.helpers import flash
+
 # FLASK APP NEW
 
 app = Flask(__name__)    
@@ -199,9 +201,75 @@ def information():
 # @/data route to send data from database to webpage
 
 
+@app.route('/guest', methods=['GET', 'POST'])
+def guest():
+    if request.method == 'POST':
+        # sql query to inser in database and run the rout for next page 
+            # cursor.execute("select * from guest ORDER BY ID DESC LIMIT 1")
+            # dataform = cursor.fetchone()
+
+            if request.form['selectbtn']=="Freedrive":
+                # fire query to add value accordingly and render to graphs
+                cursor.execute("UPDATE guest SET treatment=(?) WHERE ID=(?)", ("Freedrive",1))
+                
+                return redirect(url_for("selectguest"))
+            if request.form['selectbtn']=="Passive":
+                # fire query to add value accordingly and render to select
+                cursor.execute("UPDATE guest SET treatment=(?) WHERE ID=(?)", ("Passive",1))
+                return redirect(url_for("selectguest"))
+            if request.form['selectbtn']=="Active isotonic":
+                # fire query to add value accordingly and render to select
+                cursor.execute("UPDATE guest SET treatment=(?) WHERE ID=(?)", ("Active isotonic",1))
+                return redirect(url_for("selectguest"))
+            if request.form['selectbtn']=="Active isometric":
+                # fire query to add value accordingly and render to select
+                cursor.execute("UPDATE guest SET treatment=(?) WHERE ID=(?)", ("Active isometric",1))
+                return redirect(url_for("selectguest"))
+            if request.form['selectbtn']=="Active isokinetic":
+                # fire query to add value accordingly and render to select
+                cursor.execute("UPDATE guest SET treatment=(?) WHERE ID=(?)", ("Active isokinetic",1))
+                return redirect(url_for("selectguest"))
+    else:
+        return render_template("guest.html")
+
+@app.route('/graphs', methods=['GET', 'POST'])
+def graphs():
+    #  requesting data from sql and use if else loop to render accordingly only two if and else 
+    cursor.execute("select * from guest ORDER BY ID DESC LIMIT 1")
+    dataform = cursor.fetchone()
+    if dataform is not None:
+        if dataform['treatment']=="Freedrive":
+            return render_template("graphs.html",back="guest")
+    return render_template("graphs.html",back="selectguest")
+
+@app.route('/selectguest', methods=['GET', 'POST'])
+def selectguest():
+    # requesting data from sql and use if else loop to render accordingly
+    if request.method == 'POST':
+        point1 = request.form["point1"]
+        point2 = request.form["point2"] 
+        Resistance = request.form["Resistance"]
+        return redirect(url_for("graphs"))
+
+    cursor.execute("select * from guest ORDER BY ID DESC LIMIT 1")
+    dataform = cursor.fetchone()
+    if dataform is not None:
+        if dataform['treatment']=="Freedrive":
+            return redirect(url_for("graphs"))
+        if dataform['treatment']=="Passive":
+            return render_template("selectguest.html",back="guest",point1="0",point2="0",RSA="Assistance",Resistance="50")
+        if dataform['treatment']=="Active isokinetic":
+            return render_template("selectguest.html",back="guest",point1="0",point2="0",RSA="Speed",Resistance="50")
+        else:
+            return render_template("selectguest.html",back="guest",point1="0",point2="0",RSA="Resistance",Resistance="50")
+
+    else:
+        return redirect(url_for("guest"))
+
+
 @app.route('/data')
-def data():
-    if session["username"] == session["username1"]:
+def data():   
+     # if session["username"] == session["username1"]:
         cursor.execute("select * from sdata ORDER BY ID DESC LIMIT 1")
         sdata = cursor.fetchone()
         if sdata is not None:
@@ -209,41 +277,41 @@ def data():
             response = make_response(json.dumps(data))
             response.content_type = 'application/json'
             return response
-    else:
-        return redirect(url_for("login"))
+    # else:
+    #     return redirect(url_for("login"))
 
 
 @app.route('/data1')
 def data1():
-    if session["username"] == session["username1"]:
+    # if session["username"] == session["username1"]:
         data = [time() * 100000, random()*100*time()]
         response = make_response(json.dumps(data))
         response.content_type = 'application/json'
         return response
-    else:
-        return redirect(url_for("login"))
+    # else:
+    #     return redirect(url_for("login"))
 
 
 @app.route('/data2')
 def data2():
-    if session["username"] == session["username1"]:
+    # if session["username"] == session["username1"]:
         data = [time() * 100000, random()*random()]
         response = make_response(json.dumps(data))
         response.content_type = 'application/json'
         return response
-    else:
-        return redirect(url_for("login"))
+    # else:
+    #     return redirect(url_for("login"))
 
 
 @app.route('/data3')
 def data3():
-    if session["username"] == session["username1"]:
+    # if session["username"] == session["username1"]:
         data = [time() * 10000, random()*100]
         response = make_response(json.dumps(data))
         response.content_type = 'application/json'
         return response
-    else:
-        return redirect(url_for("login"))
+    # else:
+    #     return redirect(url_for("login"))
 
 # FLASK APP
 

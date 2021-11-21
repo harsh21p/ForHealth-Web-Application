@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/select.css') }}">
+  <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/navbar.css') }}">
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/bootstrap.min.css') }}">
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/w3.css') }}">
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/input.css') }}">
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/input2.css') }}">
+  <script src="{{ url_for('static', filename='js/Supporting_docs/jquery.js') }}"></script>
+  <script src="{{ url_for('static', filename='js/form.js') }}"></script>
+  <script src="{{ url_for('static', filename='js/Supporting_docs/bootstrap.bundle.min.js') }}"></script>
+  <link rel="icon" href="{{ url_for('static', filename='images/logo1.png') }}" type="image/x-icon" />
+<link rel="shortcut icon" href="{{ url_for('static', filename='images/logo1.png') }}" type="image/x-icon" />
+</head>
+<title>Input End Points</title>
+
+<body>
+  <!-- Myprofile drawer -->
+
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/myprofilenav.css') }}">
+
+  <div id="myPronav" class="divnav">
+    <div style=" margin:4%;">
+      <a style="text-decoration: none;" href="#">
+        <center>
+          <button class="buttonnav">Guest</button>
+        </center>
+      </a>
+    </div>
+    <div style="margin:4%;">
+      <a style="text-decoration: none;" href="login">
+        <center>
+          <button class="buttonnav2">Login</button>
+        </center>
+      </a>
+    </div>
+    <div style="margin:4%;">
+      <a onclick="closeProNav()" style="text-decoration: none; cursor: pointer;">
+        <center>
+          <button class="buttonnav3">Close</button>
+        </center>
+      </a>
+    </div>
+  </div>
+
+  <script>
+    function openProNav() {
+      document.getElementById("myPronav").style.width = "120px";
+    }
+
+    function closeProNav() {
+      document.getElementById("myPronav").style.width = "0";
+    }
+  </script>
+
+  <!-- drawer -->
+  <div id="mySidenav" class="sidenav" style="height: 310px; top: 105px;">
+    <div style=" margin:4%;">
+      <a style="text-decoration: none;" href="/">Home</a>
+    </div>
+    <div style="margin:4%;">
+      <a style="text-decoration: none;" href="guest">Treatment</a>
+    </div>
+    <div style="margin:4%;">
+      <a style="text-decoration: none; color: #EE723D;" href="selectguest">Inputs</a>
+    </div>
+    <div style=" margin:4%;">
+      <a style="text-decoration: none; cursor: pointer;" onclick="closeNav()">Close</a>
+    </div>
+  </div>
+
+  <script>
+    function openNav() {
+      document.getElementById("mySidenav").style.width = "236px";
+    }
+
+    function closeNav() {
+      document.getElementById("mySidenav").style.width = "0";
+    }
+  </script>
+
+  <!-- button of drawer -->
+  <div class="navbar" style="padding-top: 1%; padding-left:3%; padding-bottom: 7.6%;">
+    <div style="float: left; width: 25%; padding-top: 0.4%;">
+      <span onclick="openNav()">
+        <img src="{{ url_for('static', filename='images/drow.png') }}" alt="img" style="width: 11%;"></span>
+    </div>
+
+    <div style="float: left; width: 50%;">
+      <center>
+        <h6 class="lname">Information</h6>
+      </center>
+    </div>
+
+    <div style="float: right; width: 25%; padding-top: 1%;">
+      <img src="{{ url_for('static', filename='images/logo.png') }}" alt="img"
+        style="width: 60%; margin-left: 40%;"></span>
+    </div>
+  </div>
+  <br>
+  <!-- button of drawer -->
+  <div class="navbar"
+    style="padding-top: 0.4%; padding-left:3%; padding-bottom: 6.6%; background-color: white; opacity: 100%;">
+    <div style="float: left; width: 25%; padding-top: 0.4%;">
+      <a href="{{back}}">
+        <span>
+          <img src="{{ url_for('static', filename='images/back.png') }}" alt="img"
+            style="width: 9%; margin-left: 9%;"></span></a>
+    </div>
+
+    <div style="float: left; width: 50%;">
+      <center>
+        <h6 class="lname1">Input end points</h6>
+      </center>
+
+    </div>
+
+    <div style="float: right; width: 25%; padding-top: 0.5%;">
+      <a onclick="openProNav()" style="text-decoration: none;">
+        <img src="{{ url_for('static', filename='images/Profileimg.png') }}" alt="img" class="imgclass">
+      </a>
+    </div>
+  </div>
+
+  <form action="" id="formofselect" method="POST">
+    <div>
+
+      <div
+        style="float: left; width: 25%; margin-left: 8%; font-family: Poppinsbold; font-weight: 600; font-size: 18px;">
+        <center><b>{{RSA}}</b></center>
+        <input type="range" style="position: relative;" value="{{Resistance}}" id="Resistance" name="Resistance" min="0"
+          max="100" onpointermove="updateTextInputr(this.value);">
+        <div style="margin-top: -4%;">
+          <div style="float: left; width: 10%; font-size: small;">
+            <center>Low</center>
+          </div>
+          <div style="float: left; width: 80%;font-size: small;">
+            <center>Medium</center>
+          </div>
+          <div style="float: right; width: 10%;font-size: small;">
+            <center>High</center>
+          </div>
+        </div>
+      </div>
+
+
+    </div>
+    <br><br><br><br>
+
+    <div class="select1">
+      <div style="float: left; width: 35%;">
+        <center>
+          <button type="button" onclick="enable()" class="manualbtn">Manual</button>
+        </center>
+      </div>
+
+      <div class="slidfor">
+        <button type="button" class="btnrec" ><b>Record</b></button>
+        <button type="button" class="btnrec" style="margin-left: 21.3%;" ><b>Record</b></button>
+        <center>
+          <input name="point1" value="{{point1}}" class="input1" id="first">
+          <input name="point2" value="{{point2}}" class="input2" id="second" /><br>
+        </center>
+        <input type="range" id="point1slide" value="{{point1}}" min="0" max="100"
+          onpointermove="updateTextInput1(this.value);">
+        <input type="range" value="{{point2}}" style="margin-left: 5%;" id="point2slide" min="0" max="100"
+          onpointermove="updateTextInput2(this.value);">
+      </div>
+    </div>
+
+    <script>
+      function updateTextInput1(val) {
+        document.getElementById('point1slide').value = val;
+        document.getElementById('first').value = val;
+      }
+      function updateTextInput2(val) {
+        document.getElementById('point2slide').value = val;
+        document.getElementById('second').value = val;
+      }
+      function updateTextInputr(val) {
+        document.getElementById('Resistance').value = val;
+      }
+    </script>
+
+    <div class="select1">
+      <div style="float: left; width: 35%;">
+        <center>
+          <button onclick="disable()" type="button" class="manualbtn">Auto</button>
+        </center>
+
+      </div>
+
+      <div style="float: right; width: 65%;">
+        <button type="button" class="btnrec" ><b>Record</b></button>
+        <button type="button" class="btnrec" style="margin-left: 22%;"><b>Record</b></button>
+        <center>
+          <input name="point1" value="{{point1}}" class="input1" id="third">
+          <input name="point2" value="{{point2}}" class="input2" id="fourth" /><br>
+        </center>
+
+      </div>
+    </div>
+    </div>
+    <div>
+      <center>
+        <a href="information"></a>
+        <button style="margin-top: 0.2%; margin-bottom: 0.5%;" type="submit" class="button1">Continue</button>
+        </a>
+      </center>
+    </div>
+  </form>
+  <script>
+
+
+    function disable() {
+      document.getElementById("first").disabled = "true";
+      document.getElementById("second").disabled = "true";
+      document.getElementById("third").removeAttribute('disabled');
+      document.getElementById("fourth").removeAttribute('disabled');
+    }
+
+    function enable() {
+      document.getElementById("first").removeAttribute('disabled');
+      document.getElementById("second").removeAttribute('disabled');
+      document.getElementById("third").disabled = "true";
+      document.getElementById("fourth").disabled = "true";
+    }
+
+    function record1() {
+      document.getElementById("first").disabled = "true";
+      document.getElementById("point1slide").disabled = "true";
+      document.getElementById("third").disabled = "true";
+    }
+    function record2() {
+      document.getElementById("second").disabled = "true";
+      document.getElementById("point2slide").disabled = "true";
+      document.getElementById("fourth").disabled = "true";
+    }
+
+    function record3() {
+      document.getElementById("third").disabled = "true";
+      document.getElementById("second").disabled = "true";
+    }
+
+    function record4() {
+      document.getElementById("fourth").disabled = "true";
+      document.getElementById("first").disabled = "true";
+    }
+
+    function edit1() {
+      document.getElementById("first").removeAttribute('disabled');
+      document.getElementById("point1slide").removeAttribute('disabled');
+    }
+    function edit2() {
+      document.getElementById("second").removeAttribute('disabled');
+      document.getElementById("point2slide").removeAttribute('disabled');
+    }
+
+    function edit3() {
+      document.getElementById("third").removeAttribute('disabled');
+    }
+
+    function edit4() {
+      document.getElementById("fourth").removeAttribute('disabled');
+    }
+  </script>
+
+</body>
+
+</html>

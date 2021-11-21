@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/graphs.css') }}">
+  <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/navbar.css') }}">
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/bootstrap.min.css') }}">
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/w3.css') }}">
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/input.css') }}">
+  <script src="{{ url_for('static', filename='js/Supporting_docs/jquery.js') }}"></script>
+  <script src="{{ url_for('static', filename='js/Supporting_docs/bootstrap.bundle.min.js') }}"></script>
+  <script src="{{ url_for('static', filename='js/form.js') }}"></script>
+  <link rel="icon" href="{{ url_for('static', filename='images/logo1.png') }}" type="image/x-icon" />
+<link rel="shortcut icon" href="{{ url_for('static', filename='images/logo1.png') }}" type="image/x-icon" />
+</head>
+<title>Control Panal</title>
+
+<body>
+  <!-- drawer -->
+
+  <!-- Myprofile drawer -->
+
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/myprofilenav.css') }}">
+
+  <div id="myPronav" class="divnav">
+    <div style=" margin:4%;">
+      <a style="text-decoration: none;" href="#">
+        <center>
+          <button class="buttonnav">Guest</button>
+        </center>
+      </a>
+    </div>
+    <div style="margin:4%;">
+      <a style="text-decoration: none;" href="login">
+        <center>
+          <button class="buttonnav2">Login</button>
+        </center>
+      </a>
+    </div>
+    <div style="margin:4%;">
+      <a onclick="closeProNav()" style="text-decoration: none; cursor: pointer;">
+        <center>
+          <button class="buttonnav3">Close</button>
+        </center>
+      </a>
+    </div>
+  </div>
+
+  <script>
+    function openProNav() {
+      document.getElementById("myPronav").style.width = "120px";
+    }
+
+    function closeProNav() {
+      document.getElementById("myPronav").style.width = "0";
+    }
+  </script>
+
+  <div id="mySidenav" class="sidenav" style="height: 370px; top: 105px;">
+    <div style=" margin:4%;">
+      <a style="text-decoration: none;" href="/">Home</a>
+    </div>
+    <div style="margin:4%;">
+      <a style="text-decoration: none;" href="guest">Treatment</a>
+    </div>
+    <div style="margin:4%;">
+      <a style="text-decoration: none;" href="selectguest">Inputs</a>
+    </div>
+    <div style="margin:4%;">
+      <a style="text-decoration: none;color: #EE723D;" href="graphs">Graphs</a>
+    </div>
+    <div style=" margin:4%;">
+      <a style="text-decoration: none; cursor: pointer;" onclick="closeNav()">Close</a>
+    </div>
+  </div>
+
+  <script>
+    function openNav() {
+      document.getElementById("mySidenav").style.width = "236px";
+    }
+
+    function closeNav() {
+      document.getElementById("mySidenav").style.width = "0";
+    }
+  </script>
+  <!-- button of drawer -->
+  <div class="navbar" style="padding-top: 1%; padding-left:3%; padding-bottom: 7.6%;">
+    <div style="float: left; width: 25%; padding-top: 0.4%;">
+      <span onclick="openNav()">
+        <img src="{{ url_for('static', filename='images/drow.png') }}" alt="img" style="width: 11%;"></span>
+    </div>
+
+    <div style="float: left; width: 50%;">
+      <center>
+        <h6 class="lname">Information</h6>
+      </center>
+    </div>
+
+    <div style="float: right; width: 25%; padding-top: 1%;">
+      <img src="{{ url_for('static', filename='images/logo.png') }}" alt="img"
+        style="width: 60%; margin-left: 40%;"></span>
+    </div>
+  </div>
+  <br>
+  <!-- button of drawer -->
+  <div class="navbar"
+    style="padding-top: 0.4%; padding-left:3%; padding-bottom: 6.6%; background-color: white; opacity: 100%;">
+    <div style="float: left; width: 15%; padding-top: 0.4%;">
+      <a href="{{back}}">
+        <span>
+          <img src="{{ url_for('static', filename='images/back.png') }}" alt="img"
+            style="width: 15%; margin-left: 16%;"></span></a>
+    </div>
+
+    <div style="float: left; width: 70%;">
+      <div style="float: left; width: 25%;">
+        <button type="button" class="play"><b style="color: white; font-weight: 500;
+            font-size: 24px;
+            line-height: 36px;">Play</b></button>
+      </div>
+      <div style="float: left; width: 25%;  padding-left: 5%;">
+        <button type="button" class="play"><b style="color: white; font-weight: 500;
+          font-size: 24px;
+          line-height: 36px;">Pause</b></button>
+      </div>
+      <div style="float: left; width: 25%;padding-left: 10%;">
+        <button type="button" class="play"><b style="color: white; font-weight: 500;
+          font-size: 24px;
+          line-height: 36px;">Stop</b></button>
+      </div>
+    </div>
+    <div style="float: right; width: 15%; padding-top: 0.5%;">
+      <a style="cursor: pointer; text-decoration: none;" onclick="openProNav()">
+        <img src="{{ url_for('static', filename='images/Profileimg.png') }}" alt="img" class="imgclass"></a>
+
+    </div>
+  </div>
+
+  <div class="angle">
+
+    <!-- Angle -->
+
+    <center>
+      <p style="
+        width: 156px;
+        height: 36px;;
+        font-family: Poppins;
+        font-style: normal;
+        font-weight: normal;
+        font-size: 24px;
+        line-height: 36px;
+        color: #000000;margin-top: 6%;">Device Angle</p>
+    </center>
+
+
+    <div class="anglediv">
+      <center>
+        <p style="
+            width: 156px;
+            height: 36px;;
+            font-family: Poppins;
+            font-style: normal;
+            font-weight: normal;
+            font-size: 24px;
+            line-height: 36px;
+            color: #000000;margin-top: 0%;">Angle = <b>30°</b></p>
+    </div>
+    </center>
+
+  </div>
+  <script src="/static/js/Supporting_docs/jquery.min.js"></script>
+  <script src="/static/js/Supporting_docs/highchart.js"></script>
+  <script src="/static/js/Supporting_docs/highcharts-more.js"></script>
+  <script src="/static/js/Supporting_docs/exporting.js"></script>
+  <script src="/static/js/getdata1.js"></script>
+  <script src="/static/js/getdata.js"></script>
+
+  <div class="graphs">
+
+    <!-- Graphs -->
+
+    <center>
+      <p sqtyle="
+        width: 156px;
+        height: 36px;;
+        font-family: Poppins;
+        font-style: normal;
+        font-weight: normal;
+        font-size: 24px;
+        line-height: 36px;
+        color: #000000;margin-top: 6%;">Graphs</p>
+    </center>
+
+    <div id="graph1" style="float: left; width: 100%; overflow: hidden; position: absolute;">
+        <div class="graph1" id="data-container"></div>
+        <div class="graph2" id="data-container1"></div>
+    </div>
+
+    <div id="graph2" style="float: left; width: 100%; overflow: hidden;  position: absolute;">
+        <div class="graph1"  id="data-container2"></div>
+        <div class="graph2"  id="data-container3"></div>
+    </div>
+
+    <script>
+
+       function slidenext() {
+      document.getElementById("graph1").style.width = "100%";
+      document.getElementById("graph2").style.width = "0";
+
+    }
+
+    function slideprv() {
+      document.getElementById("graph2").style.width = "100%";
+      document.getElementById("graph1").style.width = "0";
+    }
+    </script>
+      <div style="margin-top: 7%;">
+        <div style="float: left; width: 50%;">
+          <button onclick="slidenext()" class="sliderbtn"></button>
+        </div>
+        <div style="float: right; width: 50%;">
+          <button onclick="slideprv()" class="sliderbtn1"></button>
+        </div>
+      </div>
+
+  </div>
+</body>
+
+</html>

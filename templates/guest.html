@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Patient Details</title>
+  <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/guest.css') }}">
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/bootstrap.min.css') }}">
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/w3.css') }}">
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/navbar.css') }}">
+  <script src="{{ url_for('static', filename='js/Supporting_docs/jquery.js') }}"></script>
+  <script src="{{ url_for('static', filename='js/Supporting_docs/bootstrap.bundle.min.js') }}"></script>
+  <script src="{{ url_for('static', filename='js/form.js') }}"></script>
+  <link rel="icon" href="{{ url_for('static', filename='images/logo1.png') }}" type="image/x-icon" />
+<link rel="shortcut icon" href="{{ url_for('static', filename='images/logo1.png') }}" type="image/x-icon" />
+</head>
+
+<body>
+
+  <script>
+    window.onload = check;
+
+    function check() {
+
+      let a = "Freedrive";
+
+      if (a == "Passive") {
+        document.getElementById("btn1").focus();
+      }
+      if (a == "Freedrive") {
+        document.getElementById("btn2").focus();
+      }
+      if (a == "Active isotonic") {
+        document.getElementById("btn3").focus();
+      }
+      if (a == "Active isometric") {
+        document.getElementById("btn4").focus();
+      }
+      if (a == "cctive isokinetic") {
+        document.getElementById("btn5").focus();
+      }
+    }
+
+
+    function passive() {
+
+      document.getElementById("btnselect").value = "Passive";
+    }
+
+    function passive1() {
+
+      document.getElementById("btnselect").value = "Freedrive";
+    }
+
+    function passive2() {
+
+      document.getElementById("btnselect").value = "Active isotonic";
+    }
+
+    function passive3() {
+
+      document.getElementById("btnselect").value = "Active isometric";
+    }
+    function passive4() {
+
+      document.getElementById("btnselect").value = "Active isokinetic";
+    }
+
+
+
+
+  </script>
+  <!-- drawer -->
+
+  <div id="mySidenav" class="sidenav" style="height: 240px; top: 105px;">
+    <div style=" margin:4%;">
+      <a style="text-decoration: none;" href="/">Home</a>
+    </div>
+    <div style=" margin:4%;">
+      <a style="text-decoration: none; cursor: pointer; color: #EE723D;">Treatment</a>
+    </div>
+    <div style=" margin:4%;">
+      <a style="text-decoration: none; cursor: pointer;" onclick="closeNav()">Close</a>
+    </div>
+  </div>
+
+  <script>
+    function openNav() {
+      document.getElementById("mySidenav").style.width = "236px";
+    }
+
+    function closeNav() {
+      document.getElementById("mySidenav").style.width = "0";
+    }
+  </script>
+
+  <!-- navbar -->
+  <div class="navbar" style="padding-top: 1%; padding-left:3%; padding-bottom: 7.6%;">
+    <div style="float: left; width: 25%; padding-top: 0.4%;">
+      <span onclick="openNav()">
+        <img src="{{ url_for('static', filename='images/drow.png') }}" alt="img" style="width: 11%;"></span>
+    </div>
+
+    <div style="float: left; width: 50%;">
+      <center>
+        <h6 class="lname">Treatment</h6>
+      </center>
+    </div>
+
+    <div style="float: right; width: 25%; padding-top: 1%;">
+      <img src="{{ url_for('static', filename='images/logo.png') }}" alt="img"
+        style="width: 60%; margin-left: 40%;"></span>
+    </div>
+  </div>
+  <div style="float: left; width: 25%; padding-top: 0.4%; position: absolute; left: 5%; top: 16%;">
+    <a href="/">
+      <span>
+        <img src="{{ url_for('static', filename='images/back.png') }}" alt="img" style="width: 9.0%;"></span></a>
+  </div>
+  <center>
+  <form action="" id="formofselect" method="POST">
+    <!-- Second -->
+    <div class="gsecond">
+        <input name="selectbtn" value="{{selectbtn}}" type="hidden" placeholder="btn" type="text" id="btnselect">
+      <h1 class="sdetails" style="font-family: Poppinsdark; margin-top: 10%;font-size: 150%;">Type of Treatment</h1>
+      <center>
+        <div style="margin: auto; margin-top: 5%;">
+          <button id="btn1" type="button" onclick="passive()" name="button" value="Passive" class="button1"
+            style="margin-top: 6%;">Passive</button>
+          <br>
+          <br>
+          <button type="button" onclick="passive1()" id="btn2" class="button1">Freedrive</button>
+          <br>
+          <br>
+          <button type="button" onclick="passive2()" id="btn3" class="button1">Active isotonic</button>
+          <br>
+          <br>
+          <button type="button" onclick="passive3()" id="btn4" class="button1">Active isometric</button>
+          <br>
+          <br>
+          <button type="button" onclick="passive4()" id="btn5" class="button1">Active isokinetic</button>
+          <br>
+          <br>
+      </center>
+      <div style="margin-top: 4%;">
+        <div>
+          <center>
+            <button class="confirm">Confirm</button>
+          </center>
+        </div>
+      </div>
+
+    </div>
+    </div>
+  </form>
+</center>
+  </div>
+</body>
+
+</html>

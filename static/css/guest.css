@@ -39,18 +39,20 @@
 }
 
 .gsecond
-{
+{ 
     background: #BCBCBC33;
     color: black;
     width: 364px;
     height: 533px;
     border-radius: 60px;
-    margin-top: 6%;
+    margin-top: 6.1%;
+    padding-top: 0.1%;
+    
 }
 
 .sdetails
 {
-    margin:auto;
+    
     text-align:center;
 }
 

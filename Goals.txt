@@ -6,8 +6,11 @@
 #6) Remove user login
 #7) Add user button
 #Siddhu# 8) list of users
+
 9) session node( Date ) ==> user node
 10) icon to img from database
+17) Guest Mode
+
 #11) Resistance to Assistance only in passive
 #12) fredrive direct ==> Graphs
 #13) Resistance to Speed only in Isokinetic
