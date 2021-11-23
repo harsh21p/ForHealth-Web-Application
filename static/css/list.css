@@ -8,6 +8,7 @@
     font-size: 36px;
     line-height: 54px;
     font-weight: bold;
+    margin-left: 2%;
     color: #042a73;
   }
 
@@ -24,6 +25,14 @@
     border-radius: 47px;
     float: left;
   }
+
+  
+.imgclass {
+  border-radius: 50%;
+  width: 38%;
+  margin-bottom: 10%;
+}
+
 
   .select2 {
     width: 20%;

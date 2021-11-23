@@ -12,7 +12,38 @@
     padding: 1%;
   }
   
+  .listcard{
+    float: left;
+    height: 350px;
+    width: 287px;
+    margin-top: 15%;
+    border-radius: 10%;
+    margin-left: 10%;
+    background-color: #EAEAEA;
 
+}
+
+.listcard2{
+  float: left;
+  height: 350px;
+  width: 287px;
+  margin-top: 15%;
+  border-radius: 10%;
+  margin-left: 3%;
+  background-color: #EAEAEA;
+
+}
+
+.rotateimg180 {
+
+  width: 9.0%;
+  -webkit-transform:rotate(180deg);
+  -moz-transform: rotate(180deg);
+  -ms-transform: rotate(180deg);
+  -o-transform: rotate(180deg);
+  transform: rotate(180deg);
+}
+  
   .sidenav {
     height: 250px;
     width: 0%;

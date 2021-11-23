@@ -71,13 +71,46 @@
         </div>
     </div>
     <div style="float: left; width: 25%; padding-top: 0.4%; position: absolute; left: 5%; top: 52%;">
-        <a href="details">
+        <a onclick="prv()">
             <span>
                 <img src="{{ url_for('static', filename='images/back.png') }}" alt="img"
                     style="width: 9.0%;"></span></a>
     </div>
 
     <!-- List code -->
+
+    <div class="listcard">
+        <center>
+            <img src="{{ url_for('static', filename='images/Profileimg.png') }}" alt="img" class="imgclass">
+            <p><b>Name : Example</b></p>
+            <p><b>Email : example@example.com</b></p>
+            <p><b>Phone : +918833772277</b></p>
+        </center>
+    </div>
+
+    <div class="listcard2">
+        <center>
+            <img src="{{ url_for('static', filename='images/Profileimg.png') }}" alt="img" class="imgclass">
+            <p><b>Name : Example</b></p>
+            <p><b>Email : example@example.com</b></p>
+            <p><b>Phone : +918833772277</b></p>
+        </center>
+    </div>
+
+    <div class="listcard2">
+        <center>
+            <img src="{{ url_for('static', filename='images/Profileimg.png') }}" alt="img" class="imgclass">
+            <p><b>Name : Example</b></p>
+            <p><b>Email : example@example.com</b></p>
+            <p><b>Phone : +918833772277</b></p>
+        </center>
+    </div>
+
+    <div  style="float: right; width: 25%; padding-top: 0.4%; position: absolute; left: 91%; top: 51.8%;">
+        <a onclick="nxt()">
+            <span>
+                <img  class="rotateimg180" src="{{ url_for('static', filename='images/back.png') }}" alt="img"></span></a>
+    </div>
 
 
 </body>

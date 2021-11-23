@@ -194,9 +194,9 @@ def information():
         return render_template("fourthpage.html",back="select")
 
 
-# @app.route('/list', methods=['GET', 'POST'])
-# def list():
-#     return render_template("userlist.html")
+@app.route('/list', methods=['GET', 'POST'])
+def list():
+    return render_template("userlist.html")
 
 # @/data route to send data from database to webpage
 
@@ -211,7 +211,6 @@ def guest():
             if request.form['selectbtn']=="Freedrive":
                 # fire query to add value accordingly and render to graphs
                 cursor.execute("UPDATE guest SET treatment=(?) WHERE ID=(?)", ("Freedrive",1))
-                
                 return redirect(url_for("selectguest"))
             if request.form['selectbtn']=="Passive":
                 # fire query to add value accordingly and render to select
@@ -265,7 +264,6 @@ def selectguest():
 
     else:
         return redirect(url_for("guest"))
-
 
 @app.route('/data')
 def data():   
