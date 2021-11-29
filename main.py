@@ -7,7 +7,7 @@ import sqlite3
 import json
 from time import time
 from random import random
-
+# import Adafruit_ADS1x15
 from flask.helpers import flash
 
 # FLASK APP NEW
@@ -271,7 +271,13 @@ def data():
         cursor.execute("select * from sdata ORDER BY ID DESC LIMIT 1")
         sdata = cursor.fetchone()
         if sdata is not None:
-            data = [time() * 10000, int(sdata["value1"])]
+
+            # adc = Adafruit_ADS1x15.ADS1115()
+            # GAIN = 2
+            # adc.start_adc(0, gain=GAIN)
+            # value = adc.get_last_result()
+
+            data = [time() * 10000, random()*100*time()]
             response = make_response(json.dumps(data))
             response.content_type = 'application/json'
             return response
@@ -279,37 +285,37 @@ def data():
     #     return redirect(url_for("login"))
 
 
-@app.route('/data1')
-def data1():
-    # if session["username"] == session["username1"]:
-        data = [time() * 100000, random()*100*time()]
-        response = make_response(json.dumps(data))
-        response.content_type = 'application/json'
-        return response
-    # else:
-    #     return redirect(url_for("login"))
+# @app.route('/data1')
+# def data1():
+#     # if session["username"] == session["username1"]:
+#         data = [time() * 100000, random()*100*time()]
+#         response = make_response(json.dumps(data))
+#         response.content_type = 'application/json'
+#         return response
+#     # else:
+#     #     return redirect(url_for("login"))
 
 
-@app.route('/data2')
-def data2():
-    # if session["username"] == session["username1"]:
-        data = [time() * 100000, random()*random()]
-        response = make_response(json.dumps(data))
-        response.content_type = 'application/json'
-        return response
-    # else:
-    #     return redirect(url_for("login"))
+# @app.route('/data2')
+# def data2():
+#     # if session["username"] == session["username1"]:
+#         data = [time() * 100000, random()*random()]
+#         response = make_response(json.dumps(data))
+#         response.content_type = 'application/json'
+#         return response
+#     # else:
+#     #     return redirect(url_for("login"))
 
 
-@app.route('/data3')
-def data3():
-    # if session["username"] == session["username1"]:
-        data = [time() * 10000, random()*100]
-        response = make_response(json.dumps(data))
-        response.content_type = 'application/json'
-        return response
-    # else:
-    #     return redirect(url_for("login"))
+# @app.route('/data3')
+# def data3():
+#     # if session["username"] == session["username1"]:
+#         data = [time() * 10000, random()*100]
+#         response = make_response(json.dumps(data))
+#         response.content_type = 'application/json'
+#         return response
+#     # else:
+#     #     return redirect(url_for("login"))
 
 # FLASK APP
 

@@ -76,6 +76,15 @@
   border-radius: 10px;
 }
 
+.graph1 {
+  height: 310px;
+  background: #ffffff;
+  border-radius: 10px;
+  float: left;
+  width: 45%;
+  margin-left: 3%;
+}
+
 .imgclass {
   border-radius: 50%;
   width: 38%;
@@ -96,14 +105,7 @@
 
 }
 
-.graph1 {
-  height: 310px;
-  background: #ffffff;
-  border-radius: 10px;
-  float: left;
-  width: 45%;
-  margin-left: 3%;
-}
+
 
 .graph2 {
   height: 310px;
