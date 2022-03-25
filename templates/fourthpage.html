@@ -114,12 +114,12 @@
 
     <div style="float: left; width: 70%;">
       <div style="float: left; width: 25%;">
-        <button type="button" class="play"><b style="color: white; font-weight: 500;
+        <button onclick="ledon()" type="button" class="play"><b style="color: white; font-weight: 500;
             font-size: 24px;
             line-height: 36px;">Play</b></button>
       </div>
       <div style="float: left; width: 25%;  padding-left: 5%;">
-        <button type="button" class="play"><b style="color: white; font-weight: 500;
+        <button onclick="ledoff()" type="button" class="play"><b style="color: white; font-weight: 500;
           font-size: 24px;
           line-height: 36px;">Pause</b></button>
       </div>
@@ -223,7 +223,23 @@
           <button onclick="slideprv()" class="sliderbtn1"></button>
         </div>
       </div> -->
+<script>
+     function ledon()
+    {
+        // send a request, but don't refresh page
+        xhttp = new XMLHttpRequest();
+        xhttp.open("GET", "on", true);
+        xhttp.send();
+    }
 
+    function ledoff()
+    {
+        // send a request, but don't refresh page
+        xhttp1 = new XMLHttpRequest();
+        xhttp1.open("GET", "off", true);
+        xhttp1.send();
+    }
+</script>
   </div>
 </body>
 
