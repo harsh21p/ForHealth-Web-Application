@@ -1,4 +1,5 @@
 var chart;
+var chartb;
 
 /**
  * Request data from the server, add it to the graph and set a timeout
@@ -34,7 +35,7 @@ function requestData() {
     if(j==5){
         
         $.ajax({
-            url: '/data',
+            url: '/torque',
             success: function(point) {
                 var series = chart.series[0],
                     shift = series.data.length > 20; // shift if the series is
@@ -53,26 +54,76 @@ function requestData() {
 
     }
 
-    // if(k==10){
-    //     $.ajax({
-    //         url: '/data2',
-    //         success: function(point) {
-    //             var series = chart.series[0],
-    //                 shift = series.data.length > 20; // shift if the series is
-    //                                                 // longer than 20
-                    
-    //             // add the point
-                
-    //             chartb.series[0].addPoint(point, true, shift);
-            
+    if(i==5){
+        
+        $.ajax({
+            url: '/angle',
+            success: function(point) {
 
-    //             // call it again after one second
+                document.getElementById("angle").innerHTML ="Angle = <b>"+point+"°</b>";
+
+            },
+            cache: false
+        });
+        i=0;
+
+    }
+
+    if(k==5){
+        
+        $.ajax({
+            url: '/repetition',
+            success: function(point) {
+
+                document.getElementById("repetition").innerHTML ="<b>"+point+"</b>";
+
+            },
+            cache: false
+        });
+        
+
+    }
+
+    if(l==5){
+        
+        $.ajax({
+            url: '/breakstate',
+            success: function(point) {
+                if(point==1){
+                document.getElementById("break").style.backgroundColor = "#14FF00";
+                }else{
+
+                    document.getElementById("break").style.backgroundColor = "#FF0000";
+
+                }
+
+            },
+            cache: false
+        });
+        l=0;
+
+    }
+
+    if(k==5){
+        $.ajax({
+            url: '/speed',
+            success: function(point) {
+                var series = chartb.series[0],
+                    shift = series.data.length > 20; // shift if the series is
+                                                    // longer than 20
+                    
+                // add the point
                 
-    //         },
-    //         cache: false
-    //     });
-    //     k=0;
-    // }
+                chartb.yAxis[0].setExtremes(0,1500);
+                chartb.series[0].addPoint(point, true, shift);
+
+                // call it again after one second
+                
+            },
+            cache: false
+        });
+        k=0;
+    }
 
    
     // if(l==15){
@@ -116,7 +167,7 @@ $(document).ready(function() {
             }
         },
         title: {
-            text: 'Live1'
+            text: 'Torque '
         },
         xAxis: {
             type: 'datetime',
@@ -155,6 +206,53 @@ $(document).ready(function() {
 });
 
 
+$(document).ready(function() {
+    chartb = new Highcharts.Chart({
+        chart: {
+            renderTo: 'data-container1',
+            defaultSeriesType: 'spline',
+            events: {
+                load: requestData
+            }
+        },
+        title: {
+            text: 'Speed'
+        },
+        xAxis: {
+            type: 'datetime',
+            tickPixelInterval: 150,
+            maxZoom: 20 * 1000
+        },
+        yAxis: {
+            minPadding: 0.2,
+            maxPadding: 0.2,
+            title: {
+                text: 'Value',
+                margin: 0
+            }
+        },
+        plotOptions: {
+            
+            series: {
+                color:'hsl(18, 84%, 59%)',
+                allowPointSelect: true,
+                marker: {
+                    fillColor: 'hsl(18, 84%, 59%)',
+                    states: {
+                        select: {
+                            fillColor: 'red',
+                            lineWidth: 0
+                        }
+                    }
+                }
+            }
+        },
+        series: [{
+            name: 'Data',
+            data: []
+        }]
+    });
+});
 
 // $(document).ready(function() {
 //     charta = new Highcharts.Chart({
@@ -206,53 +304,6 @@ $(document).ready(function() {
 //     });
 // });
 
-// $(document).ready(function() {
-//     chartb = new Highcharts.Chart({
-//         chart: {
-//             renderTo: 'data-container2',
-//             defaultSeriesType: 'spline',
-//             events: {
-//                 load: requestData
-//             }
-//         },
-//         title: {
-//             text: 'Live3'
-//         },
-//         xAxis: {
-//             type: 'datetime',
-//             tickPixelInterval: 150,
-//             maxZoom: 20 * 1000
-//         },
-//         yAxis: {
-//             minPadding: 0.2,
-//             maxPadding: 0.2,
-//             title: {
-//                 text: 'Value',
-//                 margin: 0
-//             }
-//         },
-//         plotOptions: {
-            
-//             series: {
-//                 color:'hsl(18, 84%, 59%)',
-//                 allowPointSelect: true,
-//                 marker: {
-//                     fillColor: 'hsl(18, 84%, 59%)',
-//                     states: {
-//                         select: {
-//                             fillColor: 'red',
-//                             lineWidth: 0
-//                         }
-//                     }
-//                 }
-//             }
-//         },
-//         series: [{
-//             name: 'Data',
-//             data: []
-//         }]
-//     });
-// });
 
 
 // $(document).ready(function() {

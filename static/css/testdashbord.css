@@ -1,0 +1,35 @@
+.angle{
+
+    width: 48%;
+    float: left;
+    margin: 1%;
+    
+}
+
+
+.brake{
+
+    width: 48%;
+    float: right;
+    margin: 1%;
+    background-color: black;
+
+}
+
+.derection{
+
+    width: 48%;
+    float: left;
+    margin: 1%;
+    background-color: gray;
+
+}
+
+.grapht{
+
+    width: 48%;
+    float: right;
+    margin: 1%;
+}
+
+

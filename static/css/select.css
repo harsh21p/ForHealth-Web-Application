@@ -97,6 +97,19 @@ border:#f05918;
   text-align: center;
   border: none;
 }
+
+.inputrep{
+
+  height: 40px;
+  width: 40px;
+  border-radius: 20%;
+  margin: auto;
+  text-align: center;
+  background: #FFFFFF;
+  border: 1px solid #000000;
+  box-sizing: border-box;
+
+}
 .input2 {
   height: 70px;
   width: 70px;

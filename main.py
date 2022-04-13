@@ -6,29 +6,30 @@ from flask import Flask, render_template, request
 import sqlite3
 import json
 from time import time
-from random import random
-import Adafruit_ADS1x15
+from random import randint, random
+# import Adafruit_ADS1x15
 from flask.helpers import flash
 import xlwt
 from xlwt import Workbook
 import numpy as np
-import RPi.GPIO as GPIO
+# import RPi.GPIO as GPIO
 from time import sleep
+from flask_caching import Cache
 
-GPIO.setwarnings(False)
-GPIO.setmode(GPIO.BCM) 
-GPIO.setup(21, GPIO.OUT) 
+# GPIO.setwarnings(False)
+# GPIO.setmode(GPIO.BCM) 
+# GPIO.setup(21, GPIO.OUT) 
 
-def led_on():
-    GPIO.output(21, GPIO.HIGH) 
+# def led_on():
+#     GPIO.output(21, GPIO.HIGH) 
 
-def led_off():
-    GPIO.output(21, GPIO.LOW)
+# def led_off():
+#     GPIO.output(21, GPIO.LOW)
 
 # FLASK APP NEW
 
-app = Flask(__name__)    
-  
+app = Flask(__name__)  
+
 app.secret_key = "ForHealth"
 
 db = sqlite3.connect("Database.db", check_same_thread=False)
@@ -45,13 +46,13 @@ def myhome():
 
 
 
-@app.route('/on', methods=['GET'])
-def on():
-    led_on()
+# @app.route('/on', methods=['GET'])
+# def on():
+#     led_on()
 
-@app.route('/off', methods=['GET'])
-def off():
-    led_off()
+# @app.route('/off', methods=['GET'])
+# def off():
+#     led_off()
 # LOGIN
 
 
@@ -128,6 +129,7 @@ def select():
                 point1 = request.form["point1"]
                 point2 = request.form["point2"] 
                 Resistance = request.form["Resistance"]
+                Rep = request.form["rep"]
                 cursor.execute("UPDATE info1 SET point1=(?),point2=(?),Resistance=(?) WHERE name_user=(?)", (
                     point1, point2, Resistance, dataform['name_user']))
                 db.commit()
@@ -289,19 +291,21 @@ def selectguest():
     else:
         return redirect(url_for("guest"))
 
-@app.route('/data')
+
+
+@app.route('/torque')
 def data():   
      # if session["username"] == session["username1"]:
-        cursor.execute("select * from sdata ORDER BY ID DESC LIMIT 1")
-        sdata = cursor.fetchone()
-        if sdata is not None:
+        # cursor.execute("select * from sdata ORDER BY ID DESC LIMIT 1")
+        # sdata = cursor.fetchone()
+        # if sdata is not None:
 
             # adc = Adafruit_ADS1x15.ADS1115()
             # GAIN = 2
-            # adc.start_adc(0, gain=GAIN)
+            # adc.start_adc(2, gain=GAIN)
             # value = adc.get_last_result()
 
-            data = [time() * 10000, randint(0,20000)]
+            data = [time() * 10000, randint(1,30000)]
             response = make_response(json.dumps(data))
             response.content_type = 'application/json'
             return response
@@ -309,15 +313,46 @@ def data():
     #     return redirect(url_for("login"))
 
 
-# @app.route('/data1')
-# def data1():
-#     # if session["username"] == session["username1"]:
-#         data = [time() * 100000, random()*100*time()]
-#         response = make_response(json.dumps(data))
-#         response.content_type = 'application/json'
-#         return response
-#     # else:
-#     #     return redirect(url_for("login"))
+@app.route('/angle')
+def angle():
+    
+    # encoder = RotaryEncoder(13,19,max_steps=0)
+
+    # step = encoder.steps
+
+    # anglevalue = step/2.8
+
+    data = [randint(1,360)]
+    response = make_response(json.dumps(data))
+    response.content_type = 'application/json'
+    return response
+
+@app.route('/repetition')
+def repetition():
+    
+    data = [randint(1,25)]
+    response = make_response(json.dumps(data))
+    response.content_type = 'application/json'
+    return response
+
+@app.route('/breakstate')
+def breakstate():
+    
+    data = [randint(0,1)]
+    response = make_response(json.dumps(data))
+    response.content_type = 'application/json'
+    return response
+
+
+@app.route('/speed')
+def data1():
+    # if session["username"] == session["username1"]:
+        data = [time() * 100000, randint(1,1000)]
+        response = make_response(json.dumps(data))
+        response.content_type = 'application/json'
+        return response
+    # else:
+    #     return redirect(url_for("login"))
 
 
 # @app.route('/data2')

@@ -123,8 +123,19 @@
   border-radius: 6px;
   border: none;
   margin-left: 46%;
-  margin-top: 82%;
+  margin-top: 3%;
   padding: 2%;
+}
+.inputrep1{
+
+  height: 40px;
+  width: 40px;
+  border-radius: 20%;
+  margin-left: 15%;
+  text-align: center;
+  background: #FFFFFF;
+  border: none;
+  float: left;
 }
 
 @font-face {

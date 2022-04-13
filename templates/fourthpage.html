@@ -152,6 +152,49 @@
         color: #000000;margin-top: 6%;">Device Angle</p>
     </center>
 
+    <div>
+      <center>
+        <svg width="300" height="300" viewBox="0 0 476 476" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M440.797 237.617C440.797 349.408 350.173 440.032 238.383 440.032C126.592 440.032 35.9678 349.408 35.9678 237.617C35.9678 125.827 126.592 35.2026 238.383 35.2026C350.173 35.2026 440.797 125.827 440.797 237.617ZM130.325 237.617C130.325 297.296 178.704 345.675 238.383 345.675C298.061 345.675 346.44 297.296 346.44 237.617C346.44 177.939 298.061 129.56 238.383 129.56C178.704 129.56 130.325 177.939 130.325 237.617Z" fill="url(#paint0_linear_32_25)" fill-opacity="0.7"/>
+          <line y1="236.5" x2="476" y2="236.5" stroke="white" stroke-width="3"/>
+          <line x1="239.5" y1="6.54293e-08" x2="239.5" y2="476" stroke="white" stroke-width="3"/>
+          <line x1="239.975" y1="235.879" x2="362.879" y2="110.025" stroke="red" stroke-width="3" stroke-linecap="round"/>
+          <defs>
+          <linearGradient id="paint0_linear_32_25" x1="238.383" y1="35.2026" x2="238.383" y2="440.032" gradientUnits="userSpaceOnUse">
+          <stop stop-color="#00BEFA"/>
+          <stop offset="1" stop-color="#8EFF84"/>
+          </linearGradient>
+          </defs>
+          </svg>
+        
+        </center>
+        
+    </div>
+
+    <div style=" margin-top: 5%; float: left; width: 40%; margin-left: 0%; font-family: Poppinsbold; font-weight: 600; font-size: 18px;">
+            
+      <div class="inputrep1">
+
+        <center>
+          <p style="
+              width: 40px;
+              height: 40px;;
+              font-family: Poppins;
+              font-style: normal;
+              font-weight: normal;
+              font-size: 20px;
+              line-height: 40px;
+              color: #000000;margin-top: 0%;" id="repetition"><b>0</b></p>
+        </center>
+      </div>
+    
+      <div style=" width: 26%; height: 40px; border-radius: 50%; background-color: red; float: right; margin-right: 11%; font-family: Poppinsbold; font-weight: 600; font-size: 18px;" id="break">
+            
+      
+      </div>
+    </div>
+
+  </center>
 
     <div class="anglediv">
       <center>
@@ -163,7 +206,7 @@
             font-weight: normal;
             font-size: 24px;
             line-height: 36px;
-            color: #000000;margin-top: 0%;">Angle = <b>30°</b></p>
+            color: #000000;margin-top: 0%;" id="angle">Angle = <b>30°</b></p>
     </div>
     </center>
 
@@ -172,16 +215,15 @@
   <script src="/static/js/Supporting_docs/highchart.js"></script>
   <script src="/static/js/Supporting_docs/highcharts-more.js"></script>
   <script src="/static/js/Supporting_docs/exporting.js"></script>
-  <script src="/static/js/getdata1.js"></script>
   <script src="/static/js/getdata.js"></script>
 
  <!-- <div class="graphs"> -->
 
-  <div class="graphs" id="data-container">
+  <!-- <div class="graphs" id="data-container"> -->
     <!-- Graphs -->
-
-    <!-- <center>
-      <p sqtyle="
+    <div class="graphs"> 
+    <center>
+      <p style="
         width: 156px;
         height: 36px;;
         font-family: Poppins;
@@ -189,20 +231,20 @@
         font-weight: normal;
         font-size: 24px;
         line-height: 36px;
-        color: #000000;margin-top: 6%;">Graphs</p>
-    </center> -->
+        color: #000000;margin-top: 2%;">Graphs</p>
+    </center>
 
-    <!-- <div id="graph1" style="float: left; width: 100%; overflow: hidden; position: absolute;">
+    <div id="graph1" style="float: left; width: 100%; overflow: hidden; position: absolute;">
         <div class="graph1" id="data-container"></div>
         <div class="graph2" id="data-container1"></div>
-    </div> -->
+    </div>
 
     <!-- <div id="graph2" style="float: left; width: 100%; overflow: hidden;  position: absolute;">
         <div class="graph1"  id="data-container2"></div>
         <div class="graph2"  id="data-container3"></div>
-    </div>
+    </div> -->
 
-    <script>
+    <!-- <script>
 
        function slidenext() {
       document.getElementById("graph1").style.width = "100%";
