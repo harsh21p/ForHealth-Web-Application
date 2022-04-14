@@ -114,16 +114,16 @@
 
     <div style="float: left; width: 70%;">
       <div style="float: left; width: 25%;">
-        <button onclick="ledon()" type="button" class="play"><b style="color: white; font-weight: 500;
+        <button onclick="play()" type="button" class="play"><b style="color: white; font-weight: 500;
             font-size: 24px;
             line-height: 36px;">Play</b></button>
       </div>
       <div style="float: left; width: 25%;  padding-left: 5%;">
-        <button onclick="ledoff()" type="button" class="play"><b style="color: white; font-weight: 500;
+        <button onclick="pause()" type="button" class="play"><b style="color: white; font-weight: 500;
           font-size: 24px;
           line-height: 36px;">Pause</b></button>
       </div>
-      <div style="float: left; width: 25%;padding-left: 10%;">
+      <div onclick="stop()"  style="float: left; width: 25%;padding-left: 10%;">
         <button type="button" class="play"><b style="color: white; font-weight: 500;
           font-size: 24px;
           line-height: 36px;">Stop</b></button>
@@ -266,19 +266,26 @@
         </div>
       </div> -->
 <script>
-     function ledon()
+     function play()
     {
         // send a request, but don't refresh page
         xhttp = new XMLHttpRequest();
-        xhttp.open("GET", "on", true);
+        xhttp.open("GET", "play", true);
         xhttp.send();
     }
 
-    function ledoff()
+    function stop()
     {
         // send a request, but don't refresh page
         xhttp1 = new XMLHttpRequest();
-        xhttp1.open("GET", "off", true);
+        xhttp1.open("GET", "stop", true);
+        xhttp1.send();
+    }
+    function pause()
+    {
+        // send a request, but don't refresh page
+        xhttp1 = new XMLHttpRequest();
+        xhttp1.open("GET", "pause", true);
         xhttp1.send();
     }
 </script>

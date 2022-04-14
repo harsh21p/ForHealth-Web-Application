@@ -14,17 +14,7 @@ from xlwt import Workbook
 import numpy as np
 # import RPi.GPIO as GPIO
 from time import sleep
-from flask_caching import Cache
 
-# GPIO.setwarnings(False)
-# GPIO.setmode(GPIO.BCM) 
-# GPIO.setup(21, GPIO.OUT) 
-
-# def led_on():
-#     GPIO.output(21, GPIO.HIGH) 
-
-# def led_off():
-#     GPIO.output(21, GPIO.LOW)
 
 # FLASK APP NEW
 
@@ -44,17 +34,7 @@ def myhome():
     session['username'] = "null"
     return render_template("home.html")
 
-
-
-# @app.route('/on', methods=['GET'])
-# def on():
-#     led_on()
-
-# @app.route('/off', methods=['GET'])
-# def off():
-#     led_off()
 # LOGIN
-
 
 @app.route('/login', methods=['GET', 'POST'])
 def login():
@@ -291,20 +271,21 @@ def selectguest():
     else:
         return redirect(url_for("guest"))
 
+# @app.route('/play', methods=['GET'])
+# def play():
+   
 
+# @app.route('/pause', methods=['GET'])
+# def pause():
+   
+
+# @app.route('/stop', methods=['GET'])
+# def stop():
 
 @app.route('/torque')
-def data():   
+def torque():   
      # if session["username"] == session["username1"]:
-        # cursor.execute("select * from sdata ORDER BY ID DESC LIMIT 1")
-        # sdata = cursor.fetchone()
-        # if sdata is not None:
-
-            # adc = Adafruit_ADS1x15.ADS1115()
-            # GAIN = 2
-            # adc.start_adc(2, gain=GAIN)
-            # value = adc.get_last_result()
-
+       
             data = [time() * 10000, randint(1,30000)]
             response = make_response(json.dumps(data))
             response.content_type = 'application/json'
@@ -316,12 +297,6 @@ def data():
 @app.route('/angle')
 def angle():
     
-    # encoder = RotaryEncoder(13,19,max_steps=0)
-
-    # step = encoder.steps
-
-    # anglevalue = step/2.8
-
     data = [randint(1,360)]
     response = make_response(json.dumps(data))
     response.content_type = 'application/json'
@@ -345,7 +320,7 @@ def breakstate():
 
 
 @app.route('/speed')
-def data1():
+def speed():
     # if session["username"] == session["username1"]:
         data = [time() * 100000, randint(1,1000)]
         response = make_response(json.dumps(data))
