@@ -3,23 +3,28 @@ from gpiozero import PWMLED
 from gpiozero import LED
 from time import sleep
 
+
+
 brake= LED(23)
 for_rv = LED(18)
 motor_brake = LED(11)
 vi_pwm = LED(15)
 encoder = RotaryEncoder(13, 19, max_steps=0)
 
+
+BRAKESTATE = True
+
+brake.off()
+BRAKESTATE = False
+REPITIONS = 0
+
+
 def Angle(angle1):
-
-    #Go to Z (Home)
-
     motor_brake.off()
-    brake.on()
-    sleep(2)
     brake.off()
-    sleep(2)
+    BRAKESTATE = False
 
-
+    #Go to Z (Home
     #Go to angle1
     a1steps =  angle1 * (1024/360)
     i=0
@@ -44,6 +49,12 @@ def Angle(angle1):
 
 
 def Repitions(angle1,angle2,rep):
+    REPITIONS = rep
+    motor_brake.off()
+    sleep(1)
+    brake.off()
+    sleep(0.5)
+    BRAKESTATE = False
 
     Angle(angle1)
    
@@ -53,3 +64,13 @@ def Repitions(angle1,angle2,rep):
         Angle(Range)
         rep=rep-1
         Range=Range * (-1)
+        REPITIONS = rep
+
+
+def Encoder_Angle():
+    return(encoder.steps*360/1024)
+
+def Stop_Now():
+    vi_pwm.off()
+    brake.on()
+    BRAKESTATE = True

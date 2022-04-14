@@ -79,11 +79,11 @@ function requestData() {
         $.ajax({
             url: '/speed',
             success: function(point) {
-                var series = chartb.series[0],
-                    shift = series.data.length > 20; 
+                // var series = chartb.series[0],
+                //     shift = series.data.length > 20; 
                                                  
-                chartb.yAxis[0].setExtremes(0,1500);
-                chartb.series[0].addPoint(point, true, shift);
+                // chartb.yAxis[0].setExtremes(0,1500);
+                // chartb.series[0].addPoint(point, true, shift);
             },
             cache: false
         });
@@ -95,7 +95,7 @@ function requestData() {
     k=k+1;
     l=l+1;
 
-    setTimeout(requestData, 300);
+    setTimeout(requestData, 200);
 }
 
 

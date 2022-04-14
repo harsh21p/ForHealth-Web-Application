@@ -183,9 +183,9 @@
           <input name="point1" value="{{point1}}" class="input1" id="first">
           <input name="point2" value="{{point2}}" class="input2" id="second" /><br>
         </center>
-        <input type="range" id="point1slide" value="{{point1}}" min="0" max="100"
+        <input type="range" id="point1slide" value="{{point1}}" min="-180" max="180"
           onpointermove="updateTextInput1(this.value);">
-        <input type="range" value="{{point2}}" style="margin-left: 5%;" id="point2slide" min="0" max="100"
+        <input type="range" value="{{point2}}" style="margin-left: 5%;" id="point2slide" min="-180" max="180"
           onpointermove="updateTextInput2(this.value);">
       </div>
     </div>

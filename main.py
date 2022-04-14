@@ -1,6 +1,7 @@
 
 # DEPENDENCIES
 
+from multiprocessing.sharedctypes import Value
 from flask import Flask,jsonify, render_template, request, redirect, session, url_for, make_response
 from flask import Flask, render_template, request
 import sqlite3
@@ -117,8 +118,8 @@ def select():
                     point1, point2, Resistance, Rep, dataform['name_user']))
                 db.commit()
                 if dataform['selectbtn']=="Freedrive":
-                    return render_template("fourthpage.html",back="details")
-                return render_template("fourthpage.html",back="select")
+                    return render_template("fourthpage.html",back="details",point1="0",point2="0")
+                return render_template("fourthpage.html",back="select",point1=point1,point2=point2)
             else:
                 return render_template("select.html",RSA="Resistance")
 
@@ -199,18 +200,28 @@ def information():
     cursor.execute("select * from info1 WHERE name_user=(?)",
                        (session['username'],))
     dataform = cursor.fetchone()
-    if session["username"] == session["username1"]:
-        if dataform['selectbtn']=="Freedrive":
-            return render_template("fourthpage.html",back="details")
-        return render_template("fourthpage.html",back="select")
+    if dataform is not None:
+        point1 = dataform["point1"]
+        point2 = dataform["point2"]
+        if session["username"] == session["username1"]:
+            if dataform['selectbtn']=="Freedrive":
+                return render_template("fourthpage.html",back="details",point1="0",point2="0")
+            return render_template("fourthpage.html",back="select",point1=point1,point2=point2)
+    else:
+        return render_template("fourthpage.html")
 
 
 
 @app.route('/torque')
 def torque():   
      if session["username"] == session["username1"]:
+
+            adc = Adafruit_ADS1x15.ADS1115()
+            GAIN = 2
+            adc.start_adc(2, gain=GAIN)
+            value = adc.get_last_result()
        
-            data = [time() * 10000, randint(1,30000)]
+            data = [time() * 10000, value]
             response = make_response(json.dumps(data))
             response.content_type = 'application/json'
             return response
@@ -221,7 +232,8 @@ def torque():
 @app.route('/angle')
 def angle():
     if session["username"] == session["username1"]:
-        data = [randint(1,360)]
+        value = angletest.Encoder_Angle()
+        data = [int(value)]
         response = make_response(json.dumps(data))
         response.content_type = 'application/json'
         return response
@@ -231,7 +243,8 @@ def angle():
 @app.route('/repetition')
 def repetition():
     if session["username"] == session["username1"]:
-        data = [randint(1,25)]
+        value = angletest.REPITIONS
+        data = [value]
         response = make_response(json.dumps(data))
         response.content_type = 'application/json'
         return response
@@ -241,7 +254,11 @@ def repetition():
 @app.route('/breakstate')
 def breakstate():
     if session["username"] == session["username1"]:
-        data = [randint(0,1)]
+        if angletest.BRAKESTATE==True :
+            value = 0
+        else:
+            value = 1
+        data = [value]
         response = make_response(json.dumps(data))
         response.content_type = 'application/json'
         return response
@@ -277,8 +294,9 @@ def play():
 # def pause():
    
 
-# @app.route('/stop', methods=['GET'])
-# def stop():
+@app.route('/stop', methods=['GET'])
+def stop():
+    angletest.Stop_Now()
 
 
 #useless
