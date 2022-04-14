@@ -7,14 +7,17 @@ import sqlite3
 import json
 from time import time
 from random import randint, random
-# import Adafruit_ADS1x15
+import Adafruit_ADS1x15
 from flask.helpers import flash
 import xlwt
 from xlwt import Workbook
 import numpy as np
-# import RPi.GPIO as GPIO
 from time import sleep
-
+from gpiozero import PWMLED
+from gpiozero import LED
+from time import sleep
+from gpiozero import RotaryEncoder
+import angletest as angletest
 
 # FLASK APP NEW
 
@@ -110,12 +113,12 @@ def select():
                 point2 = request.form["point2"] 
                 Resistance = request.form["Resistance"]
                 Rep = request.form["rep"]
-                cursor.execute("UPDATE info1 SET point1=(?),point2=(?),Resistance=(?) WHERE name_user=(?)", (
-                    point1, point2, Resistance, dataform['name_user']))
+                cursor.execute("UPDATE info1 SET point1=(?),point2=(?),Resistance=(?),Rep=(?) WHERE name_user=(?)", (
+                    point1, point2, Resistance, Rep, dataform['name_user']))
                 db.commit()
                 if dataform['selectbtn']=="Freedrive":
-                    return render_template("information",back="details")
-                return render_template("information",back="select")
+                    return render_template("fourthpage.html",back="details")
+                return render_template("fourthpage.html",back="select")
             else:
                 return render_template("select.html",RSA="Resistance")
 
@@ -123,23 +126,25 @@ def select():
             point1 = dataform['point1']
             point2 = dataform['point2']
             Resistance = dataform['Resistance']
+            Rep = dataform['Rep']
             if request.method == 'POST':
                 point1 = request.form["point1"]
                 point2 = request.form["point2"]
                 Resistance = request.form["Resistance"]
-                cursor.execute("UPDATE info1 SET point1=(?),point2=(?),Resistance=(?) WHERE name_user=(?)", (
-                    point1, point2, Resistance, dataform['name_user']))
+                Rep = request.form["rep"]
+                cursor.execute("UPDATE info1 SET point1=(?),point2=(?),Resistance=(?),Rep=(?) WHERE name_user=(?)", (
+                    point1, point2, Resistance, Rep, dataform['name_user']))
                 db.commit()
                 return redirect(url_for("information"))
             
             if dataform['selectbtn']=="Freedrive":
                 return redirect(url_for("information"))
             if dataform['selectbtn']=="Passive":
-                return render_template("select.html",RSA="Assistance", point1=point1, point2=point2, Resistance=Resistance)
+                return render_template("select.html",RSA="Assistance", point1=point1, point2=point2, Resistance=Resistance,rep=Rep)
             if dataform['selectbtn']=="Active isokinetic":
-                return render_template("select.html",RSA="Speed",point1=point1, point2=point2, Resistance=Resistance)
+                return render_template("select.html",RSA="Speed",point1=point1, point2=point2, Resistance=Resistance,rep=Rep)
 
-            return render_template("select.html", point1=point1, point2=point2, Resistance=Resistance,RSA="Resistance")
+            return render_template("select.html", point1=point1, point2=point2, Resistance=Resistance,RSA="Resistance",rep=Rep)
     else:
         return redirect(url_for("login"))
 
@@ -200,11 +205,84 @@ def information():
         return render_template("fourthpage.html",back="select")
 
 
-@app.route('/list', methods=['GET', 'POST'])
-def list():
-    return render_template("userlist.html")
 
-# @/data route to send data from database to webpage
+@app.route('/torque')
+def torque():   
+     if session["username"] == session["username1"]:
+       
+            data = [time() * 10000, randint(1,30000)]
+            response = make_response(json.dumps(data))
+            response.content_type = 'application/json'
+            return response
+     else:
+         return redirect(url_for("login"))
+
+
+@app.route('/angle')
+def angle():
+    if session["username"] == session["username1"]:
+        data = [randint(1,360)]
+        response = make_response(json.dumps(data))
+        response.content_type = 'application/json'
+        return response
+    else:
+        return redirect(url_for("login"))
+
+@app.route('/repetition')
+def repetition():
+    if session["username"] == session["username1"]:
+        data = [randint(1,25)]
+        response = make_response(json.dumps(data))
+        response.content_type = 'application/json'
+        return response
+    else:
+        return redirect(url_for("login"))
+
+@app.route('/breakstate')
+def breakstate():
+    if session["username"] == session["username1"]:
+        data = [randint(0,1)]
+        response = make_response(json.dumps(data))
+        response.content_type = 'application/json'
+        return response
+    else:
+        return redirect(url_for("login"))
+
+
+@app.route('/speed')
+def speed():
+    if session["username"] == session["username1"]:
+        data = [time() * 100000, randint(1,1000)]
+        response = make_response(json.dumps(data))
+        response.content_type = 'application/json'
+        return response
+    else:
+        return redirect(url_for("login"))
+
+
+@app.route('/play', methods=['GET'])
+def play():
+    if session["username"] == session["username1"]:
+        cursor.execute("select * from info1 WHERE name_user=(?)", (session['username'],))
+        dataform = cursor.fetchone()
+        angle1 = dataform['point1']
+        angle2 = dataform['point2']
+        rep = dataform['Rep']
+        angletest.Repitions(angle1,angle2,rep)
+    else:
+         return redirect(url_for("login"))
+   
+
+# @app.route('/pause', methods=['GET'])
+# def pause():
+   
+
+# @app.route('/stop', methods=['GET'])
+# def stop():
+
+
+#useless
+
 
 
 @app.route('/guest', methods=['GET', 'POST'])
@@ -271,85 +349,7 @@ def selectguest():
     else:
         return redirect(url_for("guest"))
 
-# @app.route('/play', methods=['GET'])
-# def play():
-   
 
-# @app.route('/pause', methods=['GET'])
-# def pause():
-   
-
-# @app.route('/stop', methods=['GET'])
-# def stop():
-
-@app.route('/torque')
-def torque():   
-     # if session["username"] == session["username1"]:
-       
-            data = [time() * 10000, randint(1,30000)]
-            response = make_response(json.dumps(data))
-            response.content_type = 'application/json'
-            return response
-    # else:
-    #     return redirect(url_for("login"))
-
-
-@app.route('/angle')
-def angle():
-    
-    data = [randint(1,360)]
-    response = make_response(json.dumps(data))
-    response.content_type = 'application/json'
-    return response
-
-@app.route('/repetition')
-def repetition():
-    
-    data = [randint(1,25)]
-    response = make_response(json.dumps(data))
-    response.content_type = 'application/json'
-    return response
-
-@app.route('/breakstate')
-def breakstate():
-    
-    data = [randint(0,1)]
-    response = make_response(json.dumps(data))
-    response.content_type = 'application/json'
-    return response
-
-
-@app.route('/speed')
-def speed():
-    # if session["username"] == session["username1"]:
-        data = [time() * 100000, randint(1,1000)]
-        response = make_response(json.dumps(data))
-        response.content_type = 'application/json'
-        return response
-    # else:
-    #     return redirect(url_for("login"))
-
-
-# @app.route('/data2')
-# def data2():
-#     # if session["username"] == session["username1"]:
-#         data = [time() * 100000, random()*random()]
-#         response = make_response(json.dumps(data))
-#         response.content_type = 'application/json'
-#         return response
-#     # else:
-#     #     return redirect(url_for("login"))
-
-
-# @app.route('/data3')
-# def data3():
-#     # if session["username"] == session["username1"]:
-#         data = [time() * 10000, random()*100]
-#         response = make_response(json.dumps(data))
-#         response.content_type = 'application/json'
-#         return response
-#     # else:
-#     #     return redirect(url_for("login"))
 
 # FLASK APP
 
