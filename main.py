@@ -254,7 +254,7 @@ def repetition():
 @app.route('/breakstate')
 def breakstate():
     if session["username"] == session["username1"]:
-        if angletest.BRAKESTATE==True :
+        if angletest.BRAKESTATE ==True :
             value = 0
         else:
             value = 1

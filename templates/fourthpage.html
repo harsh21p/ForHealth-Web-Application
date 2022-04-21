@@ -2,14 +2,16 @@
 <html>
 
 <head>
+  <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
+  <meta http-equiv="Pragma" content="no-cache" />
+  <meta http-equiv="Expires" content="0" />
+  
   <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/graphs.css') }}">
   <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/navbar.css') }}">
-  <link rel="stylesheet" href="{{ url_for('static', filename='css/bootstrap.min.css') }}">
   <link rel="stylesheet" href="{{ url_for('static', filename='css/w3.css') }}">
   <link rel="stylesheet" href="{{ url_for('static', filename='css/input.css') }}">
-  <!-- <script src="{{ url_for('static', filename='js/Supporting_docs/jquery.js') }}"></script> -->
-  <script src="{{ url_for('static', filename='js/Supporting_docs/bootstrap.bundle.min.js') }}"></script>
   <script src="{{ url_for('static', filename='js/form.js') }}"></script>
+  <script src="{{ url_for('static', filename='js/snap.svg-min.js') }}"></script>
   <link rel="icon" href="{{ url_for('static', filename='images/logo1.png') }}" type="image/x-icon" />
 <link rel="shortcut icon" href="{{ url_for('static', filename='images/logo1.png') }}" type="image/x-icon" />
 </head>
@@ -85,7 +87,7 @@
   </script>
   <!-- button of drawer -->
   <div class="navbar" style="padding-top: 1%; padding-left:3%; padding-bottom: 7.6%;">
-    <div style="float: left; width: 25%; padding-top: 0.4%;">
+    <div style="float: left; width: 25%; padding-top: 2.5%;">
       <span onclick="openNav()">
         <img src="{{ url_for('static', filename='images/drow.png') }}" alt="img" style="width: 11%;"></span>
     </div>
@@ -128,23 +130,22 @@
           font-size: 24px;
           line-height: 36px;">Stop</b></button>
       </div>
-      
-        <div style=" position: absolute; margin-left: 50%; margin-top: 1.5%;">
+
+      <div style=" position: absolute; margin-left: 50%; margin-top: 1.5%;">
 
         
-          <p style="
-          width: 156px;
-          height: 36px;;
-          font-family: Poppins;
-          font-style: normal;
-          font-weight: normal;
-          font-size: 15px;
-          line-height: 36px;
-          margin-left: 60%;
-          color: #000000;margin-top: 0%;" id="point12"><b>P1 = {{point1}} | P2 = {{point2}}</b></p>
-  
-        </div>
-      
+        <p style="
+        width: 156px;
+        height: 36px;;
+        font-family: Poppins;
+        font-style: normal;
+        font-weight: normal;
+        font-size: 15px;
+        line-height: 36px;
+        margin-left: 60%;
+        color: #000000;margin-top: 0%;" id="point12"><b>P1 = {{point1}} | P2 = {{point2}}</b></p>
+
+      </div>
     </div>
     <div style="float: right; width: 15%; padding-top: 0.5%;">
       <a style="cursor: pointer; text-decoration: none;" onclick="openProNav()">
@@ -169,13 +170,73 @@
         color: #000000;margin-top: 6%;">Device Angle</p>
     </center>
 
+
+    <div style=" position: absolute; margin-left: 11%; margin-top: -1%; width: 305px; height: 305px;">
+      <svg  id="svg" viewBox="0 0 40 40">
+        <style>
+          .svg-text {
+              font-size: 2px;
+              font-style: bold;
+              font-family: monospace;
+              fill: black;
+              padding-top: 2%;
+              alignment-baseline: middle;
+              text-anchor: middle;
+          }
+          .svg-arc-text {
+            font-size: 2px;
+            font-family: monospace;
+            fill: black;
+            alignment-baseline: middle;
+            align-items: center;
+            text-anchor: middle;
+        }
+
+        .svg-line {
+          fill: none;
+          stroke: white;
+          stroke-width: 0;
+      }
+
+      .svg-sline {
+          fill: none;
+          stroke: white;
+          stroke-width: 0.0;
+          opacity: 0.1;
+      }
+          .svg-path {
+            
+              fill-opacity: 0;
+          }
+          .svg-arc {
+
+              fill: white;
+              stroke: white;
+              stroke-width: 0.05;
+              fill-opacity: 0.8;
+          }
+      </style>
+      <!-- <line class="svg-sline" x1="20" y1="20" x2="38" y2="20"></line> -->
+      <line id="pointerLine" class="svg-line" x1="20" y1="20" x2="20" y2="20"></line>
+      <path id="pointerMarker" class="svg-path"></path>
+      <path id="arc" class="svg-arc" d="M20,20"></path>
+      <text id="pointerText" class="svg-text" x="20" y="20"></text>
+      <!-- <text id="arcText" class="svg-arc-text" x="20" y="20"></text> -->
+      </svg>
+
+          <input type="hidden" id="input" type="number" min="0">
+    
+    </div>
+
+    <div class="shape" id="angleline"></div>
     <div>
       <center>
-        <svg width="300" height="300" viewBox="0 0 476 476" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <svg width="300" height="300" viewBox="0 0 476 476" fill="none" >
+        
           <path d="M440.797 237.617C440.797 349.408 350.173 440.032 238.383 440.032C126.592 440.032 35.9678 349.408 35.9678 237.617C35.9678 125.827 126.592 35.2026 238.383 35.2026C350.173 35.2026 440.797 125.827 440.797 237.617ZM130.325 237.617C130.325 297.296 178.704 345.675 238.383 345.675C298.061 345.675 346.44 297.296 346.44 237.617C346.44 177.939 298.061 129.56 238.383 129.56C178.704 129.56 130.325 177.939 130.325 237.617Z" fill="url(#paint0_linear_32_25)" fill-opacity="0.7"/>
           <line y1="236.5" x2="476" y2="236.5" stroke="white" stroke-width="3"/>
           <line x1="239.5" y1="6.54293e-08" x2="239.5" y2="476" stroke="white" stroke-width="3"/>
-          <line x1="239.975" y1="235.879" x2="362.879" y2="110.025" stroke="red" stroke-width="3" stroke-linecap="round"/>
+          
           <defs>
           <linearGradient id="paint0_linear_32_25" x1="238.383" y1="35.2026" x2="238.383" y2="440.032" gradientUnits="userSpaceOnUse">
           <stop stop-color="#00BEFA"/>
@@ -188,7 +249,7 @@
         
     </div>
 
-    <div style=" margin-top: 5%; float: left; width: 40%; margin-left: 0%; font-family: Poppinsbold; font-weight: 600; font-size: 18px;">
+    <div style=" margin-top: 3%; float: left; width: 40%; margin-left: 0%; font-family: Poppinsbold; font-weight: 600; font-size: 18px;">
             
       <div class="inputrep1">
 
@@ -305,7 +366,17 @@
         xhttp1.open("GET", "pause", true);
         xhttp1.send();
     }
+
+
+
+
 </script>
+
+
+
+
+
+
   </div>
 </body>
 
